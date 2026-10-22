@@ -3,28 +3,28 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Coco Loco Albufeira · Tiki Bar & Western Saloon</title>
-<meta name="description" content="Coco Loco Albufeira: handmade cocktails, a Hawaiian tiki bar and a Western sports saloon. Quiz nights, live music, bottomless brunch, boozy breakfast, cocktail classes and private parties.">
-<meta property="og:title" content="Coco Loco Albufeira">
-<meta property="og:description" content="The bar you wish you found on your first day, not your last. Tiki bar, Western saloon, quiz nights, brunch and cocktail classes in Albufeira.">
-<meta property="og:image" content="https://www.cocolocoalbufeira.com/aboutusheader2.png">
+<title>Coco Loco Albufeira · Cocktail Bar</title>
+<meta name="description" content="Coco Loco Albufeira: handmade cocktails, a tropical tiki bar and a Western sports saloon. Quiz nights, live music, bottomless brunch, boozy breakfast, cocktail classes and private parties.">
+<meta property="og:title" content="Coco Loco Albufeira · Cocktail Bar">
+<meta property="og:description" content="Good drinks, good vibes, same people. Tiki bar, Western saloon, quiz nights, brunch and cocktail classes in Albufeira.">
+<meta property="og:image" content="https://www.cocolocoalbufeira.com/img/hero.jpg">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#04505A">
+<meta name="theme-color" content="#073B4C">
 <script>
   // Admin invite / password-reset emails land on the homepage: send them to /admin.
   if (/(invite|recovery|confirmation|email_change)_token=/.test(location.hash)) location.replace("/admin/" + location.hash);
 </script>
-<link rel="icon" href="https://www.cocolocoalbufeira.com/logo.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23073B4C'/%3E%3Ctext x='32' y='44' font-size='34' text-anchor='middle'%3E%F0%9F%8C%B4%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Rye&family=Shrikhand&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Kaushan+Script&family=Montserrat:wght@400;500;600;700&family=Rye&display=swap">
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BarOrPub",
   "name": "Coco Loco Albufeira",
-  "image": "https://www.cocolocoalbufeira.com/aboutusheader2.png",
+  "image": "https://www.cocolocoalbufeira.com/img/hero.jpg",
   "url": "https://www.cocolocoalbufeira.com",
   "telephone": "+351962772428",
   "email": "cocolocoalbufeira@outlook.com",
@@ -47,34 +47,44 @@
 </script>
 
 <style>
-/* Layout: a night out in two acts. Tiki-bar nights in lagoon green, a Western saloon in walnut downstairs,
-   and sand "daytime" bands for the practical stuff (what's on, gallery, booking). */
+/* Coco Loco brand board: Azul Oceano nights lit by turquoise LED, Dourado Sunset for actions,
+   Creme Areia daytime bands for the practical stuff. Brush script for the vibe words,
+   condensed caps for headings. */
 :root{
-  --night:#04505A;
-  --night-2:#086572;
-  --leaf:#0E9F7E;
-  --lagoon:#22CFC3;
-  --coral:#FF7A59;
-  --sand:#FFF4DE;
-  --sand-2:#FFD9A3;
-  --ink:#1F1A14;
-  --ink-soft:#5E4A3A;
-  --hibiscus:#FF3B7A;
-  --hibiscus-deep:#CF1F5C;
-  --mango:#FFC53D;
-  --walnut:#2A1A11;
-  --walnut-2:#3B2516;
-  --whiskey:#D58C2F;
-  --rope:#EEDDB8;
-  --on-night:#FFF6E6;
-  --on-night-soft:#B9E6E1;
+  /* main colours */
+  --ocean:#073B4C;
+  --ocean-deep:#04232D;
+  --ocean-2:#0C4A5E;
+  --turq:#16B8C4;
+  --gold:#FFB547;
+  --cream:#F5EFE4;
+  --charcoal:#20252A;
+  /* secondary accents */
+  --coral:#FF6B6B;
+  --palm:#2F7D32;
+  --hibiscus:#E5527F;
+  --sky:#4BD3EB;
+  --wood:#8B5E3C;
+  /* derived */
+  --cream-2:#E7DCC7;
+  --card-light:#FBF8F2;
+  --charcoal-2:#2B3137;
+  --ink:#20252A;
+  --ink-soft:#5B6166;
+  --on-dark:#F5EFE4;
+  --on-dark-soft:#A8C4CC;
+  --turq-ink:#0B7F89;
+  --walnut:#2E1E14;
+  --walnut-2:#3E2A1C;
+  --rope:#F1E3C6;
 
-  --f-tiki:"Shrikhand", "Cooper Black", Georgia, serif;
+  --f-brush:"Kaushan Script", "Brush Script MT", cursive;
+  --f-head:"Barlow Condensed", "Arial Narrow", "Roboto Condensed", sans-serif;
+  --f-body:"Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --f-west:"Rye", "Rockwell", Georgia, serif;
-  --f-body:"Figtree", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 
   --maxw:1180px;
-  --r:20px;
+  --r:18px;
   --gutter:max(20px, env(safe-area-inset-left, 0px));
   --gutter-r:max(20px, env(safe-area-inset-right, 0px));
   color-scheme: dark;
@@ -83,208 +93,257 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth; scroll-padding-top:84px}
 @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} *{animation:none!important; transition:none!important} }
-body{margin:0; background:var(--night); color:var(--on-night); font:400 17px/1.6 var(--f-body); -webkit-font-smoothing:antialiased}
+body{margin:0; background:var(--ocean); color:var(--on-dark); font:400 16px/1.65 var(--f-body); -webkit-font-smoothing:antialiased}
 img{max-width:100%; display:block}
 img.broken{visibility:hidden}
 a{color:inherit}
-h1,h2,h3{margin:0; text-wrap:balance; line-height:1.08; font-weight:400}
+h1,h2,h3{margin:0; text-wrap:balance; line-height:1.05; font-weight:400}
 p{margin:0}
 button{font:inherit; cursor:pointer}
-:focus-visible{outline:3px solid var(--mango); outline-offset:3px; border-radius:6px}
+:focus-visible{outline:3px solid var(--gold); outline-offset:3px; border-radius:6px}
+[hidden]{display:none!important}
+.hp{position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden}
 
 .wrap{max-width:var(--maxw); margin-inline:auto; padding-left:var(--gutter); padding-right:var(--gutter-r)}
 .band{padding-block:clamp(64px, 9vw, 112px)}
-.band-sand{background:var(--sand); color:var(--ink); color-scheme:light; position:relative}
-/* scalloped wave edge where a sand band meets a dark one */
-.band-sand::before{content:""; position:absolute; left:0; right:0; top:-17px; height:18px; background:radial-gradient(circle at 22px 26px, var(--sand) 20px, transparent 21px) repeat-x; background-size:44px 18px; pointer-events:none}
-#experiences{background:linear-gradient(180deg, var(--night) 0%, #05606B 100%)}
-.eyebrow{font:700 13px/1 var(--f-body); letter-spacing:.14em; text-transform:uppercase; color:var(--mango)}
-.band-sand .eyebrow{color:var(--hibiscus-deep)}
-.h2{font-family:var(--f-tiki); font-size:clamp(2.1rem, 4.6vw, 3.4rem); color:var(--on-night)}
-.band-sand .h2{color:var(--night)}
-.section-head{display:flex; flex-wrap:wrap; align-items:end; justify-content:space-between; gap:16px 40px; margin-bottom:40px}
-.section-head > div{display:grid; gap:14px; max-width:640px}
-.section-head .note{max-width:38ch; color:var(--ink-soft); font-size:16px}
-.band:not(.band-sand) .section-head .note{color:var(--on-night-soft)}
+.band-light{background:var(--cream); color:var(--ink); color-scheme:light}
+.band-charcoal{background:var(--charcoal)}
 
-/* Buttons */
-.btn{display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:52px; padding:0 26px; border-radius:999px; font:700 16px/1 var(--f-body); text-decoration:none; border:2px solid transparent; transition:transform .15s ease, background-color .15s ease, box-shadow .15s ease}
+/* Headings: condensed caps, first letter lit up, a rule running off to the right (as on the brand board) */
+.eyebrow{font:700 13px/1 var(--f-body); letter-spacing:.16em; text-transform:uppercase; color:var(--gold)}
+.band-light .eyebrow{color:var(--turq-ink)}
+.h2{display:flex; align-items:center; gap:24px; font:800 clamp(2.2rem, 5vw, 3.6rem)/1 var(--f-head); text-transform:uppercase; letter-spacing:.02em; color:var(--on-dark)}
+.h2 > span{display:inline-block; min-width:0}
+.h2 > span::first-letter{color:var(--turq)}
+.h2::after{content:""; flex:1 1 40px; height:2px; background:currentColor; opacity:.22; min-width:40px}
+.band-light .h2{color:var(--ocean)}
+.section-head{display:grid; gap:14px; margin-bottom:40px}
+.section-head .note{max-width:60ch; color:var(--ink-soft); font-size:16px}
+.band:not(.band-light) .section-head .note{color:var(--on-dark-soft)}
+.section-head .head-actions{margin-top:6px}
+
+/* Buttons, straight from the board: gold, turquoise, outline, all with an arrow */
+.btn{white-space:nowrap; display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:52px; padding:0 24px; border-radius:14px; font:700 18px/1 var(--f-head); letter-spacing:.08em; text-transform:uppercase; text-decoration:none; border:2px solid transparent; transition:transform .15s ease, box-shadow .15s ease, background-color .15s ease}
+.btn::after{content:"→"; font-family:var(--f-body); font-weight:600; transition:transform .15s ease}
 .btn:hover{transform:translateY(-2px)}
-.btn-hot{background:var(--hibiscus); color:#fff; box-shadow:0 6px 0 var(--hibiscus-deep)}
-.btn-hot:hover{box-shadow:0 8px 0 var(--hibiscus-deep)}
-.btn-ghost{border-color:currentColor; color:var(--on-night)}
-.band-sand .btn-ghost{color:var(--night)}
-.btn-sm{min-height:42px; padding:0 18px; font-size:15px}
+.btn:hover::after{transform:translateX(3px)}
+.btn-gold, .btn-hot{background:var(--gold); color:var(--charcoal); box-shadow:0 8px 24px -8px rgba(255,181,71,.6)}
+.btn-turq{background:var(--turq); color:var(--ocean-deep); box-shadow:0 8px 24px -8px rgba(22,184,196,.6)}
+.btn-outline, .btn-ghost{border-color:currentColor; color:var(--on-dark)}
+.band-light .btn-outline, .band-light .btn-ghost{color:var(--ocean)}
+.btn-sm{min-height:44px; padding:0 18px; font-size:16px}
+.btn-noarrow::after{content:none}
 
 /* Header */
-body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top, 0px); background:var(--night); z-index:60}
-.site-header{position:sticky; top:env(safe-area-inset-top, 0px); z-index:50; background:color-mix(in srgb, var(--night) 88%, transparent); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-bottom:1px solid rgba(244,234,214,.08)}
-.header-row{display:flex; align-items:center; gap:20px; min-height:72px}
-.brand{display:flex; align-items:center; gap:12px; text-decoration:none; margin-right:auto}
-.brand img{width:44px; height:44px; object-fit:contain}
-.brand span{font:400 26px/1 var(--f-tiki); color:var(--mango)}
-.nav{display:flex; align-items:center; gap:6px}
-.nav a{padding:10px 12px; border-radius:999px; text-decoration:none; font-weight:600; font-size:15px; color:var(--on-night)}
-.nav a:hover{background:rgba(244,234,214,.08)}
-.lang{display:inline-flex; border:1.5px solid rgba(244,234,214,.3); border-radius:999px; padding:3px}
-.lang button{border:0; background:none; color:var(--on-night-soft); font-weight:700; font-size:13px; letter-spacing:.06em; padding:6px 10px; border-radius:999px}
-.lang button[aria-pressed="true"]{background:var(--on-night); color:var(--night)}
-.menu-btn{display:none; width:46px; height:46px; border-radius:50%; border:1.5px solid rgba(244,234,214,.3); background:none; color:var(--on-night); align-items:center; justify-content:center}
+body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top, 0px); background:var(--ocean-deep); z-index:60}
+.site-header{position:sticky; top:env(safe-area-inset-top, 0px); z-index:50; background:color-mix(in srgb, var(--ocean-deep) 90%, transparent); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-bottom:1px solid rgba(22,184,196,.25)}
+.header-row{display:flex; align-items:center; gap:18px; min-height:72px}
+.brand{display:grid; text-decoration:none; margin-right:auto; line-height:1}
+.brand b{font:400 30px/1 var(--f-brush); color:var(--on-dark)}
+.brand small{font:700 11px/1 var(--f-head); letter-spacing:.42em; color:var(--turq); margin-top:2px; padding-left:2px}
+.nav{display:flex; align-items:center; gap:4px}
+.nav a{white-space:nowrap; padding:10px 12px; border-radius:10px; text-decoration:none; font:700 17px/1 var(--f-head); letter-spacing:.06em; text-transform:uppercase; color:var(--on-dark)}
+.nav a:hover{background:rgba(22,184,196,.12); color:var(--sky)}
+.lang{display:inline-flex; border:1.5px solid rgba(245,239,228,.3); border-radius:999px; padding:3px}
+.lang button{border:0; background:none; color:var(--on-dark-soft); font-weight:700; font-size:13px; letter-spacing:.06em; padding:6px 10px; border-radius:999px}
+.lang button[aria-pressed="true"]{background:var(--turq); color:var(--ocean-deep)}
+.menu-btn{display:none; width:46px; height:46px; border-radius:12px; border:1.5px solid rgba(245,239,228,.3); background:none; color:var(--on-dark); align-items:center; justify-content:center}
 .menu-btn svg{width:22px; height:22px}
-@media (max-width: 960px){
-  .nav{display:none; position:absolute; left:0; right:0; top:100%; flex-direction:column; align-items:stretch; gap:2px; background:var(--night); padding:12px var(--gutter-r) 20px var(--gutter); border-bottom:1px solid rgba(244,234,214,.1)}
+@media (max-width: 1020px){
+  .nav{display:none; position:absolute; left:0; right:0; top:100%; flex-direction:column; align-items:stretch; gap:2px; background:var(--ocean-deep); padding:12px var(--gutter-r) 20px var(--gutter); border-bottom:1px solid rgba(22,184,196,.25)}
   .nav.open{display:flex}
-  .nav a{padding:14px 12px; font-size:18px}
+  .nav a{padding:14px 12px; font-size:22px}
   .menu-btn{display:inline-flex}
   .header-book{display:none}
 }
 
 /* Hero */
-.hero{padding-block:clamp(40px, 6vw, 80px) clamp(64px, 8vw, 104px); position:relative; overflow:hidden}
-.hero{background:linear-gradient(160deg, #04505A 0%, #06707A 55%, #0B8A84 100%)}
-.hero::before{content:""; position:absolute; inset:0; background:
-  radial-gradient(640px 440px at 88% 6%, rgba(255,122,89,.45), transparent 70%),
-  radial-gradient(520px 380px at 70% 40%, rgba(255,59,122,.22), transparent 70%),
-  radial-gradient(560px 400px at 0% 100%, rgba(255,197,61,.28), transparent 70%); pointer-events:none}
-.hero-grid{position:relative; display:grid; grid-template-columns:1.15fr .85fr; gap:clamp(32px, 5vw, 72px); align-items:center}
-.hero-copy{display:grid; gap:24px; min-width:0}
-.hero h1{font-family:var(--f-tiki); font-size:clamp(2.5rem, 5.6vw, 4.6rem); line-height:1.02; color:var(--on-night)}
-.hero h1 em{font-style:normal; color:var(--mango)}
-.lede{font-size:clamp(17px, 1.6vw, 19px); color:var(--on-night-soft); max-width:56ch}
-.status{display:inline-flex; align-items:center; gap:10px; align-self:start; justify-self:start; padding:10px 16px; border-radius:999px; background:rgba(244,234,214,.07); border:1px solid rgba(244,234,214,.14); font-weight:600; font-size:15px}
-.status .dot{width:10px; height:10px; border-radius:50%; background:var(--on-night-soft)}
-.status.is-open .dot{background:#4ADE80; box-shadow:0 0 0 4px rgba(74,222,128,.2)}
-.cta-row{display:flex; flex-wrap:wrap; gap:14px}
-
-.hero-art{position:relative; min-width:0}
-.arch{aspect-ratio:4/5; max-width:100%; border-radius:999px 999px 28px 28px; overflow:hidden; border:6px solid var(--mango); box-shadow:0 0 0 10px rgba(255,197,61,.18), 0 30px 60px rgba(0,30,35,.35); background:
-  linear-gradient(180deg, var(--hibiscus) 0%, var(--coral) 45%, var(--mango) 100%)}
-.arch img{width:100%; height:100%; object-fit:cover}
-.sticker{position:absolute; left:-28px; bottom:28px; width:150px; height:150px; border-radius:50%; background:var(--hibiscus); color:#fff; display:grid; place-items:center; box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.hero{position:relative; overflow:hidden; padding-block:clamp(20px, 3vw, 36px) clamp(56px, 7vw, 88px); background:
+  radial-gradient(700px 360px at 50% 0%, rgba(22,184,196,.28), transparent 70%),
+  radial-gradient(520px 400px at 100% 100%, rgba(229,82,127,.16), transparent 70%),
+  linear-gradient(180deg, var(--ocean-deep) 0%, var(--ocean) 100%)}
+.hero-photo{position:relative; margin:0; border-radius:28px; overflow:hidden; aspect-ratio:1312 / 644; max-width:100%; background:var(--ocean-2);
+  box-shadow:0 0 0 2px rgba(22,184,196,.7), 0 0 50px -6px rgba(22,184,196,.55), 0 30px 60px -20px rgba(0,0,0,.6)}
+.hero-photo img{width:100%; height:100%; object-fit:cover; object-position:45% 40%}
+.sticker{position:absolute; top:18px; right:18px; width:132px; height:132px; border-radius:50%; background:var(--coral); color:#fff; display:grid; place-items:center; box-shadow:0 10px 30px rgba(0,0,0,.35)}
 .sticker svg{position:absolute; inset:0; width:100%; height:100%; animation:spin 26s linear infinite}
 .sticker svg text{font:700 10.5px var(--f-body); letter-spacing:.08em; fill:#fff; text-transform:uppercase}
-.sticker b{font:400 22px/1 var(--f-tiki); text-align:center}
+.sticker b{font:800 26px/1 var(--f-head); text-align:center; letter-spacing:.04em}
 .sticker b small{display:block; font:700 11px/1.2 var(--f-body); letter-spacing:.12em; margin-top:4px}
 @keyframes spin{to{transform:rotate(360deg)}}
+
+/* Logo lock-up on a cream brush stroke, overlapping the photo like on the board */
+.lockup{position:relative; z-index:2; width:min(600px, 94%); margin:-78px auto 0; padding:26px 34px 24px; display:grid; justify-items:center; gap:6px; background:var(--cream); color:var(--ocean);
+  clip-path:polygon(1% 18%, 7% 6%, 19% 10%, 33% 2%, 49% 8%, 64% 0%, 79% 7%, 93% 2%, 99% 14%, 100% 52%, 98% 86%, 90% 98%, 73% 93%, 56% 100%, 38% 94%, 21% 99%, 6% 93%, 0% 62%)}
+.lk-name{font:400 clamp(2.8rem, 8vw, 5.4rem)/.95 var(--f-brush); text-transform:uppercase; letter-spacing:.01em}
+.lk-town{font:700 clamp(1.3rem, 3vw, 1.9rem)/1 var(--f-head); letter-spacing:.42em; padding-left:.42em; color:var(--turq)}
+.lk-type{display:flex; align-items:center; gap:14px; font:600 13px/1 var(--f-body); letter-spacing:.38em; text-transform:uppercase; color:var(--charcoal)}
+.lk-type::before, .lk-type::after{content:""; width:46px; height:1.5px; background:currentColor; opacity:.5}
+
+.hero-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:clamp(28px, 5vw, 64px); align-items:start; margin-top:clamp(36px, 5vw, 56px)}
+.hero-copy{display:grid; gap:20px; min-width:0}
+.hero h1{font:800 clamp(2.3rem, 5vw, 3.9rem)/1 var(--f-head); text-transform:uppercase; letter-spacing:.01em; color:var(--on-dark)}
+.hero h1 em{font:400 1.12em/1 var(--f-brush); font-style:normal; text-transform:none; color:var(--gold)}
+.slogan{font:400 clamp(1.4rem, 2.4vw, 1.8rem)/1.2 var(--f-brush); color:var(--sky)}
+.lede{font-size:clamp(16px, 1.5vw, 17.5px); color:var(--on-dark-soft); max-width:58ch}
+.hero-side{display:grid; gap:20px; min-width:0}
+.status{display:inline-flex; align-items:center; gap:10px; justify-self:start; padding:10px 16px; border-radius:12px; background:rgba(245,239,228,.06); border:1px solid rgba(22,184,196,.35); font-weight:600; font-size:15px}
+.status .dot{width:10px; height:10px; border-radius:50%; background:var(--on-dark-soft)}
+.status.is-open .dot{background:#4ADE80; box-shadow:0 0 0 4px rgba(74,222,128,.2)}
+.cta-stack{display:grid; gap:12px}
+.cta-stack .btn{justify-content:center; width:100%}
+.cta-row{display:flex; flex-wrap:wrap; gap:12px}
+
+/* Round icon links */
+.icons{display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:10px; margin-top:6px}
+.icons a{display:grid; justify-items:center; gap:8px; text-decoration:none; font:700 14px/1.1 var(--f-head); letter-spacing:.08em; text-transform:uppercase; text-align:center; color:var(--on-dark)}
+.icons .ic{width:64px; height:64px; border-radius:50%; display:grid; place-items:center; border:2px solid currentColor; transition:transform .2s ease, background-color .2s ease}
+.icons a:hover .ic{transform:translateY(-3px); background:rgba(255,255,255,.06)}
+.icons svg{width:28px; height:28px}
+@media (max-width: 420px){ .icons .ic{width:54px; height:54px} .icons svg{width:24px; height:24px} .icons a{font-size:12.5px; letter-spacing:.04em} }
+.ic-turq{color:var(--turq)} .ic-gold{color:var(--gold)} .ic-sky{color:var(--sky)} .ic-cream{color:var(--on-dark)}
 @media (max-width: 860px){
   .hero-grid{grid-template-columns:1fr}
-  .hero-art{max-width:420px; width:100%; justify-self:center; order:-1}
-  .arch{aspect-ratio:5/4; border-radius:220px 220px 24px 24px}
-  .sticker{left:auto; right:-6px; bottom:-20px; width:124px; height:124px}
-  .sticker b{font-size:18px}
+  .hero-photo{aspect-ratio:4 / 3; border-radius:22px}
+  .hero-photo img{object-position:38% 50%}
+  .sticker{width:104px; height:104px; top:12px; right:12px}
+  .sticker b{font-size:20px}
+  .lockup{margin-top:-46px; padding:20px 22px 18px}
+  .lk-type::before, .lk-type::after{width:22px}
+  .lk-type{letter-spacing:.24em; font-size:11px}
+}
+
+/* Vibe tiles */
+.vibes{background:var(--ocean-deep); padding-block:clamp(48px, 7vw, 88px)}
+.tiles{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:18px}
+.tile{position:relative; display:block; aspect-ratio:4 / 5; max-width:100%; border-radius:20px; overflow:hidden; text-decoration:none; background:var(--ocean-2); box-shadow:0 0 0 1.5px rgba(255,181,71,.55)}
+.tile:nth-child(2){box-shadow:0 0 0 1.5px rgba(22,184,196,.7)}
+.tile img{width:100%; height:100%; object-fit:cover; transition:transform .6s ease}
+.tile:hover img{transform:scale(1.05)}
+.tile::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg, transparent 40%, rgba(4,35,45,.85) 100%)}
+.tile-word{position:absolute; z-index:1; left:20px; right:20px; bottom:22px; font:400 clamp(2.1rem, 3.6vw, 3rem)/.95 var(--f-brush); color:#fff; text-shadow:0 3px 18px rgba(0,0,0,.45)}
+.tile-word.gold{color:var(--gold)}
+.tile-word.band{justify-self:start; display:inline-block; right:auto; padding:10px 18px 12px; background:var(--gold); color:var(--charcoal); text-shadow:none; transform:rotate(-3deg);
+  clip-path:polygon(0 12%, 6% 0, 50% 5%, 94% 0, 100% 15%, 98% 88%, 92% 100%, 46% 94%, 5% 100%, 1% 82%)}
+@media (max-width: 760px){
+  .tiles-scroll{overflow-x:auto; scroll-snap-type:x mandatory; margin-inline:calc(-1 * var(--gutter)) calc(-1 * var(--gutter-r)); padding:6px var(--gutter-r) 10px var(--gutter); scroll-padding-inline:var(--gutter) var(--gutter-r); scrollbar-width:none}
+  .tiles{grid-template-columns:repeat(3, 74vw)}
+  .tile{scroll-snap-align:start}
 }
 
 /* What's on */
 .week{display:grid; grid-template-columns:repeat(7, minmax(0,1fr)); gap:12px}
-.day{display:grid; align-content:start; gap:12px; padding:18px 16px 20px; border-radius:var(--r); background:#FFFBF2; border:2px solid var(--sand-2); min-width:0}
-.day:not(.closed):not(.today){border-top:6px solid var(--lagoon)}
+.day{display:grid; align-content:start; gap:12px; padding:18px 16px 20px; border-radius:var(--r); background:var(--card-light); border:2px solid var(--cream-2); min-width:0}
+.day:not(.closed):not(.today){border-top:6px solid var(--turq)}
 .day-top{display:grid; gap:6px}
-.day h3{font:800 15px/1 var(--f-body); letter-spacing:.12em; text-transform:uppercase; color:var(--night)}
+.day h3{font:800 20px/1 var(--f-head); letter-spacing:.08em; text-transform:uppercase; color:var(--ocean)}
+.day h3 .dom{font-weight:600; letter-spacing:0; color:var(--ink-soft)}
 .day .hrs{font-size:13px; color:var(--ink-soft); font-variant-numeric:tabular-nums; white-space:nowrap}
-.day.today{border-color:var(--hibiscus); box-shadow:0 8px 0 var(--hibiscus)}
-.today-chip{display:none; font:800 11px/1 var(--f-body); letter-spacing:.1em; text-transform:uppercase; background:var(--hibiscus); color:#fff; padding:5px 8px; border-radius:999px; justify-self:start}
+.day.today{border-color:var(--coral); box-shadow:0 8px 0 var(--coral)}
+.today-chip{display:none; font:700 13px/1 var(--f-head); letter-spacing:.12em; text-transform:uppercase; background:var(--coral); color:#fff; padding:5px 9px; border-radius:8px; justify-self:start}
 .day.today .today-chip{display:inline-block}
 .day.closed{background:transparent; border-style:dashed}
 .day.closed .ev-t{color:var(--ink-soft)}
-.ev{display:grid; gap:2px; padding-top:10px; border-top:1px solid var(--sand-2)}
-.ev-time{font:700 13px/1.2 var(--f-body); color:var(--hibiscus-deep); font-variant-numeric:tabular-nums}
+.ev{display:grid; gap:2px; padding-top:10px; border-top:1px solid var(--cream-2)}
+.ev-time{font:700 13px/1.2 var(--f-body); color:var(--turq-ink); font-variant-numeric:tabular-nums}
 .ev-t{font-weight:700; font-size:15px; line-height:1.3; color:var(--ink)}
 .ev-where{font-size:13px; color:var(--ink-soft)}
-.day h3 .dom{font-weight:600; letter-spacing:0; color:var(--ink-soft)}
-.ev.special .ev-time::before{content:"★ "; color:var(--coral)}
-.ev.special .ev-t{color:var(--hibiscus-deep)}
+.ev.special .ev-time{color:var(--coral)}
+.ev.special .ev-time::before{content:"★ "}
+.ev.special .ev-t{color:var(--hibiscus)}
 .upcoming{margin-top:36px; display:grid; gap:16px}
-.upcoming-h{font:800 13px/1 var(--f-body); letter-spacing:.14em; text-transform:uppercase; color:var(--hibiscus-deep)}
+.upcoming-h{font:800 22px/1 var(--f-head); letter-spacing:.06em; text-transform:uppercase; color:var(--ocean)}
 .up-list{display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:14px}
-.up{display:flex; gap:14px; align-items:flex-start; padding:14px; border-radius:16px; background:#FFFBF2; border:2px solid var(--sand-2); min-width:0}
-.up-date{flex:none; width:58px; padding:8px 0; border-radius:12px; background:var(--hibiscus); color:#fff; display:grid; justify-items:center; gap:2px}
-.up-date b{font:400 26px/1 var(--f-tiki)}
-.up-date span{font:800 11px/1 var(--f-body); letter-spacing:.1em; text-transform:uppercase}
+.up{display:flex; gap:14px; align-items:flex-start; padding:14px; border-radius:16px; background:var(--card-light); border:2px solid var(--cream-2); min-width:0}
+.up-date{flex:none; width:58px; padding:8px 0; border-radius:12px; background:var(--coral); color:#fff; display:grid; justify-items:center; gap:2px}
+.up-date b{font:800 28px/1 var(--f-head)}
+.up-date span{font:700 11px/1 var(--f-body); letter-spacing:.1em; text-transform:uppercase}
 .up-body{display:grid; gap:2px; min-width:0}
 .week-foot{margin-top:28px; display:flex; flex-wrap:wrap; gap:12px 24px; align-items:center; color:var(--ink-soft); font-size:15px}
-.week-foot a{font-weight:700; color:var(--night)}
+.week-foot a{font-weight:700; color:var(--ocean)}
 @media (max-width: 1080px){
-  .week-scroll{overflow-x:auto; scroll-snap-type:x mandatory; margin-inline:calc(-1 * var(--gutter)) calc(-1 * var(--gutter-r)); padding:4px var(--gutter-r) 16px var(--gutter); scrollbar-width:thin}
+  .week-scroll{overflow-x:auto; scroll-snap-type:x mandatory; margin-inline:calc(-1 * var(--gutter)) calc(-1 * var(--gutter-r)); padding:4px var(--gutter-r) 16px var(--gutter); scroll-padding-inline:var(--gutter) var(--gutter-r); scrollbar-width:thin}
   .week{grid-template-columns:repeat(7, 200px)}
   .day{scroll-snap-align:start}
 }
 
 /* Two bars */
+.bars-wrap{position:relative}
 .bars{display:flex; min-height:560px}
 .bar{flex:1 1 0; position:relative; padding:clamp(48px,7vw,88px) clamp(24px,5vw,64px); display:grid; align-content:center; gap:22px; transition:flex-grow .5s cubic-bezier(.2,.7,.2,1); min-width:0; overflow:hidden}
 @media (hover:hover) and (min-width: 861px){ .bar:hover{flex-grow:1.3} }
 .bar-tiki{background:
-  radial-gradient(300px 300px at 92% 10%, rgba(255,59,122,.55), transparent 70%),
-  radial-gradient(360px 280px at 4% 98%, rgba(255,197,61,.45), transparent 70%),
-  repeating-linear-gradient(90deg, rgba(255,255,255,.05) 0 14px, transparent 14px 62px),
-  linear-gradient(150deg, var(--leaf) 0%, #0BB59B 100%)}
-.bar-saloon{background:
-  repeating-linear-gradient(90deg, rgba(255,255,255,.018) 0 2px, transparent 2px 9px),
-  repeating-linear-gradient(0deg, var(--walnut-2) 0 54px, #22150D 54px 57px);
-  color:var(--rope)}
-.bar .where{font:800 13px/1 var(--f-body); letter-spacing:.16em; text-transform:uppercase}
-.bar-tiki .where{color:var(--mango)}
-.bar-saloon .where{color:var(--whiskey)}
-.bar h2{font-size:clamp(2.6rem, 5vw, 4.2rem)}
-.bar-tiki h2{font-family:var(--f-tiki); color:#fff}
+  radial-gradient(300px 300px at 92% 10%, rgba(229,82,127,.45), transparent 70%),
+  radial-gradient(380px 300px at 4% 98%, rgba(47,125,50,.6), transparent 70%),
+  radial-gradient(320px 260px at 60% 110%, rgba(255,181,71,.3), transparent 70%),
+  linear-gradient(150deg, var(--ocean) 0%, #0E8E9A 100%)}
+.bar-saloon{overflow:visible; color:var(--rope); background:
+  repeating-linear-gradient(90deg, rgba(255,255,255,.02) 0 2px, transparent 2px 9px),
+  repeating-linear-gradient(0deg, var(--walnut-2) 0 54px, var(--walnut) 54px 57px)}
+.bar .where{font:700 13px/1 var(--f-body); letter-spacing:.16em; text-transform:uppercase}
+.bar-tiki .where{color:var(--gold)}
+.bar-saloon .where{color:var(--gold)}
+.bar h2{font-size:clamp(2.8rem, 5.4vw, 4.4rem)}
+.bar-tiki h2{font-family:var(--f-brush); color:#fff}
 .bar-saloon h2{font-family:var(--f-west); color:var(--rope); letter-spacing:.02em}
-.bar p.desc{max-width:42ch; font-size:17px}
-.bar-tiki p.desc{color:#E3F1EA}
-.bar-saloon p.desc{color:#D9C6A0}
-.perks{list-style:none; margin:0; padding:0; display:grid; gap:10px; max-width:420px}
+.bar p.desc{max-width:44ch; font-size:16.5px}
+.bar-tiki p.desc{color:#DDF3F5}
+.bar-saloon p.desc{color:#DCC7A3}
+.perks{list-style:none; margin:0; padding:0; display:grid; gap:10px; max-width:440px}
 .perks li{display:flex; gap:12px; align-items:baseline; font-weight:600}
-.bar-tiki .perks li::before{content:""; flex:none; width:10px; height:10px; border-radius:50%; background:var(--mango); transform:translateY(-1px)}
-.poster{background:var(--rope); color:var(--walnut); padding:22px 24px 24px; border-radius:6px; max-width:420px; box-shadow:0 14px 30px rgba(0,0,0,.35); transform:rotate(-1.2deg); outline:2px dashed rgba(42,26,17,.35); outline-offset:-10px}
+.perks li::before{content:""; flex:none; width:10px; height:10px; border-radius:50%; background:var(--gold); transform:translateY(-1px)}
+.poster{background:var(--rope); color:var(--walnut); padding:22px 24px 24px; border-radius:6px; max-width:420px; box-shadow:0 14px 30px rgba(0,0,0,.35); transform:rotate(-1.2deg); outline:2px dashed rgba(46,30,20,.35); outline-offset:-10px}
 .poster h3{font:400 22px/1 var(--f-west); text-align:center; letter-spacing:.06em; margin-bottom:14px}
 .poster ul{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:8px 16px; font-weight:700; font-size:15px}
-.poster li::before{content:"★ "; color:var(--whiskey)}
-.bar-saloon{overflow:visible}
-.stairs{position:absolute; left:0; top:50%; transform:translate(-50%,-50%); z-index:2; width:118px; height:118px; border-radius:50%; background:var(--mango); color:var(--night); display:grid; place-items:center; text-align:center; font:400 17px/1.05 var(--f-tiki); box-shadow:0 0 0 8px var(--night), 0 10px 30px rgba(0,0,0,.4); pointer-events:none}
-.bars-wrap{position:relative}
+.poster li::before{content:"★ "; color:var(--wood)}
+.stairs{position:absolute; left:0; top:50%; transform:translate(-50%,-50%); z-index:2; width:118px; height:118px; border-radius:50%; background:var(--gold); color:var(--charcoal); display:grid; place-items:center; text-align:center; font:800 20px/1 var(--f-head); text-transform:uppercase; letter-spacing:.04em; box-shadow:0 0 0 8px var(--ocean-deep), 0 10px 30px rgba(0,0,0,.4); pointer-events:none}
 @media (max-width: 860px){
   .bars{flex-direction:column; min-height:0}
-  .stairs{left:50%; top:0; width:96px; height:96px; font-size:14px}
   .bar{flex:none}
   .bar-tiki{padding-bottom:84px}
   .bar-saloon{padding-top:76px}
+  .stairs{left:50%; top:0; width:96px; height:96px; font-size:17px}
   .poster ul{grid-template-columns:1fr}
 }
 
 /* Experiences */
-.xp-grid{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:24px}
-.xp{display:grid; grid-template-rows:auto 1fr; background:var(--night-2); border-radius:var(--r); overflow:hidden; border:1px solid rgba(244,234,214,.08); text-align:left; color:inherit; padding:0; transition:transform .2s ease, border-color .2s ease}
-.xp:hover{transform:translateY(-4px); border-color:rgba(255,184,48,.5)}
-.xp-img{aspect-ratio:4/3; max-width:100%; background:repeating-linear-gradient(45deg, var(--leaf) 0 12px, var(--night-2) 12px 24px); overflow:hidden}
+#experiences{background:var(--charcoal)}
+.xp-grid{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:22px}
+.xp{display:grid; grid-template-rows:auto 1fr; background:var(--charcoal-2); border-radius:var(--r); overflow:hidden; border:1px solid rgba(245,239,228,.08); text-align:left; color:inherit; padding:0; transition:transform .2s ease, border-color .2s ease}
+.xp:hover{transform:translateY(-4px); border-color:var(--turq)}
+.xp-img{aspect-ratio:4/3; max-width:100%; background:var(--ocean-2); overflow:hidden}
 .xp-img img{width:100%; height:100%; object-fit:cover; transition:transform .5s ease}
 .xp:hover .xp-img img{transform:scale(1.04)}
 .xp-body{display:grid; align-content:start; gap:10px; padding:22px 22px 24px}
-.xp-tag{justify-self:start; font:800 12px/1 var(--f-body); letter-spacing:.1em; text-transform:uppercase; color:var(--night); background:var(--mango); padding:7px 10px; border-radius:999px}
-.xp h3{font:400 26px/1.1 var(--f-tiki); color:var(--on-night)}
-.xp p{color:var(--on-night-soft); font-size:16px}
-.xp-more{margin-top:6px; font-weight:700; color:var(--mango); font-size:15px}
+.xp-tag{justify-self:start; font:700 14px/1 var(--f-head); letter-spacing:.1em; text-transform:uppercase; color:var(--charcoal); background:var(--gold); padding:7px 10px; border-radius:8px}
+.xp h3{font:800 28px/1.02 var(--f-head); text-transform:uppercase; letter-spacing:.01em; color:var(--on-dark)}
+.xp p{color:#B9BEC2; font-size:15.5px}
+.xp-more{margin-top:6px; font:700 16px/1 var(--f-head); letter-spacing:.08em; text-transform:uppercase; color:var(--turq)}
 @media (max-width: 960px){ .xp-grid{grid-template-columns:repeat(2, minmax(0,1fr))} }
 @media (max-width: 620px){ .xp-grid{grid-template-columns:1fr} }
 
 /* Dialogs */
-dialog{border:0; padding:0; max-width:min(860px, calc(100vw - 32px)); width:100%; border-radius:24px; background:var(--sand); color:var(--ink); color-scheme:light}
-dialog::backdrop{background:rgba(6,24,21,.78); backdrop-filter:blur(4px)}
-.dlg-x{position:absolute; top:12px; right:12px; z-index:2; width:44px; height:44px; border-radius:50%; border:0; background:var(--night); color:var(--on-night); font-size:22px; line-height:1}
-.dlg-photos{display:grid; grid-template-columns:2fr 1fr; grid-template-rows:1fr 1fr; gap:6px; height:min(46vh, 360px); background:var(--night)}
+dialog{border:0; padding:0; max-width:min(860px, calc(100vw - 32px)); width:100%; border-radius:22px; background:var(--cream); color:var(--ink); color-scheme:light}
+dialog::backdrop{background:rgba(4,35,45,.82); backdrop-filter:blur(4px)}
+.dlg-x{position:absolute; top:12px; right:12px; z-index:2; width:44px; height:44px; border-radius:50%; border:0; background:var(--ocean); color:var(--on-dark); font-size:22px; line-height:1}
+.dlg-photos{display:grid; grid-template-columns:2fr 1fr; grid-template-rows:1fr 1fr; gap:6px; height:min(46vh, 360px); background:var(--ocean)}
 .dlg-photos img{width:100%; height:100%; object-fit:cover; min-height:0}
 .dlg-photos img:first-child{grid-row:1 / 3}
 .dlg-body{padding:28px clamp(20px, 4vw, 40px) 32px; display:grid; gap:16px}
-.dlg-body h3{font:400 clamp(28px, 4vw, 38px)/1.05 var(--f-tiki); color:var(--night)}
+.dlg-body .eyebrow{color:var(--turq-ink)}
+.dlg-body h3{font:800 clamp(30px, 4vw, 42px)/1 var(--f-head); text-transform:uppercase; color:var(--ocean)}
 .dlg-body ul{margin:0; padding-left:20px; display:grid; gap:6px}
-.dlg-body li::marker{color:var(--hibiscus)}
+.dlg-body li::marker{color:var(--coral)}
 .dlg-actions{display:flex; flex-wrap:wrap; gap:12px; margin-top:6px}
+.dlg-actions .btn-outline{color:var(--ocean)}
 @media (max-width: 620px){ .dlg-photos{grid-template-columns:1fr 1fr; grid-template-rows:auto; height:auto} .dlg-photos img{aspect-ratio:1} .dlg-photos img:first-child{grid-row:auto; grid-column:1 / 3; aspect-ratio:16/10} .dlg-photos img:nth-child(n+4){display:none} }
 
 /* Gallery */
 .chips{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:28px}
-.chip{border:2px solid var(--night); background:transparent; color:var(--night); font-weight:700; font-size:14px; padding:8px 16px; border-radius:999px}
-.chip[aria-pressed="true"]{background:var(--night); color:var(--sand)}
+.chip{border:2px solid var(--ocean); background:transparent; color:var(--ocean); font:700 16px/1 var(--f-head); letter-spacing:.06em; text-transform:uppercase; padding:9px 16px; border-radius:10px}
+.chip[aria-pressed="true"]{background:var(--ocean); color:var(--cream)}
 .masonry{columns:3 280px; column-gap:14px}
-.masonry button{display:block; width:100%; margin:0 0 14px; padding:0; border:0; border-radius:14px; overflow:hidden; background:var(--sand-2); break-inside:avoid; min-height:120px}
+.masonry button{display:block; width:100%; margin:0 0 14px; padding:0; border:0; border-radius:14px; overflow:hidden; background:var(--cream-2); break-inside:avoid; min-height:120px}
 .masonry img{width:100%; height:auto; transition:transform .4s ease}
 .masonry button:hover img{transform:scale(1.03)}
 .gallery-foot{margin-top:24px; display:flex; flex-wrap:wrap; gap:12px; align-items:center}
@@ -295,72 +354,70 @@ dialog::backdrop{background:rgba(6,24,21,.78); backdrop-filter:blur(4px)}
 .lb-nav{position:absolute; top:50%; transform:translateY(-50%); width:48px; height:48px; border-radius:50%; border:0; background:rgba(255,255,255,.9); color:#000; font-size:22px}
 .lb-prev{left:10px} .lb-next{right:10px}
 
-/* Reviews */
-.reviews{display:grid; grid-auto-flow:column; grid-auto-columns:minmax(240px, 300px); gap:16px; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:16px; scrollbar-width:thin}
-.reviews button{scroll-snap-align:start; border:0; padding:0; border-radius:16px; overflow:hidden; background:var(--night-2); min-height:200px}
-.reviews img{width:100%; height:100%; object-fit:cover; object-position:top}
-
-/* Story */
+/* Story + reviews */
 .story{display:grid; grid-template-columns:.9fr 1.1fr; gap:clamp(32px,5vw,72px); align-items:center}
 .story-copy{display:grid; gap:20px; min-width:0}
-.story-copy p{color:var(--on-night-soft); max-width:58ch}
-.story-copy p strong{color:var(--on-night)}
-.story-card{position:relative; border-radius:var(--r); overflow:hidden; aspect-ratio:5/4; max-width:100%; background:var(--leaf)}
+.story-copy p{color:var(--on-dark-soft); max-width:58ch}
+.story-copy p strong{color:var(--on-dark)}
+.story-card{position:relative; border-radius:var(--r); overflow:hidden; aspect-ratio:5/4; max-width:100%; background:var(--ocean-2); box-shadow:0 0 0 1.5px rgba(22,184,196,.6)}
 .story-card img{width:100%; height:100%; object-fit:cover}
-.tv{position:absolute; left:16px; bottom:16px; right:16px; background:var(--night); border-radius:14px; padding:14px 18px; display:flex; gap:14px; align-items:center}
-.tv b{font:400 30px/1 var(--f-tiki); color:var(--mango)}
-.tv span{font-size:14px; line-height:1.35; color:var(--on-night)}
+.tv{position:absolute; left:16px; bottom:16px; right:16px; background:var(--charcoal); border-radius:14px; padding:14px 18px; display:flex; gap:14px; align-items:center}
+.tv b{font:800 30px/1 var(--f-head); color:var(--gold)}
+.tv span{font-size:14px; line-height:1.35; color:var(--on-dark)}
+.reviews{display:grid; grid-auto-flow:column; grid-auto-columns:minmax(240px, 300px); gap:16px; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:16px; scrollbar-width:thin}
+.reviews button{scroll-snap-align:start; border:0; padding:0; border-radius:16px; overflow:hidden; background:var(--ocean-2); min-height:200px}
+.reviews img{width:100%; height:100%; object-fit:cover; object-position:top}
 @media (max-width: 860px){ .story{grid-template-columns:1fr} }
 
 /* Visit & book */
 .visit{display:grid; grid-template-columns:.85fr 1.15fr; gap:clamp(28px,4vw,56px); align-items:start}
 .info{display:grid; gap:28px; min-width:0}
-.info h3{font:800 13px/1 var(--f-body); letter-spacing:.14em; text-transform:uppercase; color:var(--hibiscus-deep); margin-bottom:10px}
-.info address{font-style:normal; font-size:20px; font-weight:600; line-height:1.4}
+.info h3{font:800 20px/1 var(--f-head); letter-spacing:.1em; text-transform:uppercase; color:var(--turq-ink); margin-bottom:10px}
+.info address{font-style:normal; font-size:19px; font-weight:600; line-height:1.45}
 .hours{width:100%; border-collapse:collapse; font-variant-numeric:tabular-nums}
-.hours td{padding:8px 0; border-bottom:1px solid var(--sand-2)}
+.hours td{padding:8px 0; border-bottom:1px solid var(--cream-2)}
 .hours td:last-child{text-align:right}
-.hours tr.today td{font-weight:800; color:var(--night)}
-.hours tr.today td:first-child::after{content:" ●"; color:var(--hibiscus)}
-.contact-lines{display:grid; gap:8px; font-size:17px}
-.contact-lines a{font-weight:700; text-decoration-color:var(--hibiscus); text-underline-offset:4px}
+.hours tr.today td{font-weight:700; color:var(--ocean)}
+.hours tr.today td:first-child::after{content:" ●"; color:var(--coral)}
+.contact-lines{display:grid; gap:8px; font-size:16px}
+.contact-lines a{font-weight:700; text-decoration-color:var(--turq); text-underline-offset:4px}
 .socials{display:flex; gap:12px}
-.socials a{width:46px; height:46px; border-radius:50%; background:var(--night); display:grid; place-items:center}
-.socials img{width:22px; height:22px; object-fit:contain; filter:brightness(0) invert(1)}
+.socials a{width:48px; height:48px; border-radius:50%; background:var(--ocean); color:var(--cream); display:grid; place-items:center}
+.socials svg{width:22px; height:22px}
 
-.form-card{background:#FFF8EA; border-radius:28px; padding:clamp(24px,4vw,40px); border:2px solid var(--sand-2); box-shadow:0 10px 0 var(--sand-2); display:grid; gap:20px; min-width:0}
-.form-card h3{font:400 clamp(28px,3.4vw,36px)/1.05 var(--f-tiki); color:var(--night)}
+.form-card{background:#fff; border-radius:24px; padding:clamp(24px,4vw,40px); border:2px solid var(--cream-2); box-shadow:0 10px 0 var(--turq); display:grid; gap:20px; min-width:0}
+.form-card h3{font:800 clamp(30px,3.6vw,40px)/1 var(--f-head); text-transform:uppercase; color:var(--ocean)}
 .form-card > p{color:var(--ink-soft)}
 .fields{display:grid; grid-template-columns:1fr 1fr; gap:16px}
 .field{display:grid; gap:6px; min-width:0}
 .field.full{grid-column:1 / -1}
 .field label{font-weight:700; font-size:14px; color:var(--ink)}
 .field label small{font-weight:500; color:var(--ink-soft)}
-.field input, .field select, .field textarea{width:100%; font:500 16px/1.4 var(--f-body); color:var(--ink); background:#fff; border:2px solid var(--sand-2); border-radius:12px; padding:12px 14px; min-height:50px}
+.field input, .field select, .field textarea{width:100%; font:500 16px/1.4 var(--f-body); color:var(--ink); background:var(--card-light); border:2px solid var(--cream-2); border-radius:12px; padding:12px 14px; min-height:50px}
 .field textarea{min-height:120px; resize:vertical}
-.field input:focus, .field select:focus, .field textarea:focus{outline:none; border-color:var(--night); box-shadow:0 0 0 4px rgba(11,46,41,.12)}
-.hp{position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden}
+.field input:focus, .field select:focus, .field textarea:focus{outline:none; border-color:var(--turq); box-shadow:0 0 0 4px rgba(22,184,196,.18)}
 .form-foot{display:flex; flex-wrap:wrap; gap:14px; align-items:center}
 .form-msg{font-weight:600; font-size:15px}
-.form-msg.ok{color:#17703F}
-.form-msg.err{color:var(--hibiscus-deep)}
+.form-msg.ok{color:var(--palm)}
+.form-msg.err{color:#C2393B}
 @media (max-width: 900px){ .visit{grid-template-columns:1fr} }
 @media (max-width: 560px){ .fields{grid-template-columns:1fr} }
 
 /* Footer */
-.footer{background:var(--walnut); color:var(--rope); padding-block:56px 40px}
+.footer{background:var(--charcoal); color:var(--on-dark); padding-block:56px 40px; border-top:2px solid var(--turq)}
 .footer-row{display:flex; flex-wrap:wrap; gap:24px 48px; align-items:center; justify-content:space-between}
-.footer .sign{font:400 clamp(22px,3vw,30px)/1.1 var(--f-west); color:var(--rope)}
-.footer small{color:#A88E6C; font-size:13px}
+.footer .sign{font:400 clamp(26px,3.4vw,36px)/1.1 var(--f-brush); color:var(--gold)}
+.footer small{color:#9AA1A6; font-size:13px}
 .footer nav{display:flex; flex-wrap:wrap; gap:6px 18px}
-.footer nav a{text-decoration:none; font-weight:600; font-size:15px}
+.footer nav a{text-decoration:none; font:700 16px/1 var(--f-head); letter-spacing:.08em; text-transform:uppercase}
+.footer nav a:hover{color:var(--turq)}
 
 /* Mobile action bar */
 .action-bar{display:none}
 @media (max-width: 700px){
-  .action-bar{display:grid; grid-template-columns:1fr 1fr 1.3fr; gap:8px; position:fixed; left:0; right:0; bottom:0; z-index:40; padding:10px var(--gutter-r) calc(10px + env(safe-area-inset-bottom, 0px)) var(--gutter); background:var(--night); border-top:1px solid rgba(244,234,214,.12)}
-  .action-bar a{display:flex; align-items:center; justify-content:center; gap:8px; min-height:48px; border-radius:999px; text-decoration:none; font-weight:700; font-size:15px; border:1.5px solid rgba(244,234,214,.3)}
-  .action-bar a.hot{background:var(--hibiscus); border-color:var(--hibiscus); color:#fff}
+  .action-bar{display:grid; grid-template-columns:1fr 1fr 1.3fr; gap:8px; position:fixed; left:0; right:0; bottom:0; z-index:40; padding:10px var(--gutter-r) calc(10px + env(safe-area-inset-bottom, 0px)) var(--gutter); background:var(--ocean-deep); border-top:1px solid rgba(22,184,196,.35)}
+  .action-bar a{white-space:nowrap; display:flex; align-items:center; justify-content:center; gap:8px; min-height:48px; border-radius:12px; text-decoration:none; font:700 16px/1 var(--f-head); letter-spacing:.06em; text-transform:uppercase; border:1.5px solid rgba(245,239,228,.3)}
+  .action-bar a.hot{background:var(--gold); border-color:var(--gold); color:var(--charcoal)}
   .action-bar svg{width:18px; height:18px}
   .footer{padding-bottom:110px}
 }
@@ -370,9 +427,9 @@ dialog::backdrop{background:rgba(6,24,21,.78); backdrop-filter:blur(4px)}
 
 <header class="site-header">
   <div class="wrap header-row">
-    <a class="brand" href="#top" aria-label="Coco Loco home">
-      <img src="https://www.cocolocoalbufeira.com/logo.png" alt="" width="44" height="44">
-      <span>Coco Loco</span>
+    <a class="brand" href="#top" aria-label="Coco Loco Albufeira, home">
+      <b>Coco Loco</b>
+      <small>ALBUFEIRA</small>
     </a>
     <nav class="nav" id="nav" aria-label="Main">
       <a href="#whats-on" data-i18n="nav.whatson">What's on</a>
@@ -385,7 +442,7 @@ dialog::backdrop{background:rgba(6,24,21,.78); backdrop-filter:blur(4px)}
       <button type="button" data-lang="en" aria-pressed="true">EN</button>
       <button type="button" data-lang="pt" aria-pressed="false">PT</button>
     </div>
-    <a class="btn btn-hot btn-sm header-book" href="#book" data-i18n="cta.book">Book a table</a>
+    <a class="btn btn-gold btn-sm header-book" href="#book" data-i18n="cta.book">Book a table</a>
     <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
@@ -396,20 +453,10 @@ dialog::backdrop{background:rgba(6,24,21,.78); backdrop-filter:blur(4px)}
 
   <!-- HERO -->
   <section class="hero">
-    <div class="wrap hero-grid">
-      <div class="hero-copy">
-        <p class="eyebrow" data-i18n="hero.eyebrow">Cocktail bar · Albufeira · Since 2024</p>
-        <h1 data-i18n-html="hero.h1">The bar you wish you found on your <em>first</em> day, not your last.</h1>
-        <p class="lede" data-i18n="hero.lede">Handmade cocktails with only the freshest ingredients, a Hawaiian tiki bar and, downstairs, a Western sports saloon. Quiz nights, karaoke, live music and bottomless brunches where the clock only starts when your drinks arrive.</p>
-        <div class="status" id="status" aria-live="polite"><span class="dot"></span><span id="status-text">Tue–Fri 15:00–02:00 · Sat–Sun 12:00–02:00</span></div>
-        <div class="cta-row">
-          <a class="btn btn-hot" href="#book" data-i18n="cta.book">Book a table</a>
-          <a class="btn btn-ghost" href="#whats-on" data-i18n="cta.week">What's on this week</a>
-        </div>
-      </div>
-      <div class="hero-art">
-        <!-- MAIN PHOTO: put the new photo in the img folder as hero.jpg. Until then the old site's photo is used. -->
-        <div class="arch"><img src="img/hero.jpg" alt="Coco Loco in Albufeira" fetchpriority="high" onerror="this.onerror=null; this.src='https://www.cocolocoalbufeira.com/aboutusheader2.png'"></div>
+    <div class="wrap">
+      <!-- MAIN PHOTO: replace img/hero.jpg to change it (landscape works best). -->
+      <figure class="hero-photo">
+        <img src="img/hero.jpg" alt="Inside Coco Loco: rattan lamps, palm-tree lightboxes and the neon Coco Loco sign" fetchpriority="high">
         <div class="sticker" aria-label="As seen on Channel 4, A New Life in the Sun, Series 10">
           <svg viewBox="0 0 150 150" aria-hidden="true">
             <defs><path id="circ" d="M75,75 m-58,0 a58,58 0 1,1 116,0 a58,58 0 1,1 -116,0"/></defs>
@@ -417,18 +464,56 @@ dialog::backdrop{background:rgba(6,24,21,.78); backdrop-filter:blur(4px)}
           </svg>
           <b>TV<small data-i18n="sticker.series">Series 10</small></b>
         </div>
+      </figure>
+      <div class="lockup" aria-hidden="true">
+        <span class="lk-name">Coco Loco</span>
+        <span class="lk-town">ALBUFEIRA</span>
+        <span class="lk-type">Cocktail Bar</span>
+      </div>
+
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <h1 data-i18n-html="hero.h1">The bar you wish you found on your <em>first</em> day, not your last.</h1>
+          <p class="slogan">Good Drinks · Good Vibes · Same People</p>
+          <p class="lede" data-i18n="hero.lede">Handmade cocktails with only the freshest ingredients, a Hawaiian tiki bar and, downstairs, a Western sports saloon. Quiz nights, karaoke, live music and bottomless brunches where the clock only starts when your drinks arrive.</p>
+        </div>
+        <div class="hero-side">
+          <div class="status" id="status" aria-live="polite"><span class="dot"></span><span id="status-text">Tue–Fri 15:00–02:00 · Sat–Sun 12:00–02:00</span></div>
+          <div class="cta-stack">
+            <a class="btn btn-gold" href="#book" data-i18n="cta.book">Book a table</a>
+            <a class="btn btn-turq" href="#whats-on" data-i18n="cta.week">What's on this week</a>
+            <a class="btn btn-outline" href="#experiences" data-i18n="nav.xp">Brunch &amp; parties</a>
+          </div>
+          <nav class="icons" aria-label="Quick links">
+            <a href="#whats-on"><span class="ic ic-turq"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M8 14h2M14 14h2M8 18h2"/></svg></span><span data-i18n="ic.events">Events</span></a>
+            <a href="#experiences"><span class="ic ic-gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16l-8 9z"/><path d="M12 13v7M8 21h8"/><circle cx="17.5" cy="4.5" r="2.5"/></svg></span>Cocktails</a>
+            <a href="#gallery"><span class="ic ic-sky"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></span><span data-i18n="nav.gallery">Gallery</span></a>
+            <a href="#visit"><span class="ic ic-cream"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span><span data-i18n="ic.find">Location</span></a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIBE TILES -->
+  <section class="vibes" aria-label="Good drinks, good vibes, same people">
+    <div class="wrap">
+      <div class="tiles-scroll">
+        <div class="tiles">
+          <a class="tile" href="#experiences"><img data-img="cocktailclass9.jpg" alt="Cocktails being made at a Coco Loco cocktail class" loading="lazy"><span class="tile-word band">Signature Cocktails</span></a>
+          <a class="tile" href="#whats-on"><img data-img="brunch4.jpg" alt="Bottomless brunch at Coco Loco" loading="lazy"><span class="tile-word">Good Vibes</span></a>
+          <a class="tile" href="#story"><img data-img="quiz3.jpg" alt="Guests at a Coco Loco quiz night" loading="lazy"><span class="tile-word gold">Same People</span></a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- WHAT'S ON -->
-  <section class="band band-sand" id="whats-on">
+  <section class="band band-light" id="whats-on">
     <div class="wrap">
       <div class="section-head">
-        <div>
-          <p class="eyebrow" data-i18n="wo.eyebrow">This week at Coco Loco</p>
-          <h2 class="h2" data-i18n="wo.h2">What's on</h2>
-        </div>
+        <p class="eyebrow" data-i18n="wo.eyebrow">This week at Coco Loco</p>
+        <h2 class="h2"><span data-i18n="wo.h2">What's on</span></h2>
         <p class="note" data-i18n="wo.note">Cocktails, bar snacks, pool and darts every day we're open. Here's what else is happening.</p>
       </div>
       <div class="week-scroll"><div class="week" id="week"></div></div>
@@ -480,10 +565,8 @@ dialog::backdrop{background:rgba(6,24,21,.78); backdrop-filter:blur(4px)}
   <section class="band" id="experiences">
     <div class="wrap">
       <div class="section-head">
-        <div>
-          <p class="eyebrow" data-i18n="xp.eyebrow">Brunch, classes &amp; parties</p>
-          <h2 class="h2" data-i18n="xp.h2">Book something special</h2>
-        </div>
+        <p class="eyebrow" data-i18n="xp.eyebrow">Brunch, classes &amp; parties</p>
+        <h2 class="h2"><span data-i18n="xp.h2">Book something special</span></h2>
         <p class="note" data-i18n="xp.note">From a couple's brunch to a hen party of twenty. Tap any card for the details.</p>
       </div>
       <div class="xp-grid" id="xp-grid"></div>
@@ -491,18 +574,16 @@ dialog::backdrop{background:rgba(6,24,21,.78); backdrop-filter:blur(4px)}
   </section>
 
   <!-- GALLERY -->
-  <section class="band band-sand" id="gallery">
+  <section class="band band-light" id="gallery">
     <div class="wrap">
       <div class="section-head">
-        <div>
-          <p class="eyebrow" data-i18n="gal.eyebrow">Gallery</p>
-          <h2 class="h2" data-i18n="gal.h2">Inside Coco Loco</h2>
-        </div>
+        <p class="eyebrow" data-i18n="gal.eyebrow">Gallery</p>
+        <h2 class="h2"><span data-i18n="gal.h2">Inside Coco Loco</span></h2>
       </div>
       <div class="chips" id="chips" role="group" aria-label="Filter photos"></div>
       <div class="masonry" id="masonry"></div>
       <div class="gallery-foot">
-        <a class="btn btn-ghost btn-sm" href="https://www.instagram.com/cocolocoalbufeira" target="_blank" rel="noopener" data-i18n="gal.more">More on Instagram</a>
+        <a class="btn btn-outline btn-sm" href="https://www.instagram.com/cocolocoalbufeira" target="_blank" rel="noopener" data-i18n="gal.more">More on Instagram</a>
       </div>
     </div>
   </section>
@@ -511,12 +592,12 @@ dialog::backdrop{background:rgba(6,24,21,.78); backdrop-filter:blur(4px)}
   <section class="band" id="story">
     <div class="wrap story">
       <div class="story-card">
-        <img src="https://www.cocolocoalbufeira.com/wedding1.jpg" alt="A party at Coco Loco" loading="lazy">
-        <div class="tv"><b>C4</b><span data-i18n="story.tv">Catch Leah &amp; João on Channel 4's <strong>A New Life in the Sun</strong>, Series 10</span></div>
+        <img data-img="wedding1.jpg" alt="A party at Coco Loco" loading="lazy">
+        <div class="tv"><b>C4</b><span data-i18n-html="story.tv">Catch Leah &amp; João on Channel 4's <strong>A New Life in the Sun</strong>, Series 10</span></div>
       </div>
       <div class="story-copy">
         <p class="eyebrow" data-i18n="story.eyebrow">Our story</p>
-        <h2 class="h2" data-i18n="story.h2">Meet Leah &amp; João</h2>
+        <h2 class="h2"><span data-i18n="story.h2">Meet Leah &amp; João</span></h2>
         <p data-i18n-html="story.p1">Coco Loco opened in early 2024, run by <strong>Leah and João</strong>, an English-Portuguese couple who wanted the kind of bar they'd love to find on holiday: great cocktails, friendly faces and something going on every night.</p>
         <p data-i18n-html="story.p2">Upstairs it's tiki torches and fresh fruit. Downstairs it's cowboy hats and the match on. Families, couples, hen parties and wedding crews all end up at the same bar by the end of the night.</p>
       </div>
@@ -524,24 +605,20 @@ dialog::backdrop{background:rgba(6,24,21,.78); backdrop-filter:blur(4px)}
 
     <div class="wrap" style="margin-top:clamp(56px,8vw,96px)">
       <div class="section-head">
-        <div>
-          <p class="eyebrow" data-i18n="rev.eyebrow">Reviews</p>
-          <h2 class="h2" data-i18n="rev.h2">Straight from our guests</h2>
-        </div>
-        <a class="btn btn-ghost btn-sm" href="https://www.tripadvisor.co.uk/Restaurant_Review-g189112-d27800571-Reviews-Coco_Loco_Albufeira-Albufeira_Faro_District_Algarve.html" target="_blank" rel="noopener" data-i18n="rev.ta">Read more on Tripadvisor</a>
+        <p class="eyebrow" data-i18n="rev.eyebrow">Reviews</p>
+        <h2 class="h2"><span data-i18n="rev.h2">Straight from our guests</span></h2>
+        <div class="head-actions"><a class="btn btn-outline btn-sm" href="https://www.tripadvisor.co.uk/Restaurant_Review-g189112-d27800571-Reviews-Coco_Loco_Albufeira-Albufeira_Faro_District_Algarve.html" target="_blank" rel="noopener" data-i18n="rev.ta">Read more on Tripadvisor</a></div>
       </div>
       <div class="reviews" id="reviews"></div>
     </div>
   </section>
 
   <!-- VISIT + BOOK -->
-  <section class="band band-sand" id="visit">
+  <section class="band band-light" id="visit">
     <div class="wrap">
       <div class="section-head">
-        <div>
-          <p class="eyebrow" data-i18n="visit.eyebrow">Find us &amp; book</p>
-          <h2 class="h2" data-i18n="visit.h2">Come say olá</h2>
-        </div>
+        <p class="eyebrow" data-i18n="visit.eyebrow">Find us &amp; book</p>
+        <h2 class="h2"><span data-i18n="visit.h2">Come say olá</span></h2>
       </div>
       <div class="visit">
         <div class="info">
@@ -549,7 +626,7 @@ dialog::backdrop{background:rgba(6,24,21,.78); backdrop-filter:blur(4px)}
             <h3 data-i18n="visit.where">Where</h3>
             <address>Rua Alexandre Herculano 27<br>8200-998 Albufeira, Portugal</address>
             <div class="cta-row" style="margin-top:16px">
-              <a class="btn btn-ghost btn-sm" href="https://maps.app.goo.gl/C78vz5EwXi2FCKi36" target="_blank" rel="noopener" data-i18n="visit.directions">Get directions</a>
+              <a class="btn btn-turq btn-sm" href="https://maps.app.goo.gl/C78vz5EwXi2FCKi36" target="_blank" rel="noopener" data-i18n="visit.directions">Get directions</a>
             </div>
           </div>
           <div>
@@ -564,8 +641,8 @@ dialog::backdrop{background:rgba(6,24,21,.78); backdrop-filter:blur(4px)}
             </div>
           </div>
           <div class="socials">
-            <a href="https://www.instagram.com/cocolocoalbufeira" target="_blank" rel="noopener" aria-label="Instagram"><img src="https://www.cocolocoalbufeira.com/instagram.png" alt=""></a>
-            <a href="https://www.facebook.com/p/Coco-Loco-Albufeira-61556658491607/" target="_blank" rel="noopener" aria-label="Facebook"><img src="https://www.cocolocoalbufeira.com/facebook.png" alt=""></a>
+            <a href="https://www.instagram.com/cocolocoalbufeira" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg></a>
+            <a href="https://www.facebook.com/p/Coco-Loco-Albufeira-61556658491607/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
           </div>
         </div>
 
@@ -604,7 +681,7 @@ dialog::backdrop{background:rgba(6,24,21,.78); backdrop-filter:blur(4px)}
             <div class="hp" aria-hidden="true"><label for="f-hp">Leave empty</label><input id="f-hp" name="_gotcha" tabindex="-1" autocomplete="off"></div>
           </div>
           <div class="form-foot">
-            <button class="btn btn-hot" type="submit" id="f-submit" data-i18n="form.send">Send message</button>
+            <button class="btn btn-gold" type="submit" id="f-submit" data-i18n="form.send">Send message</button>
             <span class="form-msg" id="form-msg" role="status"></span>
           </div>
         </form>
@@ -616,7 +693,7 @@ dialog::backdrop{background:rgba(6,24,21,.78); backdrop-filter:blur(4px)}
 <footer class="footer">
   <div class="wrap footer-row">
     <div style="display:grid; gap:8px">
-      <p class="sign" data-i18n="foot.sign">See you at the bar, partner.</p>
+      <p class="sign">Good Drinks · Good Vibes · Same People</p>
       <small>© <span id="year">2026</span> Coco Loco Albufeira · Rua Alexandre Herculano 27, Albufeira</small>
     </div>
     <nav aria-label="Footer">
@@ -644,8 +721,8 @@ dialog::backdrop{background:rgba(6,24,21,.78); backdrop-filter:blur(4px)}
     <h3 id="xp-d-title"></h3>
     <ul id="xp-d-points"></ul>
     <div class="dlg-actions">
-      <a class="btn btn-hot" href="#book" id="xp-d-enquire" data-i18n="xp.enquire">Enquire about this</a>
-      <a class="btn btn-ghost" href="https://wa.me/351962772428" target="_blank" rel="noopener" data-i18n="xp.wa">Ask on WhatsApp</a>
+      <a class="btn btn-gold" href="#book" id="xp-d-enquire" data-i18n="xp.enquire">Enquire about this</a>
+      <a class="btn btn-outline" href="https://wa.me/351962772428" target="_blank" rel="noopener" data-i18n="xp.wa">Ask on WhatsApp</a>
     </div>
   </div>
 </dialog>
@@ -768,6 +845,7 @@ const T = {
     "sticker.ring":"Visto no Channel 4 • A New Life in the Sun •","sticker.series":"Série 10",
     "wo.eyebrow":"Esta semana no Coco Loco","wo.h2":"Programa","wo.note":"Cocktails, petiscos, bilhar e dardos todos os dias em que estamos abertos. E ainda:",
     "wo.upcoming":"Brevemente",
+    "ic.events":"Eventos","ic.find":"Localização",
     "wo.foot":"Karaoke, música ao vivo e os grandes jogos são anunciados no nosso Instagram.",
     "bars.title":"Dois bares debaixo do mesmo teto",
     "bars.tiki.where":"Bar principal · Tema havaiano",
@@ -861,6 +939,7 @@ const MONTHS = {en:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct",
 const esc = (s) => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 
 document.addEventListener("error", e => { if (e.target.tagName === "IMG") e.target.classList.add("broken"); }, true);
+document.querySelectorAll("img[data-img]").forEach(i => { i.src = IMG + i.dataset.img; });
 document.querySelectorAll("img").forEach(i => { if (i.complete && i.naturalWidth === 0) i.classList.add("broken"); });
 
 // Store the English source text once so we can switch back.

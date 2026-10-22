@@ -4,7 +4,8 @@
   # Agenda edits from /admin only change files in content/. The site reads those
   # straight from GitHub, so skip the Netlify deploy (saves free-plan credits).
   # Exit 0 = skip build. Anything outside content/ changed = deploy as normal.
-  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- . ':(exclude)content'"
+  # Never skips the first deploy (when both refs are the same) or when git can't compare.
+  ignore = "[ \"$CACHED_COMMIT_REF\" != \"$COMMIT_REF\" ] && git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- . ':(exclude)content'"
 
 [[headers]]
   for = "/content/*"
