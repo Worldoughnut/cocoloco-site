@@ -1,0 +1,1065 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Coco Loco Albufeira · Tiki Bar & Western Saloon</title>
+<meta name="description" content="Coco Loco Albufeira: handmade cocktails, a Hawaiian tiki bar and a Western sports saloon. Quiz nights, live music, bottomless brunch, boozy breakfast, cocktail classes and private parties.">
+<meta property="og:title" content="Coco Loco Albufeira">
+<meta property="og:description" content="The bar you wish you found on your first day, not your last. Tiki bar, Western saloon, quiz nights, brunch and cocktail classes in Albufeira.">
+<meta property="og:image" content="https://www.cocolocoalbufeira.com/aboutusheader2.png">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#04505A">
+<script>
+  // Admin invite / password-reset emails land on the homepage: send them to /admin.
+  if (/(invite|recovery|confirmation|email_change)_token=/.test(location.hash)) location.replace("/admin/" + location.hash);
+</script>
+<link rel="icon" href="https://www.cocolocoalbufeira.com/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Rye&family=Shrikhand&display=swap">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BarOrPub",
+  "name": "Coco Loco Albufeira",
+  "image": "https://www.cocolocoalbufeira.com/aboutusheader2.png",
+  "url": "https://www.cocolocoalbufeira.com",
+  "telephone": "+351962772428",
+  "email": "cocolocoalbufeira@outlook.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rua Alexandre Herculano 27",
+    "addressLocality": "Albufeira",
+    "postalCode": "8200-998",
+    "addressCountry": "PT"
+  },
+  "openingHoursSpecification": [
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday"], "opens": "15:00", "closes": "02:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday","Sunday"], "opens": "12:00", "closes": "02:00"}
+  ],
+  "sameAs": [
+    "https://www.instagram.com/cocolocoalbufeira",
+    "https://www.facebook.com/p/Coco-Loco-Albufeira-61556658491607/"
+  ]
+}
+</script>
+
+<style>
+/* Layout: a night out in two acts. Tiki-bar nights in lagoon green, a Western saloon in walnut downstairs,
+   and sand "daytime" bands for the practical stuff (what's on, gallery, booking). */
+:root{
+  --night:#04505A;
+  --night-2:#086572;
+  --leaf:#0E9F7E;
+  --lagoon:#22CFC3;
+  --coral:#FF7A59;
+  --sand:#FFF4DE;
+  --sand-2:#FFD9A3;
+  --ink:#1F1A14;
+  --ink-soft:#5E4A3A;
+  --hibiscus:#FF3B7A;
+  --hibiscus-deep:#CF1F5C;
+  --mango:#FFC53D;
+  --walnut:#2A1A11;
+  --walnut-2:#3B2516;
+  --whiskey:#D58C2F;
+  --rope:#EEDDB8;
+  --on-night:#FFF6E6;
+  --on-night-soft:#B9E6E1;
+
+  --f-tiki:"Shrikhand", "Cooper Black", Georgia, serif;
+  --f-west:"Rye", "Rockwell", Georgia, serif;
+  --f-body:"Figtree", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --maxw:1180px;
+  --r:20px;
+  --gutter:max(20px, env(safe-area-inset-left, 0px));
+  --gutter-r:max(20px, env(safe-area-inset-right, 0px));
+  color-scheme: dark;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:84px}
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} *{animation:none!important; transition:none!important} }
+body{margin:0; background:var(--night); color:var(--on-night); font:400 17px/1.6 var(--f-body); -webkit-font-smoothing:antialiased}
+img{max-width:100%; display:block}
+img.broken{visibility:hidden}
+a{color:inherit}
+h1,h2,h3{margin:0; text-wrap:balance; line-height:1.08; font-weight:400}
+p{margin:0}
+button{font:inherit; cursor:pointer}
+:focus-visible{outline:3px solid var(--mango); outline-offset:3px; border-radius:6px}
+
+.wrap{max-width:var(--maxw); margin-inline:auto; padding-left:var(--gutter); padding-right:var(--gutter-r)}
+.band{padding-block:clamp(64px, 9vw, 112px)}
+.band-sand{background:var(--sand); color:var(--ink); color-scheme:light; position:relative}
+/* scalloped wave edge where a sand band meets a dark one */
+.band-sand::before{content:""; position:absolute; left:0; right:0; top:-17px; height:18px; background:radial-gradient(circle at 22px 26px, var(--sand) 20px, transparent 21px) repeat-x; background-size:44px 18px; pointer-events:none}
+#experiences{background:linear-gradient(180deg, var(--night) 0%, #05606B 100%)}
+.eyebrow{font:700 13px/1 var(--f-body); letter-spacing:.14em; text-transform:uppercase; color:var(--mango)}
+.band-sand .eyebrow{color:var(--hibiscus-deep)}
+.h2{font-family:var(--f-tiki); font-size:clamp(2.1rem, 4.6vw, 3.4rem); color:var(--on-night)}
+.band-sand .h2{color:var(--night)}
+.section-head{display:flex; flex-wrap:wrap; align-items:end; justify-content:space-between; gap:16px 40px; margin-bottom:40px}
+.section-head > div{display:grid; gap:14px; max-width:640px}
+.section-head .note{max-width:38ch; color:var(--ink-soft); font-size:16px}
+.band:not(.band-sand) .section-head .note{color:var(--on-night-soft)}
+
+/* Buttons */
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:52px; padding:0 26px; border-radius:999px; font:700 16px/1 var(--f-body); text-decoration:none; border:2px solid transparent; transition:transform .15s ease, background-color .15s ease, box-shadow .15s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-hot{background:var(--hibiscus); color:#fff; box-shadow:0 6px 0 var(--hibiscus-deep)}
+.btn-hot:hover{box-shadow:0 8px 0 var(--hibiscus-deep)}
+.btn-ghost{border-color:currentColor; color:var(--on-night)}
+.band-sand .btn-ghost{color:var(--night)}
+.btn-sm{min-height:42px; padding:0 18px; font-size:15px}
+
+/* Header */
+body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top, 0px); background:var(--night); z-index:60}
+.site-header{position:sticky; top:env(safe-area-inset-top, 0px); z-index:50; background:color-mix(in srgb, var(--night) 88%, transparent); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-bottom:1px solid rgba(244,234,214,.08)}
+.header-row{display:flex; align-items:center; gap:20px; min-height:72px}
+.brand{display:flex; align-items:center; gap:12px; text-decoration:none; margin-right:auto}
+.brand img{width:44px; height:44px; object-fit:contain}
+.brand span{font:400 26px/1 var(--f-tiki); color:var(--mango)}
+.nav{display:flex; align-items:center; gap:6px}
+.nav a{padding:10px 12px; border-radius:999px; text-decoration:none; font-weight:600; font-size:15px; color:var(--on-night)}
+.nav a:hover{background:rgba(244,234,214,.08)}
+.lang{display:inline-flex; border:1.5px solid rgba(244,234,214,.3); border-radius:999px; padding:3px}
+.lang button{border:0; background:none; color:var(--on-night-soft); font-weight:700; font-size:13px; letter-spacing:.06em; padding:6px 10px; border-radius:999px}
+.lang button[aria-pressed="true"]{background:var(--on-night); color:var(--night)}
+.menu-btn{display:none; width:46px; height:46px; border-radius:50%; border:1.5px solid rgba(244,234,214,.3); background:none; color:var(--on-night); align-items:center; justify-content:center}
+.menu-btn svg{width:22px; height:22px}
+@media (max-width: 960px){
+  .nav{display:none; position:absolute; left:0; right:0; top:100%; flex-direction:column; align-items:stretch; gap:2px; background:var(--night); padding:12px var(--gutter-r) 20px var(--gutter); border-bottom:1px solid rgba(244,234,214,.1)}
+  .nav.open{display:flex}
+  .nav a{padding:14px 12px; font-size:18px}
+  .menu-btn{display:inline-flex}
+  .header-book{display:none}
+}
+
+/* Hero */
+.hero{padding-block:clamp(40px, 6vw, 80px) clamp(64px, 8vw, 104px); position:relative; overflow:hidden}
+.hero{background:linear-gradient(160deg, #04505A 0%, #06707A 55%, #0B8A84 100%)}
+.hero::before{content:""; position:absolute; inset:0; background:
+  radial-gradient(640px 440px at 88% 6%, rgba(255,122,89,.45), transparent 70%),
+  radial-gradient(520px 380px at 70% 40%, rgba(255,59,122,.22), transparent 70%),
+  radial-gradient(560px 400px at 0% 100%, rgba(255,197,61,.28), transparent 70%); pointer-events:none}
+.hero-grid{position:relative; display:grid; grid-template-columns:1.15fr .85fr; gap:clamp(32px, 5vw, 72px); align-items:center}
+.hero-copy{display:grid; gap:24px; min-width:0}
+.hero h1{font-family:var(--f-tiki); font-size:clamp(2.5rem, 5.6vw, 4.6rem); line-height:1.02; color:var(--on-night)}
+.hero h1 em{font-style:normal; color:var(--mango)}
+.lede{font-size:clamp(17px, 1.6vw, 19px); color:var(--on-night-soft); max-width:56ch}
+.status{display:inline-flex; align-items:center; gap:10px; align-self:start; justify-self:start; padding:10px 16px; border-radius:999px; background:rgba(244,234,214,.07); border:1px solid rgba(244,234,214,.14); font-weight:600; font-size:15px}
+.status .dot{width:10px; height:10px; border-radius:50%; background:var(--on-night-soft)}
+.status.is-open .dot{background:#4ADE80; box-shadow:0 0 0 4px rgba(74,222,128,.2)}
+.cta-row{display:flex; flex-wrap:wrap; gap:14px}
+
+.hero-art{position:relative; min-width:0}
+.arch{aspect-ratio:4/5; max-width:100%; border-radius:999px 999px 28px 28px; overflow:hidden; border:6px solid var(--mango); box-shadow:0 0 0 10px rgba(255,197,61,.18), 0 30px 60px rgba(0,30,35,.35); background:
+  linear-gradient(180deg, var(--hibiscus) 0%, var(--coral) 45%, var(--mango) 100%)}
+.arch img{width:100%; height:100%; object-fit:cover}
+.sticker{position:absolute; left:-28px; bottom:28px; width:150px; height:150px; border-radius:50%; background:var(--hibiscus); color:#fff; display:grid; place-items:center; box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.sticker svg{position:absolute; inset:0; width:100%; height:100%; animation:spin 26s linear infinite}
+.sticker svg text{font:700 10.5px var(--f-body); letter-spacing:.08em; fill:#fff; text-transform:uppercase}
+.sticker b{font:400 22px/1 var(--f-tiki); text-align:center}
+.sticker b small{display:block; font:700 11px/1.2 var(--f-body); letter-spacing:.12em; margin-top:4px}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (max-width: 860px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-art{max-width:420px; width:100%; justify-self:center; order:-1}
+  .arch{aspect-ratio:5/4; border-radius:220px 220px 24px 24px}
+  .sticker{left:auto; right:-6px; bottom:-20px; width:124px; height:124px}
+  .sticker b{font-size:18px}
+}
+
+/* What's on */
+.week{display:grid; grid-template-columns:repeat(7, minmax(0,1fr)); gap:12px}
+.day{display:grid; align-content:start; gap:12px; padding:18px 16px 20px; border-radius:var(--r); background:#FFFBF2; border:2px solid var(--sand-2); min-width:0}
+.day:not(.closed):not(.today){border-top:6px solid var(--lagoon)}
+.day-top{display:grid; gap:6px}
+.day h3{font:800 15px/1 var(--f-body); letter-spacing:.12em; text-transform:uppercase; color:var(--night)}
+.day .hrs{font-size:13px; color:var(--ink-soft); font-variant-numeric:tabular-nums; white-space:nowrap}
+.day.today{border-color:var(--hibiscus); box-shadow:0 8px 0 var(--hibiscus)}
+.today-chip{display:none; font:800 11px/1 var(--f-body); letter-spacing:.1em; text-transform:uppercase; background:var(--hibiscus); color:#fff; padding:5px 8px; border-radius:999px; justify-self:start}
+.day.today .today-chip{display:inline-block}
+.day.closed{background:transparent; border-style:dashed}
+.day.closed .ev-t{color:var(--ink-soft)}
+.ev{display:grid; gap:2px; padding-top:10px; border-top:1px solid var(--sand-2)}
+.ev-time{font:700 13px/1.2 var(--f-body); color:var(--hibiscus-deep); font-variant-numeric:tabular-nums}
+.ev-t{font-weight:700; font-size:15px; line-height:1.3; color:var(--ink)}
+.ev-where{font-size:13px; color:var(--ink-soft)}
+.day h3 .dom{font-weight:600; letter-spacing:0; color:var(--ink-soft)}
+.ev.special .ev-time::before{content:"★ "; color:var(--coral)}
+.ev.special .ev-t{color:var(--hibiscus-deep)}
+.upcoming{margin-top:36px; display:grid; gap:16px}
+.upcoming-h{font:800 13px/1 var(--f-body); letter-spacing:.14em; text-transform:uppercase; color:var(--hibiscus-deep)}
+.up-list{display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:14px}
+.up{display:flex; gap:14px; align-items:flex-start; padding:14px; border-radius:16px; background:#FFFBF2; border:2px solid var(--sand-2); min-width:0}
+.up-date{flex:none; width:58px; padding:8px 0; border-radius:12px; background:var(--hibiscus); color:#fff; display:grid; justify-items:center; gap:2px}
+.up-date b{font:400 26px/1 var(--f-tiki)}
+.up-date span{font:800 11px/1 var(--f-body); letter-spacing:.1em; text-transform:uppercase}
+.up-body{display:grid; gap:2px; min-width:0}
+.week-foot{margin-top:28px; display:flex; flex-wrap:wrap; gap:12px 24px; align-items:center; color:var(--ink-soft); font-size:15px}
+.week-foot a{font-weight:700; color:var(--night)}
+@media (max-width: 1080px){
+  .week-scroll{overflow-x:auto; scroll-snap-type:x mandatory; margin-inline:calc(-1 * var(--gutter)) calc(-1 * var(--gutter-r)); padding:4px var(--gutter-r) 16px var(--gutter); scrollbar-width:thin}
+  .week{grid-template-columns:repeat(7, 200px)}
+  .day{scroll-snap-align:start}
+}
+
+/* Two bars */
+.bars{display:flex; min-height:560px}
+.bar{flex:1 1 0; position:relative; padding:clamp(48px,7vw,88px) clamp(24px,5vw,64px); display:grid; align-content:center; gap:22px; transition:flex-grow .5s cubic-bezier(.2,.7,.2,1); min-width:0; overflow:hidden}
+@media (hover:hover) and (min-width: 861px){ .bar:hover{flex-grow:1.3} }
+.bar-tiki{background:
+  radial-gradient(300px 300px at 92% 10%, rgba(255,59,122,.55), transparent 70%),
+  radial-gradient(360px 280px at 4% 98%, rgba(255,197,61,.45), transparent 70%),
+  repeating-linear-gradient(90deg, rgba(255,255,255,.05) 0 14px, transparent 14px 62px),
+  linear-gradient(150deg, var(--leaf) 0%, #0BB59B 100%)}
+.bar-saloon{background:
+  repeating-linear-gradient(90deg, rgba(255,255,255,.018) 0 2px, transparent 2px 9px),
+  repeating-linear-gradient(0deg, var(--walnut-2) 0 54px, #22150D 54px 57px);
+  color:var(--rope)}
+.bar .where{font:800 13px/1 var(--f-body); letter-spacing:.16em; text-transform:uppercase}
+.bar-tiki .where{color:var(--mango)}
+.bar-saloon .where{color:var(--whiskey)}
+.bar h2{font-size:clamp(2.6rem, 5vw, 4.2rem)}
+.bar-tiki h2{font-family:var(--f-tiki); color:#fff}
+.bar-saloon h2{font-family:var(--f-west); color:var(--rope); letter-spacing:.02em}
+.bar p.desc{max-width:42ch; font-size:17px}
+.bar-tiki p.desc{color:#E3F1EA}
+.bar-saloon p.desc{color:#D9C6A0}
+.perks{list-style:none; margin:0; padding:0; display:grid; gap:10px; max-width:420px}
+.perks li{display:flex; gap:12px; align-items:baseline; font-weight:600}
+.bar-tiki .perks li::before{content:""; flex:none; width:10px; height:10px; border-radius:50%; background:var(--mango); transform:translateY(-1px)}
+.poster{background:var(--rope); color:var(--walnut); padding:22px 24px 24px; border-radius:6px; max-width:420px; box-shadow:0 14px 30px rgba(0,0,0,.35); transform:rotate(-1.2deg); outline:2px dashed rgba(42,26,17,.35); outline-offset:-10px}
+.poster h3{font:400 22px/1 var(--f-west); text-align:center; letter-spacing:.06em; margin-bottom:14px}
+.poster ul{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:8px 16px; font-weight:700; font-size:15px}
+.poster li::before{content:"★ "; color:var(--whiskey)}
+.bar-saloon{overflow:visible}
+.stairs{position:absolute; left:0; top:50%; transform:translate(-50%,-50%); z-index:2; width:118px; height:118px; border-radius:50%; background:var(--mango); color:var(--night); display:grid; place-items:center; text-align:center; font:400 17px/1.05 var(--f-tiki); box-shadow:0 0 0 8px var(--night), 0 10px 30px rgba(0,0,0,.4); pointer-events:none}
+.bars-wrap{position:relative}
+@media (max-width: 860px){
+  .bars{flex-direction:column; min-height:0}
+  .stairs{left:50%; top:0; width:96px; height:96px; font-size:14px}
+  .bar{flex:none}
+  .bar-tiki{padding-bottom:84px}
+  .bar-saloon{padding-top:76px}
+  .poster ul{grid-template-columns:1fr}
+}
+
+/* Experiences */
+.xp-grid{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:24px}
+.xp{display:grid; grid-template-rows:auto 1fr; background:var(--night-2); border-radius:var(--r); overflow:hidden; border:1px solid rgba(244,234,214,.08); text-align:left; color:inherit; padding:0; transition:transform .2s ease, border-color .2s ease}
+.xp:hover{transform:translateY(-4px); border-color:rgba(255,184,48,.5)}
+.xp-img{aspect-ratio:4/3; max-width:100%; background:repeating-linear-gradient(45deg, var(--leaf) 0 12px, var(--night-2) 12px 24px); overflow:hidden}
+.xp-img img{width:100%; height:100%; object-fit:cover; transition:transform .5s ease}
+.xp:hover .xp-img img{transform:scale(1.04)}
+.xp-body{display:grid; align-content:start; gap:10px; padding:22px 22px 24px}
+.xp-tag{justify-self:start; font:800 12px/1 var(--f-body); letter-spacing:.1em; text-transform:uppercase; color:var(--night); background:var(--mango); padding:7px 10px; border-radius:999px}
+.xp h3{font:400 26px/1.1 var(--f-tiki); color:var(--on-night)}
+.xp p{color:var(--on-night-soft); font-size:16px}
+.xp-more{margin-top:6px; font-weight:700; color:var(--mango); font-size:15px}
+@media (max-width: 960px){ .xp-grid{grid-template-columns:repeat(2, minmax(0,1fr))} }
+@media (max-width: 620px){ .xp-grid{grid-template-columns:1fr} }
+
+/* Dialogs */
+dialog{border:0; padding:0; max-width:min(860px, calc(100vw - 32px)); width:100%; border-radius:24px; background:var(--sand); color:var(--ink); color-scheme:light}
+dialog::backdrop{background:rgba(6,24,21,.78); backdrop-filter:blur(4px)}
+.dlg-x{position:absolute; top:12px; right:12px; z-index:2; width:44px; height:44px; border-radius:50%; border:0; background:var(--night); color:var(--on-night); font-size:22px; line-height:1}
+.dlg-photos{display:grid; grid-template-columns:2fr 1fr; grid-template-rows:1fr 1fr; gap:6px; height:min(46vh, 360px); background:var(--night)}
+.dlg-photos img{width:100%; height:100%; object-fit:cover; min-height:0}
+.dlg-photos img:first-child{grid-row:1 / 3}
+.dlg-body{padding:28px clamp(20px, 4vw, 40px) 32px; display:grid; gap:16px}
+.dlg-body h3{font:400 clamp(28px, 4vw, 38px)/1.05 var(--f-tiki); color:var(--night)}
+.dlg-body ul{margin:0; padding-left:20px; display:grid; gap:6px}
+.dlg-body li::marker{color:var(--hibiscus)}
+.dlg-actions{display:flex; flex-wrap:wrap; gap:12px; margin-top:6px}
+@media (max-width: 620px){ .dlg-photos{grid-template-columns:1fr 1fr; grid-template-rows:auto; height:auto} .dlg-photos img{aspect-ratio:1} .dlg-photos img:first-child{grid-row:auto; grid-column:1 / 3; aspect-ratio:16/10} .dlg-photos img:nth-child(n+4){display:none} }
+
+/* Gallery */
+.chips{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:28px}
+.chip{border:2px solid var(--night); background:transparent; color:var(--night); font-weight:700; font-size:14px; padding:8px 16px; border-radius:999px}
+.chip[aria-pressed="true"]{background:var(--night); color:var(--sand)}
+.masonry{columns:3 280px; column-gap:14px}
+.masonry button{display:block; width:100%; margin:0 0 14px; padding:0; border:0; border-radius:14px; overflow:hidden; background:var(--sand-2); break-inside:avoid; min-height:120px}
+.masonry img{width:100%; height:auto; transition:transform .4s ease}
+.masonry button:hover img{transform:scale(1.03)}
+.gallery-foot{margin-top:24px; display:flex; flex-wrap:wrap; gap:12px; align-items:center}
+#lightbox{max-width:min(1100px, calc(100vw - 24px)); background:#000}
+#lightbox figure{margin:0; display:grid; place-items:center; min-height:200px}
+#lightbox img{max-height:84vh; width:auto; margin-inline:auto}
+#lightbox figcaption{color:#ddd; padding:12px 16px; font-size:14px; background:#000; width:100%; text-align:center}
+.lb-nav{position:absolute; top:50%; transform:translateY(-50%); width:48px; height:48px; border-radius:50%; border:0; background:rgba(255,255,255,.9); color:#000; font-size:22px}
+.lb-prev{left:10px} .lb-next{right:10px}
+
+/* Reviews */
+.reviews{display:grid; grid-auto-flow:column; grid-auto-columns:minmax(240px, 300px); gap:16px; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:16px; scrollbar-width:thin}
+.reviews button{scroll-snap-align:start; border:0; padding:0; border-radius:16px; overflow:hidden; background:var(--night-2); min-height:200px}
+.reviews img{width:100%; height:100%; object-fit:cover; object-position:top}
+
+/* Story */
+.story{display:grid; grid-template-columns:.9fr 1.1fr; gap:clamp(32px,5vw,72px); align-items:center}
+.story-copy{display:grid; gap:20px; min-width:0}
+.story-copy p{color:var(--on-night-soft); max-width:58ch}
+.story-copy p strong{color:var(--on-night)}
+.story-card{position:relative; border-radius:var(--r); overflow:hidden; aspect-ratio:5/4; max-width:100%; background:var(--leaf)}
+.story-card img{width:100%; height:100%; object-fit:cover}
+.tv{position:absolute; left:16px; bottom:16px; right:16px; background:var(--night); border-radius:14px; padding:14px 18px; display:flex; gap:14px; align-items:center}
+.tv b{font:400 30px/1 var(--f-tiki); color:var(--mango)}
+.tv span{font-size:14px; line-height:1.35; color:var(--on-night)}
+@media (max-width: 860px){ .story{grid-template-columns:1fr} }
+
+/* Visit & book */
+.visit{display:grid; grid-template-columns:.85fr 1.15fr; gap:clamp(28px,4vw,56px); align-items:start}
+.info{display:grid; gap:28px; min-width:0}
+.info h3{font:800 13px/1 var(--f-body); letter-spacing:.14em; text-transform:uppercase; color:var(--hibiscus-deep); margin-bottom:10px}
+.info address{font-style:normal; font-size:20px; font-weight:600; line-height:1.4}
+.hours{width:100%; border-collapse:collapse; font-variant-numeric:tabular-nums}
+.hours td{padding:8px 0; border-bottom:1px solid var(--sand-2)}
+.hours td:last-child{text-align:right}
+.hours tr.today td{font-weight:800; color:var(--night)}
+.hours tr.today td:first-child::after{content:" ●"; color:var(--hibiscus)}
+.contact-lines{display:grid; gap:8px; font-size:17px}
+.contact-lines a{font-weight:700; text-decoration-color:var(--hibiscus); text-underline-offset:4px}
+.socials{display:flex; gap:12px}
+.socials a{width:46px; height:46px; border-radius:50%; background:var(--night); display:grid; place-items:center}
+.socials img{width:22px; height:22px; object-fit:contain; filter:brightness(0) invert(1)}
+
+.form-card{background:#FFF8EA; border-radius:28px; padding:clamp(24px,4vw,40px); border:2px solid var(--sand-2); box-shadow:0 10px 0 var(--sand-2); display:grid; gap:20px; min-width:0}
+.form-card h3{font:400 clamp(28px,3.4vw,36px)/1.05 var(--f-tiki); color:var(--night)}
+.form-card > p{color:var(--ink-soft)}
+.fields{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+.field{display:grid; gap:6px; min-width:0}
+.field.full{grid-column:1 / -1}
+.field label{font-weight:700; font-size:14px; color:var(--ink)}
+.field label small{font-weight:500; color:var(--ink-soft)}
+.field input, .field select, .field textarea{width:100%; font:500 16px/1.4 var(--f-body); color:var(--ink); background:#fff; border:2px solid var(--sand-2); border-radius:12px; padding:12px 14px; min-height:50px}
+.field textarea{min-height:120px; resize:vertical}
+.field input:focus, .field select:focus, .field textarea:focus{outline:none; border-color:var(--night); box-shadow:0 0 0 4px rgba(11,46,41,.12)}
+.hp{position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden}
+.form-foot{display:flex; flex-wrap:wrap; gap:14px; align-items:center}
+.form-msg{font-weight:600; font-size:15px}
+.form-msg.ok{color:#17703F}
+.form-msg.err{color:var(--hibiscus-deep)}
+@media (max-width: 900px){ .visit{grid-template-columns:1fr} }
+@media (max-width: 560px){ .fields{grid-template-columns:1fr} }
+
+/* Footer */
+.footer{background:var(--walnut); color:var(--rope); padding-block:56px 40px}
+.footer-row{display:flex; flex-wrap:wrap; gap:24px 48px; align-items:center; justify-content:space-between}
+.footer .sign{font:400 clamp(22px,3vw,30px)/1.1 var(--f-west); color:var(--rope)}
+.footer small{color:#A88E6C; font-size:13px}
+.footer nav{display:flex; flex-wrap:wrap; gap:6px 18px}
+.footer nav a{text-decoration:none; font-weight:600; font-size:15px}
+
+/* Mobile action bar */
+.action-bar{display:none}
+@media (max-width: 700px){
+  .action-bar{display:grid; grid-template-columns:1fr 1fr 1.3fr; gap:8px; position:fixed; left:0; right:0; bottom:0; z-index:40; padding:10px var(--gutter-r) calc(10px + env(safe-area-inset-bottom, 0px)) var(--gutter); background:var(--night); border-top:1px solid rgba(244,234,214,.12)}
+  .action-bar a{display:flex; align-items:center; justify-content:center; gap:8px; min-height:48px; border-radius:999px; text-decoration:none; font-weight:700; font-size:15px; border:1.5px solid rgba(244,234,214,.3)}
+  .action-bar a.hot{background:var(--hibiscus); border-color:var(--hibiscus); color:#fff}
+  .action-bar svg{width:18px; height:18px}
+  .footer{padding-bottom:110px}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="brand" href="#top" aria-label="Coco Loco home">
+      <img src="https://www.cocolocoalbufeira.com/logo.png" alt="" width="44" height="44">
+      <span>Coco Loco</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="#whats-on" data-i18n="nav.whatson">What's on</a>
+      <a href="#bars" data-i18n="nav.bars">Two bars</a>
+      <a href="#experiences" data-i18n="nav.xp">Brunch &amp; parties</a>
+      <a href="#gallery" data-i18n="nav.gallery">Gallery</a>
+      <a href="#visit" data-i18n="nav.visit">Find us</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="pt" aria-pressed="false">PT</button>
+    </div>
+    <a class="btn btn-hot btn-sm header-book" href="#book" data-i18n="cta.book">Book a table</a>
+    <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow" data-i18n="hero.eyebrow">Cocktail bar · Albufeira · Since 2024</p>
+        <h1 data-i18n-html="hero.h1">The bar you wish you found on your <em>first</em> day, not your last.</h1>
+        <p class="lede" data-i18n="hero.lede">Handmade cocktails with only the freshest ingredients, a Hawaiian tiki bar and, downstairs, a Western sports saloon. Quiz nights, karaoke, live music and bottomless brunches where the clock only starts when your drinks arrive.</p>
+        <div class="status" id="status" aria-live="polite"><span class="dot"></span><span id="status-text">Tue–Fri 15:00–02:00 · Sat–Sun 12:00–02:00</span></div>
+        <div class="cta-row">
+          <a class="btn btn-hot" href="#book" data-i18n="cta.book">Book a table</a>
+          <a class="btn btn-ghost" href="#whats-on" data-i18n="cta.week">What's on this week</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <!-- MAIN PHOTO: put the new photo in the img folder as hero.jpg. Until then the old site's photo is used. -->
+        <div class="arch"><img src="img/hero.jpg" alt="Coco Loco in Albufeira" fetchpriority="high" onerror="this.onerror=null; this.src='https://www.cocolocoalbufeira.com/aboutusheader2.png'"></div>
+        <div class="sticker" aria-label="As seen on Channel 4, A New Life in the Sun, Series 10">
+          <svg viewBox="0 0 150 150" aria-hidden="true">
+            <defs><path id="circ" d="M75,75 m-58,0 a58,58 0 1,1 116,0 a58,58 0 1,1 -116,0"/></defs>
+            <text textLength="358" lengthAdjust="spacingAndGlyphs"><textPath href="#circ" data-i18n="sticker.ring">As seen on Channel 4 • A New Life in the Sun •</textPath></text>
+          </svg>
+          <b>TV<small data-i18n="sticker.series">Series 10</small></b>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT'S ON -->
+  <section class="band band-sand" id="whats-on">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow" data-i18n="wo.eyebrow">This week at Coco Loco</p>
+          <h2 class="h2" data-i18n="wo.h2">What's on</h2>
+        </div>
+        <p class="note" data-i18n="wo.note">Cocktails, bar snacks, pool and darts every day we're open. Here's what else is happening.</p>
+      </div>
+      <div class="week-scroll"><div class="week" id="week"></div></div>
+      <div class="upcoming" id="upcoming" hidden>
+        <h3 class="upcoming-h" data-i18n="wo.upcoming">Coming up</h3>
+        <div class="up-list" id="up-list"></div>
+      </div>
+      <div class="week-foot">
+        <span data-i18n="wo.foot">Karaoke, live music and the big matches are announced on our Instagram.</span>
+        <a href="https://www.instagram.com/cocolocoalbufeira" target="_blank" rel="noopener">@cocolocoalbufeira →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TWO BARS -->
+  <section id="bars" class="bars-wrap" aria-labelledby="bars-title">
+    <h2 id="bars-title" class="hp" data-i18n="bars.title">Two bars under one roof</h2>
+    <div class="bars">
+      <div class="bar bar-tiki">
+        <p class="where" data-i18n="bars.tiki.where">Main bar · Hawaiian themed</p>
+        <h2>The Tiki Bar</h2>
+        <p class="desc" data-i18n="bars.tiki.desc">Palm-shaded and loud in the best way. Our bartenders make every cocktail by hand, with fresh ingredients, all day and into the night.</p>
+        <ul class="perks">
+          <li data-i18n="bars.tiki.p1">Handmade cocktails, 20+ to choose from</li>
+          <li data-i18n="bars.tiki.p2">Tasty bar snacks and sharing boards</li>
+          <li data-i18n="bars.tiki.p3">Quiz nights, karaoke and live music</li>
+          <li data-i18n="bars.tiki.p4">Bottomless brunch and cocktail classes</li>
+        </ul>
+      </div>
+      <div class="bar bar-saloon">
+        <div class="stairs" aria-hidden="true" data-i18n-html="bars.badge">2 bars<br>1 night</div>
+        <p class="where" data-i18n="bars.saloon.where">Downstairs · Western sports bar</p>
+        <h2>The Saloon</h2>
+        <p class="desc" data-i18n="bars.saloon.desc">Head down the stairs and swap the palm trees for the Wild West. Pull up a stool, rack up the balls and catch the game.</p>
+        <div class="poster">
+          <h3 data-i18n="bars.saloon.poster">NOW SHOWING</h3>
+          <ul>
+            <li data-i18n="bars.saloon.p1">Live sports</li>
+            <li data-i18n="bars.saloon.p2">Pool table</li>
+            <li data-i18n="bars.saloon.p3">Electronic darts</li>
+            <li data-i18n="bars.saloon.p4">Kids' toy box</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCES -->
+  <section class="band" id="experiences">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow" data-i18n="xp.eyebrow">Brunch, classes &amp; parties</p>
+          <h2 class="h2" data-i18n="xp.h2">Book something special</h2>
+        </div>
+        <p class="note" data-i18n="xp.note">From a couple's brunch to a hen party of twenty. Tap any card for the details.</p>
+      </div>
+      <div class="xp-grid" id="xp-grid"></div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="band band-sand" id="gallery">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow" data-i18n="gal.eyebrow">Gallery</p>
+          <h2 class="h2" data-i18n="gal.h2">Inside Coco Loco</h2>
+        </div>
+      </div>
+      <div class="chips" id="chips" role="group" aria-label="Filter photos"></div>
+      <div class="masonry" id="masonry"></div>
+      <div class="gallery-foot">
+        <a class="btn btn-ghost btn-sm" href="https://www.instagram.com/cocolocoalbufeira" target="_blank" rel="noopener" data-i18n="gal.more">More on Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY + REVIEWS -->
+  <section class="band" id="story">
+    <div class="wrap story">
+      <div class="story-card">
+        <img src="https://www.cocolocoalbufeira.com/wedding1.jpg" alt="A party at Coco Loco" loading="lazy">
+        <div class="tv"><b>C4</b><span data-i18n="story.tv">Catch Leah &amp; João on Channel 4's <strong>A New Life in the Sun</strong>, Series 10</span></div>
+      </div>
+      <div class="story-copy">
+        <p class="eyebrow" data-i18n="story.eyebrow">Our story</p>
+        <h2 class="h2" data-i18n="story.h2">Meet Leah &amp; João</h2>
+        <p data-i18n-html="story.p1">Coco Loco opened in early 2024, run by <strong>Leah and João</strong>, an English-Portuguese couple who wanted the kind of bar they'd love to find on holiday: great cocktails, friendly faces and something going on every night.</p>
+        <p data-i18n-html="story.p2">Upstairs it's tiki torches and fresh fruit. Downstairs it's cowboy hats and the match on. Families, couples, hen parties and wedding crews all end up at the same bar by the end of the night.</p>
+      </div>
+    </div>
+
+    <div class="wrap" style="margin-top:clamp(56px,8vw,96px)">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow" data-i18n="rev.eyebrow">Reviews</p>
+          <h2 class="h2" data-i18n="rev.h2">Straight from our guests</h2>
+        </div>
+        <a class="btn btn-ghost btn-sm" href="https://www.tripadvisor.co.uk/Restaurant_Review-g189112-d27800571-Reviews-Coco_Loco_Albufeira-Albufeira_Faro_District_Algarve.html" target="_blank" rel="noopener" data-i18n="rev.ta">Read more on Tripadvisor</a>
+      </div>
+      <div class="reviews" id="reviews"></div>
+    </div>
+  </section>
+
+  <!-- VISIT + BOOK -->
+  <section class="band band-sand" id="visit">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow" data-i18n="visit.eyebrow">Find us &amp; book</p>
+          <h2 class="h2" data-i18n="visit.h2">Come say olá</h2>
+        </div>
+      </div>
+      <div class="visit">
+        <div class="info">
+          <div>
+            <h3 data-i18n="visit.where">Where</h3>
+            <address>Rua Alexandre Herculano 27<br>8200-998 Albufeira, Portugal</address>
+            <div class="cta-row" style="margin-top:16px">
+              <a class="btn btn-ghost btn-sm" href="https://maps.app.goo.gl/C78vz5EwXi2FCKi36" target="_blank" rel="noopener" data-i18n="visit.directions">Get directions</a>
+            </div>
+          </div>
+          <div>
+            <h3 data-i18n="visit.hours">Opening hours</h3>
+            <table class="hours" id="hours"></table>
+          </div>
+          <div>
+            <h3 data-i18n="visit.contact">Talk to us</h3>
+            <div class="contact-lines">
+              <span><span data-i18n="visit.phone">Phone &amp; WhatsApp</span>: <a href="tel:+351962772428">+351 962 772 428</a></span>
+              <span>Email: <a href="mailto:cocolocoalbufeira@outlook.com">cocolocoalbufeira@outlook.com</a></span>
+            </div>
+          </div>
+          <div class="socials">
+            <a href="https://www.instagram.com/cocolocoalbufeira" target="_blank" rel="noopener" aria-label="Instagram"><img src="https://www.cocolocoalbufeira.com/instagram.png" alt=""></a>
+            <a href="https://www.facebook.com/p/Coco-Loco-Albufeira-61556658491607/" target="_blank" rel="noopener" aria-label="Facebook"><img src="https://www.cocolocoalbufeira.com/facebook.png" alt=""></a>
+          </div>
+        </div>
+
+        <form class="form-card" id="book" novalidate>
+          <h3 data-i18n="form.h3">Book or ask us anything</h3>
+          <p data-i18n="form.lede">Tables, brunches, cocktail classes, parties. Send us the details and we'll reply by email, usually the same day.</p>
+          <div class="fields">
+            <div class="field">
+              <label for="f-name" data-i18n="form.name">Your name</label>
+              <input id="f-name" name="name" type="text" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="f-email" data-i18n="form.email">Email</label>
+              <input id="f-email" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="f-phone"><span data-i18n="form.phone">Phone / WhatsApp</span> <small data-i18n="form.optional">(optional)</small></label>
+              <input id="f-phone" name="phone" type="tel" autocomplete="tel">
+            </div>
+            <div class="field">
+              <label for="f-type" data-i18n="form.type">What's it for?</label>
+              <select id="f-type" name="type"></select>
+            </div>
+            <div class="field">
+              <label for="f-date" data-i18n="form.date">Date</label>
+              <input id="f-date" name="date" type="date">
+            </div>
+            <div class="field">
+              <label for="f-size" data-i18n="form.size">Number of people</label>
+              <input id="f-size" name="group_size" type="number" min="1" max="200" inputmode="numeric">
+            </div>
+            <div class="field full">
+              <label for="f-msg" data-i18n="form.msg">Message</label>
+              <textarea id="f-msg" name="message" data-i18n-ph="form.msg.ph" placeholder="Times, occasion, dietary needs…" required></textarea>
+            </div>
+            <div class="hp" aria-hidden="true"><label for="f-hp">Leave empty</label><input id="f-hp" name="_gotcha" tabindex="-1" autocomplete="off"></div>
+          </div>
+          <div class="form-foot">
+            <button class="btn btn-hot" type="submit" id="f-submit" data-i18n="form.send">Send message</button>
+            <span class="form-msg" id="form-msg" role="status"></span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-row">
+    <div style="display:grid; gap:8px">
+      <p class="sign" data-i18n="foot.sign">See you at the bar, partner.</p>
+      <small>© <span id="year">2026</span> Coco Loco Albufeira · Rua Alexandre Herculano 27, Albufeira</small>
+    </div>
+    <nav aria-label="Footer">
+      <a href="#whats-on" data-i18n="nav.whatson">What's on</a>
+      <a href="#experiences" data-i18n="nav.xp">Brunch &amp; parties</a>
+      <a href="#gallery" data-i18n="nav.gallery">Gallery</a>
+      <a href="#book" data-i18n="cta.book">Book a table</a>
+      <a href="https://www.instagram.com/cocolocoalbufeira" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/p/Coco-Loco-Albufeira-61556658491607/" target="_blank" rel="noopener">Facebook</a>
+    </nav>
+  </div>
+</footer>
+
+<div class="action-bar" aria-label="Quick actions">
+  <a href="tel:+351962772428"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span data-i18n="bar.call">Call</span></a>
+  <a href="https://wa.me/351962772428" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.5A8.4 8.4 0 1 1 21 11.5z"/></svg>WhatsApp</a>
+  <a class="hot" href="#book" data-i18n="cta.book">Book a table</a>
+</div>
+
+<dialog id="xp-dialog" aria-labelledby="xp-d-title">
+  <button class="dlg-x" type="button" data-close aria-label="Close">×</button>
+  <div class="dlg-photos" id="xp-d-photos"></div>
+  <div class="dlg-body">
+    <p class="eyebrow" id="xp-d-tag"></p>
+    <h3 id="xp-d-title"></h3>
+    <ul id="xp-d-points"></ul>
+    <div class="dlg-actions">
+      <a class="btn btn-hot" href="#book" id="xp-d-enquire" data-i18n="xp.enquire">Enquire about this</a>
+      <a class="btn btn-ghost" href="https://wa.me/351962772428" target="_blank" rel="noopener" data-i18n="xp.wa">Ask on WhatsApp</a>
+    </div>
+  </div>
+</dialog>
+
+<dialog id="lightbox" aria-label="Photo viewer">
+  <button class="dlg-x" type="button" data-close aria-label="Close">×</button>
+  <figure><img id="lb-img" alt=""><figcaption id="lb-cap"></figcaption></figure>
+  <button class="lb-nav lb-prev" type="button" id="lb-prev" aria-label="Previous photo">‹</button>
+  <button class="lb-nav lb-next" type="button" id="lb-next" aria-label="Next photo">›</button>
+</dialog>
+
+<script>
+/* ================================================================
+   EDIT HERE: settings the bar can change without touching the design
+   ================================================================ */
+
+// Where photos live. Keep as-is while the old site's images are online,
+// or copy them into an /img folder and change this to "img/".
+const IMG = "https://www.cocolocoalbufeira.com/";
+
+// Contact form → email. Create a free form at formspree.io (or similar)
+// using the bar's email, then paste the form URL here.
+const FORM_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+
+// AGENDA & OPENING HOURS are edited by the bar at /admin and saved in content/*.json on GitHub.
+// Put your GitHub username and repo name here, so edits show up within minutes without a redeploy.
+const CONTENT_URL = "https://raw.githubusercontent.com/GITHUB_USER/GITHUB_REPO/main/content/";
+
+// Backup copy, only used if content/*.json can't be loaded.
+const DEFAULT_HOURS = {
+  mon:{closed:true, open:"15:00", close:"02:00"}, tue:{closed:false, open:"15:00", close:"02:00"},
+  wed:{closed:false, open:"15:00", close:"02:00"}, thu:{closed:false, open:"15:00", close:"02:00"},
+  fri:{closed:false, open:"15:00", close:"02:00"}, sat:{closed:false, open:"12:00", close:"02:00"},
+  sun:{closed:false, open:"12:00", close:"02:00"}
+};
+const DEFAULT_AGENDA = { weekly:[
+  {day:"thu", time:"19:30", title_en:"Quiz Night", title_pt:"Noite de Quiz", details_en:"Music & tasting rounds · family-friendly", details_pt:"Rondas de música e prova · para famílias"},
+  {day:"fri", time:"", title_en:"Bottomless Brunch + live music", title_pt:"Bottomless Brunch + música ao vivo", details_en:"Book ahead", details_pt:"Reserve com antecedência"},
+  {day:"sat", time:"", title_en:"Boozy Breakfast", title_pt:"Boozy Breakfast", details_en:"Mornings · limited spaces", details_pt:"De manhã · lugares limitados"},
+  {day:"sun", time:"", title_en:"Boozy Breakfast", title_pt:"Boozy Breakfast", details_en:"Mornings · limited spaces", details_pt:"De manhã · lugares limitados"}
+], specials:[] };
+
+/* ================================================================ */
+
+const EXPERIENCES = [
+  { id:"brunch", photos:["brunch4.jpg","brunch6.jpg","brunch5.jpg","brunch9.jpg"],
+    tag:{en:"90 min unlimited", pt:"90 min ilimitado"},
+    title:{en:"Bottomless Brunch", pt:"Bottomless Brunch"},
+    blurb:{en:"Unlimited cocktails, 20+ to pick from. Your 90 minutes start when the drinks hit the table.", pt:"Cocktails ilimitados, mais de 20 à escolha. Os 90 minutos só contam quando as bebidas chegam à mesa."},
+    points:{en:["Unlimited selected cocktails, beer, wine, sangria and selected spirits","Over 20 cocktails to choose from","Your time starts when your drinks reach the table, not from your booked slot","Book on a Friday for live music with your brunch","Couples to groups of 20+"],
+            pt:["Cocktails selecionados, cerveja, vinho, sangria e bebidas espirituosas selecionadas, tudo ilimitado","Mais de 20 cocktails à escolha","O tempo começa quando as bebidas chegam à mesa, não à hora da reserva","Reserve à sexta-feira para ter música ao vivo","De casais a grupos de mais de 20 pessoas"]}},
+  { id:"cocktail", photos:["cocktailclass9.jpg","cocktailclass21.jpg","cocktailclass14.jpg","cocktailclass10.jpg"],
+    tag:{en:"From €20 per person", pt:"Desde 20 € por pessoa"},
+    title:{en:"Cocktail Class", pt:"Aula de Cocktails"},
+    blurb:{en:"Unlock your inner bartender. Perfect for hens, birthdays, families and couples.", pt:"Descubra o barman que há em si. Ideal para despedidas, aniversários, famílias e casais."},
+    points:{en:["No minimum group size","Learn to make 1–3 cocktails each","Charcuterie board or brunch spread","Fun & games, champagne and shots","Tailored to your group"],
+            pt:["Sem número mínimo de pessoas","Aprenda a fazer 1 a 3 cocktails cada","Tábua de enchidos e queijos ou mesa de brunch","Jogos, champanhe e shots","Adaptada ao seu grupo"]}},
+  { id:"quiz", photos:["quiz3.jpg","quiz2.jpg","quiz4.jpg","quiz5.jpg"],
+    tag:{en:"Thursdays · 19:30", pt:"Quintas · 19:30"},
+    title:{en:"Quiz Night", pt:"Noite de Quiz"},
+    blurb:{en:"Music rounds, tasting rounds, trivia and more. Bring the whole family.", pt:"Rondas de música, de prova, cultura geral e muito mais. Traga a família toda."},
+    points:{en:["Music rounds, tasting rounds, trivia and general knowledge","Completely family-friendly, with a toy box for the kids","Pool table and electronic darts downstairs in the Saloon","Book a table so your team has a spot"],
+            pt:["Rondas de música, de prova, curiosidades e cultura geral","Para toda a família, com caixa de brinquedos para os mais novos","Bilhar e dardos eletrónicos no Saloon, no piso de baixo","Reserve mesa para garantir lugar à sua equipa"]}},
+  { id:"breakfast", photos:["brunch2.jpg","brunch10.jpg","brunch11.jpg","brunch5.jpg"],
+    tag:{en:"Sat & Sun mornings", pt:"Sáb. e dom. de manhã"},
+    title:{en:"Boozy Breakfast", pt:"Boozy Breakfast"},
+    blurb:{en:"90 minutes of unlimited mimosas and prosecco with a fresh breakfast spread.", pt:"90 minutos de mimosas e prosecco ilimitados com um pequeno-almoço fresco."},
+    points:{en:["90 minutes of unlimited mimosas and prosecco","Fresh pastries, fruit, jams and much more","Your time starts when your drinks reach the table","Saturday and Sunday mornings from March","Limited availability, so book ahead"],
+            pt:["90 minutos de mimosas e prosecco ilimitados","Pastelaria fresca, fruta, compotas e muito mais","O tempo começa quando as bebidas chegam à mesa","Sábados e domingos de manhã, a partir de março","Lugares limitados: reserve com antecedência"]}},
+  { id:"wedding", photos:["wedding1.jpg","foodwedding.jpg","wedding2.jpg","cocktailclass7.jpg"],
+    tag:{en:"Private hire", pt:"Aluguer privado"},
+    title:{en:"Pre-Wedding & Day 2 Parties", pt:"Festas Pré-Casamento e Dia 2"},
+    blurb:{en:"The whole venue for your crew, with live music, themed drinks and a fresh buffet.", pt:"O espaço todo para o seu grupo, com música ao vivo, bebidas temáticas e buffet fresco."},
+    points:{en:["Privately hired venue","Live music and themed drinks","Two themed bars and a kids area","In-house buffets to suit every budget","Made fresh on the day and adapted to dietary requirements","Couples to groups of 20+"],
+            pt:["Espaço reservado só para vocês","Música ao vivo e bebidas temáticas","Dois bares temáticos e zona para crianças","Buffets da casa para todos os orçamentos","Tudo feito no próprio dia e adaptado a restrições alimentares","De casais a grupos de mais de 20 pessoas"]}},
+  { id:"party", photos:["cocktailclass7.jpg","wedding2.jpg","quiz4.jpg","brunch9.jpg"],
+    tag:{en:"Any occasion", pt:"Qualquer ocasião"},
+    title:{en:"Birthdays, Hens & Celebrations", pt:"Aniversários, Despedidas e Festas"},
+    blurb:{en:"Packages for special occasions and private areas for your group.", pt:"Pacotes para ocasiões especiais e zonas privadas para o seu grupo."},
+    points:{en:["Packages for special occasions","Private hire areas available","Add a cocktail class, brunch or buffet","Tell us your date and group size and we'll send you options"],
+            pt:["Pacotes para ocasiões especiais","Zonas privadas disponíveis","Junte uma aula de cocktails, brunch ou buffet","Diga-nos a data e o número de pessoas e enviamos opções"]}}
+];
+
+const GALLERY = [
+  ["aboutusheader2.png","bar"],
+  ["cocktailclass9.jpg","cocktails"],["brunch4.jpg","brunch"],["quiz3.jpg","quiz"],["wedding1.jpg","parties"],
+  ["cocktailclass21.jpg","cocktails"],["brunch6.jpg","brunch"],["quiz2.jpg","quiz"],["foodwedding.jpg","parties"],
+  ["cocktailclass14.jpg","cocktails"],["brunch5.jpg","brunch"],["quiz4.jpg","quiz"],["wedding2.jpg","parties"],
+  ["cocktailclass10.jpg","cocktails"],["brunch9.jpg","brunch"],["quiz5.jpg","quiz"],["brunch2.jpg","brunch"],
+  ["cocktailclass7.jpg","cocktails"],["brunch10.jpg","brunch"],["brunch11.jpg","brunch"]
+];
+const CATS = {
+  all:{en:"All", pt:"Tudo"}, bar:{en:"The bar", pt:"O bar"}, cocktails:{en:"Cocktail classes", pt:"Aulas de cocktails"},
+  brunch:{en:"Brunch & breakfast", pt:"Brunch e pequeno-almoço"}, quiz:{en:"Quiz nights", pt:"Noites de quiz"}, parties:{en:"Parties", pt:"Festas"}
+};
+const REVIEWS = ["brunchreview1.jpg","cocktailreview1.jpg","quizreview1.jpg","brunchreview2.jpg","cocktailreview2.jpg","quizreview2.jpg","brunchreview3.jpg","cocktailreview3.jpg","quizreview3.jpg"];
+
+const ENQUIRY = [
+  ["table",{en:"Table booking",pt:"Reserva de mesa"}],
+  ["brunch",{en:"Bottomless Brunch",pt:"Bottomless Brunch"}],
+  ["breakfast",{en:"Boozy Breakfast",pt:"Boozy Breakfast"}],
+  ["cocktail",{en:"Cocktail Class",pt:"Aula de Cocktails"}],
+  ["quiz",{en:"Quiz Night table",pt:"Mesa para a Noite de Quiz"}],
+  ["wedding",{en:"Pre-Wedding / Day 2 party",pt:"Festa pré-casamento / Dia 2"}],
+  ["party",{en:"Birthday, hen or private hire",pt:"Aniversário, despedida ou aluguer"}],
+  ["other",{en:"Something else",pt:"Outro assunto"}]
+];
+
+const DAYS = {en:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], pt:["Domingo","Segunda","Terça","Quarta","Quinta","Sexta","Sábado"]};
+const DAYS_SHORT = {en:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"], pt:["Dom","Seg","Ter","Qua","Qui","Sex","Sáb"]};
+
+const T = {
+  en:{},
+  pt:{
+    "nav.whatson":"Programa","nav.bars":"Dois bares","nav.xp":"Brunch e festas","nav.gallery":"Galeria","nav.visit":"Onde estamos",
+    "cta.book":"Reservar mesa","cta.week":"Programa da semana",
+    "hero.eyebrow":"Bar de cocktails · Albufeira · Desde 2024",
+    "hero.h1":"O bar que gostava de ter encontrado no <em>primeiro</em> dia de férias, não no último.",
+    "hero.lede":"Cocktails feitos à mão com ingredientes frescos, um bar tiki havaiano e, no piso de baixo, um saloon desportivo ao estilo Western. Noites de quiz, karaoke, música ao vivo e brunches em que o relógio só começa quando as bebidas chegam.",
+    "sticker.ring":"Visto no Channel 4 • A New Life in the Sun •","sticker.series":"Série 10",
+    "wo.eyebrow":"Esta semana no Coco Loco","wo.h2":"Programa","wo.note":"Cocktails, petiscos, bilhar e dardos todos os dias em que estamos abertos. E ainda:",
+    "wo.upcoming":"Brevemente",
+    "wo.foot":"Karaoke, música ao vivo e os grandes jogos são anunciados no nosso Instagram.",
+    "bars.title":"Dois bares debaixo do mesmo teto",
+    "bars.tiki.where":"Bar principal · Tema havaiano",
+    "bars.tiki.desc":"Palmeiras, cor e boa disposição. Os nossos bartenders fazem cada cocktail à mão, com ingredientes frescos, do início da tarde até de madrugada.",
+    "bars.tiki.p1":"Cocktails feitos à mão, mais de 20 à escolha","bars.tiki.p2":"Petiscos e tábuas para partilhar","bars.tiki.p3":"Noites de quiz, karaoke e música ao vivo","bars.tiki.p4":"Bottomless brunch e aulas de cocktails",
+    "bars.saloon.where":"Piso de baixo · Bar desportivo Western",
+    "bars.saloon.desc":"Desça as escadas e troque as palmeiras pelo Velho Oeste. Puxe um banco, prepare as bolas de bilhar e veja o jogo.",
+    "bars.saloon.poster":"EM CARTAZ","bars.saloon.p1":"Desporto ao vivo","bars.saloon.p2":"Mesa de bilhar","bars.saloon.p3":"Dardos eletrónicos","bars.saloon.p4":"Brinquedos para crianças",
+    "bars.badge":"2 bares<br>1 noite",
+    "xp.eyebrow":"Brunch, aulas e festas","xp.h2":"Reserve algo especial","xp.note":"Do brunch a dois à despedida de solteira com vinte amigas. Toque num cartão para ver os detalhes.",
+    "xp.more":"Ver detalhes →","xp.enquire":"Pedir informações","xp.wa":"Perguntar no WhatsApp",
+    "gal.eyebrow":"Galeria","gal.h2":"Dentro do Coco Loco","gal.more":"Mais no Instagram",
+    "story.tv":"Veja a Leah e o João no programa <strong>A New Life in the Sun</strong> do Channel 4, série 10",
+    "story.eyebrow":"A nossa história","story.h2":"Conheça a Leah e o João",
+    "story.p1":"O Coco Loco abriu no início de 2024 pelas mãos da <strong>Leah e do João</strong>, um casal anglo-português que queria o bar que adorariam encontrar nas férias: bons cocktails, caras simpáticas e animação todas as noites.",
+    "story.p2":"Em cima há tochas tiki e fruta fresca. Em baixo há chapéus de cowboy e o jogo na televisão. Famílias, casais, despedidas e grupos de casamento acabam todos no mesmo balcão no fim da noite.",
+    "rev.eyebrow":"Opiniões","rev.h2":"Palavra de quem nos visitou","rev.ta":"Ver mais no Tripadvisor",
+    "visit.eyebrow":"Onde estamos e reservas","visit.h2":"Venha dizer olá","visit.where":"Morada","visit.directions":"Como chegar","visit.hours":"Horário","visit.contact":"Fale connosco","visit.phone":"Telefone e WhatsApp",
+    "form.h3":"Reserve ou pergunte o que quiser","form.lede":"Mesas, brunches, aulas de cocktails, festas. Envie-nos os detalhes e respondemos por email, normalmente no mesmo dia.",
+    "form.name":"O seu nome","form.email":"Email","form.phone":"Telefone / WhatsApp","form.optional":"(opcional)","form.type":"Para quê?","form.date":"Data","form.size":"Número de pessoas","form.msg":"Mensagem","form.msg.ph":"Horário, ocasião, restrições alimentares…","form.send":"Enviar mensagem",
+    "foot.sign":"Vemo-nos no bar, parceiro.",
+    "bar.call":"Ligar"
+  }
+};
+const MSG = {
+  en:{ open:(c)=>`Open now · until ${c}`, opensToday:(o)=>`Closed now · opens today at ${o}`, opensNext:(d,o)=>`Closed today · opens ${d} at ${o}`, closed:"Closed",
+       sending:"Sending…", ok:"Thanks! Your message is on its way. We'll reply by email soon.", err:"That didn't send. Please try again, or message us on WhatsApp at +351 962 772 428.",
+       missing:"Please add your name, a valid email and a message.", notLive:"This form isn't connected yet. For now, please email cocolocoalbufeira@outlook.com or WhatsApp +351 962 772 428.",
+       today:"Today", nothing:"Cocktails, pool & darts", more:"See details →", photo:"Photo" },
+  pt:{ open:(c)=>`Aberto agora · até às ${c}`, opensToday:(o)=>`Fechado agora · abre hoje às ${o}`, opensNext:(d,o)=>`Fechado hoje · abre ${d} às ${o}`, closed:"Fechado",
+       sending:"A enviar…", ok:"Obrigado! A sua mensagem foi enviada. Respondemos em breve por email.", err:"Não foi possível enviar. Tente de novo ou fale connosco no WhatsApp: +351 962 772 428.",
+       missing:"Indique o seu nome, um email válido e uma mensagem.", notLive:"Este formulário ainda não está ligado. Por agora, escreva para cocolocoalbufeira@outlook.com ou WhatsApp +351 962 772 428.",
+       today:"Hoje", nothing:"Cocktails, bilhar e dardos", more:"Ver detalhes →", photo:"Foto" }
+};
+
+/* ---------- helpers ---------- */
+let lang = "en";
+const $ = (s, r=document) => r.querySelector(s);
+const tx = (v) => (v && typeof v === "object") ? (v[lang] ?? v.en) : v;
+const pad = (n) => String(n).padStart(2, "0");
+const fmtM = (m) => `${pad(Math.floor(m / 60) % 24)}:${pad(m % 60)}`;
+
+/* ---------- agenda & hours data ---------- */
+const DAY_KEYS = ["sun","mon","tue","wed","thu","fri","sat"];
+let HOURS = {}, WEEKLY = {}, SPECIALS = [];
+const toMin = (s) => { const m = /^(\d{1,2}):(\d{2})$/.exec(String(s || "").trim()); return m ? (+m[1]) * 60 + (+m[2]) : null; };
+function applyHours(h){
+  HOURS = {};
+  DAY_KEYS.forEach((k, i) => {
+    const d = h && h[k], o = d && toMin(d.open), c = d && toMin(d.close);
+    HOURS[i] = (!d || d.closed || o == null || c == null) ? null : [o, c <= o ? c + 1440 : c];
+  });
+}
+function applyAgenda(a){
+  const byTime = (x, y) => String(x.time || "").localeCompare(String(y.time || ""));
+  WEEKLY = {};
+  ((a && a.weekly) || []).forEach(e => {
+    const i = DAY_KEYS.indexOf(e && e.day);
+    if (i < 0 || e.active === false) return;
+    (WEEKLY[i] ||= []).push(e);
+  });
+  Object.values(WEEKLY).forEach(l => l.sort(byTime));
+  SPECIALS = ((a && a.specials) || []).filter(e => e && e.date)
+    .map(e => ({...e, date:String(e.date).slice(0, 10)}))
+    .sort((x, y) => x.date.localeCompare(y.date) || byTime(x, y));
+}
+const evText = (e, f) => e[`${f}_${lang}`] || e[`${f}_en`] || e[`${f}_pt`] || "";
+
+async function getJSON(name){
+  const urls = [];
+  if (!CONTENT_URL.includes("GITHUB_USER")) urls.push(CONTENT_URL + name);
+  urls.push("content/" + name);
+  for (const u of urls){
+    try{
+      const r = await fetch(u + "?v=" + Math.floor(Date.now() / 60000), {cache:"no-store"});
+      if (r.ok) return await r.json();
+    }catch(e){}
+  }
+  return null;
+}
+async function loadContent(){
+  const [a, h] = await Promise.all([getJSON("agenda.json"), getJSON("hours.json")]);
+  if (h) applyHours(h);
+  if (a) applyAgenda(a);
+  if (a || h){ renderStatus(); renderWeek(); renderHours(); }
+}
+
+/* dates in Lisbon, as "YYYY-MM-DD" */
+const ymdShift = (ymd, n) => { const [y, m, d] = ymd.split("-").map(Number); return new Date(Date.UTC(y, m - 1, d + n)).toISOString().slice(0, 10); };
+const MONTHS = {en:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"], pt:["jan","fev","mar","abr","mai","jun","jul","ago","set","out","nov","dez"]};
+const esc = (s) => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+document.addEventListener("error", e => { if (e.target.tagName === "IMG") e.target.classList.add("broken"); }, true);
+document.querySelectorAll("img").forEach(i => { if (i.complete && i.naturalWidth === 0) i.classList.add("broken"); });
+
+// Store the English source text once so we can switch back.
+document.querySelectorAll("[data-i18n]").forEach(el => T.en[el.dataset.i18n] ??= el.textContent);
+document.querySelectorAll("[data-i18n-html]").forEach(el => T.en[el.dataset.i18nHtml] ??= el.innerHTML);
+document.querySelectorAll("[data-i18n-ph]").forEach(el => T.en[el.dataset.i18nPh] ??= el.placeholder);
+
+function lisbonNow(){
+  const parts = new Intl.DateTimeFormat("en-GB", {timeZone:"Europe/Lisbon", weekday:"short", year:"numeric", month:"2-digit", day:"2-digit", hour:"2-digit", minute:"2-digit", hourCycle:"h23"}).formatToParts(new Date());
+  const get = t => parts.find(p => p.type === t).value;
+  const day = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].indexOf(get("weekday"));
+  const mins = (+get("hour")) * 60 + (+get("minute"));
+  const ymd = `${get("year")}-${get("month")}-${get("day")}`;
+  // Before closing time after midnight, the "night" still belongs to yesterday.
+  const yest = HOURS[(day + 6) % 7];
+  const late = !!(yest && yest[1] > 1440 && mins < yest[1] - 1440);
+  return { day, mins, ymd, late, nightDay: late ? (day + 6) % 7 : day, nightYmd: late ? ymdShift(ymd, -1) : ymd };
+}
+
+/* ---------- open / closed status ---------- */
+function renderStatus(){
+  const {day, mins, late} = lisbonNow();
+  const el = $("#status"), txt = $("#status-text"), m = MSG[lang];
+  const today = HOURS[day], yest = HOURS[(day + 6) % 7];
+  let s, open = false;
+  if (late){ open = true; s = m.open(fmtM(yest[1])); }
+  else if (today && mins >= today[0] && mins < today[1]){ open = true; s = m.open(fmtM(today[1])); }
+  else if (today && mins < today[0]){ s = m.opensToday(fmtM(today[0])); }
+  else {
+    let d = (day + 1) % 7, n = 0;
+    while (!HOURS[d] && n < 7){ d = (d + 1) % 7; n++; }
+    s = HOURS[d] ? m.opensNext(lang === "pt" ? DAYS.pt[d].toLowerCase() : DAYS.en[d], fmtM(HOURS[d][0])) : m.closed;
+  }
+  el.classList.toggle("is-open", open);
+  txt.textContent = s;
+}
+
+/* ---------- week ---------- */
+function evHTML(e){
+  return `<div class="ev${e._special ? " special" : ""}">${e.time ? `<span class="ev-time">${esc(e.time)}</span>` : ""}<span class="ev-t">${esc(evText(e, "title"))}</span>${evText(e, "details") ? `<span class="ev-where">${esc(evText(e, "details"))}</span>` : ""}</div>`;
+}
+function renderWeek(){
+  const {nightDay, nightYmd} = lisbonNow();
+  const monday = ymdShift(nightYmd, -((nightDay + 6) % 7));
+  const cols = [0,1,2,3,4,5,6].map(k => ({ d:(k + 1) % 7, date:ymdShift(monday, k) }));
+  $("#week").innerHTML = cols.map(({d, date}) => {
+    const h = HOURS[d];
+    const evs = [...(WEEKLY[d] || []), ...SPECIALS.filter(s => s.date === date).map(s => ({...s, _special:true}))];
+    const hrs = h ? `${fmtM(h[0])}–${fmtM(h[1])}` : MSG[lang].closed;
+    const body = evs.length ? (h ? evs : evs.filter(e => e._special)).map(evHTML).join("") : "";
+    const fallback = `<div class="ev"><span class="ev-t">${h ? MSG[lang].nothing : MSG[lang].closed}</span></div>`;
+    return `<article class="day${date === nightYmd ? " today" : ""}${h ? "" : " closed"}">
+      <span class="today-chip">${MSG[lang].today}</span>
+      <div class="day-top"><h3>${DAYS_SHORT[lang][d]} <span class="dom">${+date.slice(8)}</span></h3><span class="hrs">${hrs}</span></div>${body || fallback}</article>`;
+  }).join("");
+  const t = $(".day.today");
+  if (t && matchMedia("(max-width:1080px)").matches){ const sc = $(".week-scroll"); sc.scrollLeft = t.offsetLeft - sc.offsetLeft - 20; }
+
+  // Coming up: dated events after this week
+  const sunday = ymdShift(monday, 6);
+  const next = SPECIALS.filter(s => s.date > sunday).slice(0, 6);
+  $("#upcoming").hidden = !next.length;
+  $("#up-list").innerHTML = next.map(s => {
+    const [, mo, dd] = s.date.split("-").map(Number);
+    const wd = new Date(s.date + "T12:00:00Z").getUTCDay();
+    return `<article class="up"><div class="up-date"><b>${dd}</b><span>${MONTHS[lang][mo - 1]}</span></div>
+      <div class="up-body"><span class="ev-time">${DAYS[lang][wd]}${s.time ? " · " + esc(s.time) : ""}</span>
+      <span class="ev-t">${esc(evText(s, "title"))}</span>${evText(s, "details") ? `<span class="ev-where">${esc(evText(s, "details"))}</span>` : ""}</div></article>`;
+  }).join("");
+}
+
+/* ---------- hours table ---------- */
+function renderHours(){
+  const {day} = lisbonNow();
+  $("#hours").innerHTML = [1,2,3,4,5,6,0].map(d => {
+    const h = HOURS[d];
+    return `<tr class="${d === day ? "today" : ""}"><td>${DAYS[lang][d]}</td><td>${h ? `${fmtM(h[0])} – ${fmtM(h[1])}` : MSG[lang].closed}</td></tr>`;
+  }).join("");
+}
+
+/* ---------- experiences ---------- */
+function renderXP(){
+  $("#xp-grid").innerHTML = EXPERIENCES.map(x => `
+    <button class="xp" type="button" data-xp="${x.id}">
+      <div class="xp-img"><img src="${IMG + x.photos[0]}" alt="" loading="lazy"></div>
+      <div class="xp-body">
+        <span class="xp-tag">${esc(tx(x.tag))}</span>
+        <h3>${esc(tx(x.title))}</h3>
+        <p>${esc(tx(x.blurb))}</p>
+        <span class="xp-more">${MSG[lang].more}</span>
+      </div>
+    </button>`).join("");
+}
+let currentXP = null;
+function openXP(id){
+  const x = EXPERIENCES.find(e => e.id === id); if (!x) return;
+  currentXP = x;
+  $("#xp-d-photos").innerHTML = x.photos.slice(0,3).map(p => `<img src="${IMG + p}" alt="${esc(tx(x.title))}">`).join("");
+  $("#xp-d-tag").textContent = tx(x.tag);
+  $("#xp-d-title").textContent = tx(x.title);
+  $("#xp-d-points").innerHTML = tx(x.points).map(p => `<li>${esc(p)}</li>`).join("");
+  $("#xp-dialog").showModal();
+}
+$("#xp-grid").addEventListener("click", e => { const b = e.target.closest("[data-xp]"); if (b) openXP(b.dataset.xp); });
+$("#xp-d-enquire").addEventListener("click", () => {
+  if (currentXP) $("#f-type").value = currentXP.id;
+  $("#xp-dialog").close();
+  setTimeout(() => $("#f-name").focus({preventScroll:true}), 400);
+});
+
+/* ---------- gallery + lightbox ---------- */
+let filter = "all", lbList = [], lbIndex = 0;
+function renderGallery(){
+  $("#chips").innerHTML = Object.keys(CATS).map(k => `<button type="button" class="chip" data-cat="${k}" aria-pressed="${k === filter}">${esc(tx(CATS[k]))}</button>`).join("");
+  const items = GALLERY.filter(([, c]) => filter === "all" || c === filter);
+  $("#masonry").innerHTML = items.map(([f, c], i) => `<button type="button" data-i="${i}" aria-label="${esc(tx(CATS[c]))}"><img src="${IMG + f}" alt="${esc(tx(CATS[c]))}" loading="lazy"></button>`).join("");
+  $("#masonry").dataset.list = JSON.stringify(items.map(([f, c]) => [f, tx(CATS[c])]));
+}
+$("#chips").addEventListener("click", e => { const b = e.target.closest("[data-cat]"); if (b){ filter = b.dataset.cat; renderGallery(); } });
+$("#masonry").addEventListener("click", e => { const b = e.target.closest("[data-i]"); if (b) openLB(JSON.parse($("#masonry").dataset.list), +b.dataset.i); });
+
+function renderReviews(){
+  $("#reviews").innerHTML = REVIEWS.map((f, i) => `<button type="button" data-i="${i}" aria-label="Review ${i + 1}"><img src="${IMG + f}" alt="Guest review" loading="lazy"></button>`).join("");
+}
+$("#reviews").addEventListener("click", e => { const b = e.target.closest("[data-i]"); if (b) openLB(REVIEWS.map(f => [f, ""]), +b.dataset.i); });
+
+function openLB(list, i){ lbList = list; lbIndex = i; showLB(); $("#lightbox").showModal(); }
+function showLB(){
+  const [f, cap] = lbList[lbIndex];
+  const img = $("#lb-img"); img.classList.remove("broken"); img.src = IMG + f; img.alt = cap || MSG[lang].photo;
+  $("#lb-cap").textContent = `${cap ? cap + " · " : ""}${lbIndex + 1} / ${lbList.length}`;
+}
+const stepLB = d => { lbIndex = (lbIndex + d + lbList.length) % lbList.length; showLB(); };
+$("#lb-prev").addEventListener("click", () => stepLB(-1));
+$("#lb-next").addEventListener("click", () => stepLB(1));
+$("#lightbox").addEventListener("keydown", e => { if (e.key === "ArrowLeft") stepLB(-1); if (e.key === "ArrowRight") stepLB(1); });
+
+document.querySelectorAll("dialog").forEach(d => {
+  d.addEventListener("click", e => { if (e.target === d || e.target.closest("[data-close]")) d.close(); });
+});
+
+/* ---------- form ---------- */
+function renderSelect(){
+  const sel = $("#f-type"), keep = sel.value;
+  sel.innerHTML = ENQUIRY.map(([v, l]) => `<option value="${v}">${esc(tx(l))}</option>`).join("");
+  if (keep) sel.value = keep;
+}
+$("#book").addEventListener("submit", async e => {
+  e.preventDefault();
+  const f = e.target, msg = $("#form-msg"), btn = $("#f-submit"), m = MSG[lang];
+  msg.className = "form-msg";
+  if ($("#f-hp").value) return;
+  const email = $("#f-email").value.trim();
+  if (!$("#f-name").value.trim() || !/^\S+@\S+\.\S+$/.test(email) || !$("#f-msg").value.trim()){
+    msg.textContent = m.missing; msg.classList.add("err"); return;
+  }
+  if (FORM_ENDPOINT.includes("YOUR_FORM_ID")){ msg.textContent = m.notLive; msg.classList.add("err"); return; }
+  const data = Object.fromEntries(new FormData(f));
+  data.type = $("#f-type").selectedOptions[0].textContent;
+  data._subject = `Website enquiry: ${data.type} – ${data.name}`;
+  btn.disabled = true; msg.textContent = m.sending;
+  try{
+    const r = await fetch(FORM_ENDPOINT, {method:"POST", headers:{"Content-Type":"application/json", "Accept":"application/json"}, body:JSON.stringify(data)});
+    if (!r.ok) throw new Error(r.status);
+    f.reset(); renderSelect(); msg.textContent = m.ok; msg.classList.add("ok");
+  } catch(err){ msg.textContent = m.err; msg.classList.add("err"); }
+  finally{ btn.disabled = false; }
+});
+
+/* ---------- nav ---------- */
+$("#menu-btn").addEventListener("click", () => {
+  const open = $("#nav").classList.toggle("open");
+  $("#menu-btn").setAttribute("aria-expanded", open);
+});
+$("#nav").addEventListener("click", e => { if (e.target.tagName === "A"){ $("#nav").classList.remove("open"); $("#menu-btn").setAttribute("aria-expanded", false); } });
+
+/* ---------- language ---------- */
+function setLang(l){
+  lang = l; document.documentElement.lang = l;
+  const dict = T[l];
+  document.querySelectorAll("[data-i18n]").forEach(el => { const v = dict[el.dataset.i18n] ?? T.en[el.dataset.i18n]; if (v != null) el.textContent = v; });
+  document.querySelectorAll("[data-i18n-html]").forEach(el => { const v = dict[el.dataset.i18nHtml] ?? T.en[el.dataset.i18nHtml]; if (v != null) el.innerHTML = v; });
+  document.querySelectorAll("[data-i18n-ph]").forEach(el => { const v = dict[el.dataset.i18nPh] ?? T.en[el.dataset.i18nPh]; if (v != null) el.placeholder = v; });
+  document.querySelectorAll(".lang button").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === l));
+  try{ localStorage.setItem("cocoloco-lang", l); }catch(e){}
+  renderAll();
+}
+document.querySelectorAll(".lang button").forEach(b => b.addEventListener("click", () => setLang(b.dataset.lang)));
+
+function renderAll(){ renderStatus(); renderWeek(); renderHours(); renderXP(); renderGallery(); renderReviews(); renderSelect(); }
+
+$("#year").textContent = new Date().getFullYear();
+let start = "en";
+try{ start = localStorage.getItem("cocoloco-lang") || ((navigator.language || "").toLowerCase().startsWith("pt") ? "pt" : "en"); }catch(e){}
+applyHours(DEFAULT_HOURS);
+applyAgenda(DEFAULT_AGENDA);
+setLang(start);
+loadContent();
+setInterval(renderStatus, 60000);
+</script>
+</body>
+</html>

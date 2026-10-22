@@ -1,0 +1,9 @@
+{
+  "mon": { "closed": true,  "open": "15:00", "close": "02:00" },
+  "tue": { "closed": false, "open": "15:00", "close": "02:00" },
+  "wed": { "closed": false, "open": "15:00", "close": "02:00" },
+  "thu": { "closed": false, "open": "15:00", "close": "02:00" },
+  "fri": { "closed": false, "open": "15:00", "close": "02:00" },
+  "sat": { "closed": false, "open": "12:00", "close": "02:00" },
+  "sun": { "closed": false, "open": "12:00", "close": "02:00" }
+}

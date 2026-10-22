@@ -1,0 +1,131 @@
+# Decap CMS settings for the Coco Loco admin panel (/admin)
+# Login: Netlify Identity (email + password). Saving: Git Gateway → GitHub.
+
+backend:
+  name: git-gateway
+  branch: main
+  commit_messages:
+    update: "Agenda: atualização de {{slug}}"
+
+locale: pt
+
+media_folder: "img/uploads"
+public_folder: "/img/uploads"
+
+collections:
+  - name: agenda
+    label: "Agenda e horário"
+    description: "As alterações aparecem no site 1 a 5 minutos depois de carregar em Publicar."
+    format: json
+    editor:
+      preview: false
+    files:
+      - name: programa
+        label: "Programa da semana e eventos"
+        file: "content/agenda.json"
+        fields:
+          - label: "Eventos semanais"
+            name: weekly
+            widget: list
+            hint: "Repetem-se todas as semanas (ex: Quiz à quinta). Desligue 'Ativo' para esconder um evento sem o apagar."
+            add_to_top: false
+            summary: "{{fields.day}} · {{fields.time}} · {{fields.title_pt}}"
+            fields:
+              - label: "Dia"
+                name: day
+                widget: select
+                options:
+                  - { label: "Segunda", value: "mon" }
+                  - { label: "Terça", value: "tue" }
+                  - { label: "Quarta", value: "wed" }
+                  - { label: "Quinta", value: "thu" }
+                  - { label: "Sexta", value: "fri" }
+                  - { label: "Sábado", value: "sat" }
+                  - { label: "Domingo", value: "sun" }
+              - { label: "Ativo (mostrar no site)", name: active, widget: boolean, default: true }
+              - { label: "Hora", name: time, widget: string, required: false, hint: "Ex: 19:30. Pode ficar vazio." }
+              - { label: "Evento (português)", name: title_pt, widget: string }
+              - { label: "Evento (inglês)", name: title_en, widget: string, hint: "O que os turistas veem na versão inglesa." }
+              - { label: "Detalhes (português)", name: details_pt, widget: string, required: false }
+              - { label: "Detalhes (inglês)", name: details_en, widget: string, required: false }
+
+          - label: "Eventos especiais"
+            name: specials
+            widget: list
+            required: false
+            hint: "Eventos numa data concreta (ex: banda ao vivo, jogo importante, noite de karaoke). Aparecem na semana certa e na lista 'Brevemente'. Desaparecem sozinhos depois da data."
+            summary: "{{fields.date}} · {{fields.title_pt}}"
+            fields:
+              - label: "Data"
+                name: date
+                widget: datetime
+                format: "YYYY-MM-DD"
+                date_format: "DD/MM/YYYY"
+                time_format: false
+                picker_utc: true
+              - { label: "Hora", name: time, widget: string, required: false, hint: "Ex: 21:00" }
+              - { label: "Evento (português)", name: title_pt, widget: string }
+              - { label: "Evento (inglês)", name: title_en, widget: string }
+              - { label: "Detalhes (português)", name: details_pt, widget: string, required: false }
+              - { label: "Detalhes (inglês)", name: details_en, widget: string, required: false }
+
+      - name: horario
+        label: "Horário de abertura"
+        file: "content/hours.json"
+        fields:
+          - label: "Segunda-feira"
+            name: mon
+            widget: object
+            collapsed: false
+            fields:
+              - { label: "Fechado neste dia", name: closed, widget: boolean, default: true }
+              - { label: "Abre às", name: open, widget: string, default: "15:00", pattern: ['^([01][0-9]|2[0-3]):[0-5][0-9]$', "Use o formato HH:MM, ex: 15:00"] }
+              - { label: "Fecha às", name: close, widget: string, default: "02:00", hint: "Depois da meia-noite escreva por ex. 02:00", pattern: ['^([01][0-9]|2[0-3]):[0-5][0-9]$', "Use o formato HH:MM, ex: 02:00"] }
+          - label: "Terça-feira"
+            name: tue
+            widget: object
+            collapsed: false
+            fields:
+              - { label: "Fechado neste dia", name: closed, widget: boolean, default: false }
+              - { label: "Abre às", name: open, widget: string, default: "15:00", pattern: ['^([01][0-9]|2[0-3]):[0-5][0-9]$', "Use o formato HH:MM, ex: 15:00"] }
+              - { label: "Fecha às", name: close, widget: string, default: "02:00", hint: "Depois da meia-noite escreva por ex. 02:00", pattern: ['^([01][0-9]|2[0-3]):[0-5][0-9]$', "Use o formato HH:MM, ex: 02:00"] }
+          - label: "Quarta-feira"
+            name: wed
+            widget: object
+            collapsed: false
+            fields:
+              - { label: "Fechado neste dia", name: closed, widget: boolean, default: false }
+              - { label: "Abre às", name: open, widget: string, default: "15:00", pattern: ['^([01][0-9]|2[0-3]):[0-5][0-9]$', "Use o formato HH:MM, ex: 15:00"] }
+              - { label: "Fecha às", name: close, widget: string, default: "02:00", hint: "Depois da meia-noite escreva por ex. 02:00", pattern: ['^([01][0-9]|2[0-3]):[0-5][0-9]$', "Use o formato HH:MM, ex: 02:00"] }
+          - label: "Quinta-feira"
+            name: thu
+            widget: object
+            collapsed: false
+            fields:
+              - { label: "Fechado neste dia", name: closed, widget: boolean, default: false }
+              - { label: "Abre às", name: open, widget: string, default: "15:00", pattern: ['^([01][0-9]|2[0-3]):[0-5][0-9]$', "Use o formato HH:MM, ex: 15:00"] }
+              - { label: "Fecha às", name: close, widget: string, default: "02:00", hint: "Depois da meia-noite escreva por ex. 02:00", pattern: ['^([01][0-9]|2[0-3]):[0-5][0-9]$', "Use o formato HH:MM, ex: 02:00"] }
+          - label: "Sexta-feira"
+            name: fri
+            widget: object
+            collapsed: false
+            fields:
+              - { label: "Fechado neste dia", name: closed, widget: boolean, default: false }
+              - { label: "Abre às", name: open, widget: string, default: "15:00", pattern: ['^([01][0-9]|2[0-3]):[0-5][0-9]$', "Use o formato HH:MM, ex: 15:00"] }
+              - { label: "Fecha às", name: close, widget: string, default: "02:00", hint: "Depois da meia-noite escreva por ex. 02:00", pattern: ['^([01][0-9]|2[0-3]):[0-5][0-9]$', "Use o formato HH:MM, ex: 02:00"] }
+          - label: "Sábado"
+            name: sat
+            widget: object
+            collapsed: false
+            fields:
+              - { label: "Fechado neste dia", name: closed, widget: boolean, default: false }
+              - { label: "Abre às", name: open, widget: string, default: "12:00", pattern: ['^([01][0-9]|2[0-3]):[0-5][0-9]$', "Use o formato HH:MM, ex: 15:00"] }
+              - { label: "Fecha às", name: close, widget: string, default: "02:00", hint: "Depois da meia-noite escreva por ex. 02:00", pattern: ['^([01][0-9]|2[0-3]):[0-5][0-9]$', "Use o formato HH:MM, ex: 02:00"] }
+          - label: "Domingo"
+            name: sun
+            widget: object
+            collapsed: false
+            fields:
+              - { label: "Fechado neste dia", name: closed, widget: boolean, default: false }
+              - { label: "Abre às", name: open, widget: string, default: "12:00", pattern: ['^([01][0-9]|2[0-3]):[0-5][0-9]$', "Use o formato HH:MM, ex: 15:00"] }
+              - { label: "Fecha às", name: close, widget: string, default: "02:00", hint: "Depois da meia-noite escreva por ex. 02:00", pattern: ['^([01][0-9]|2[0-3]):[0-5][0-9]$', "Use o formato HH:MM, ex: 02:00"] }
