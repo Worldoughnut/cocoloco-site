@@ -308,7 +308,10 @@ body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-in
 
 /* Experiences */
 #experiences{background:var(--charcoal)}
-.xp-grid{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:22px}
+.xp-grid{display:grid; grid-template-columns:repeat(6, minmax(0,1fr)); gap:22px}
+.xp-grid > .xp{grid-column:span 2}
+.xp-grid > .xp:nth-child(n+4){grid-column:span 3}
+@media (min-width: 961px){ .xp-grid > .xp:nth-child(n+4) .xp-img{aspect-ratio:16/8} }
 .xp{display:grid; grid-template-rows:auto 1fr; background:var(--charcoal-2); border-radius:var(--r); overflow:hidden; border:1px solid rgba(245,239,228,.08); text-align:left; color:inherit; padding:0; transition:transform .2s ease, border-color .2s ease}
 .xp:hover{transform:translateY(-4px); border-color:var(--turq)}
 .xp-img{aspect-ratio:4/3; max-width:100%; background:var(--ocean-2); overflow:hidden}
@@ -319,8 +322,8 @@ body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-in
 .xp h3{font:800 28px/1.02 var(--f-head); text-transform:uppercase; letter-spacing:.01em; color:var(--on-dark)}
 .xp p{color:#B9BEC2; font-size:15.5px}
 .xp-more{margin-top:6px; font:700 16px/1 var(--f-head); letter-spacing:.08em; text-transform:uppercase; color:var(--turq)}
-@media (max-width: 960px){ .xp-grid{grid-template-columns:repeat(2, minmax(0,1fr))} }
-@media (max-width: 620px){ .xp-grid{grid-template-columns:1fr} }
+@media (max-width: 960px){ .xp-grid{grid-template-columns:repeat(2, minmax(0,1fr))} .xp-grid > .xp, .xp-grid > .xp:nth-child(n+4){grid-column:span 1} .xp-grid > .xp:last-child{grid-column:1 / -1} }
+@media (max-width: 620px){ .xp-grid{grid-template-columns:1fr} .xp-grid > .xp, .xp-grid > .xp:nth-child(n+4), .xp-grid > .xp:last-child{grid-column:auto} }
 
 /* Dialogs */
 dialog{border:0; padding:0; max-width:min(860px, calc(100vw - 32px)); width:100%; border-radius:22px; background:var(--cream); color:var(--ink); color-scheme:light}
@@ -474,8 +477,8 @@ dialog::backdrop{background:rgba(4,35,45,.82); backdrop-filter:blur(4px)}
       <div class="hero-grid">
         <div class="hero-copy">
           <h1 data-i18n-html="hero.h1">The bar you wish you found on your <em>first</em> day, not your last.</h1>
-          <p class="slogan">Good Drinks · Good Vibes · Same People</p>
-          <p class="lede" data-i18n="hero.lede">Handmade cocktails with only the freshest ingredients, a Hawaiian tiki bar and, downstairs, a Western sports saloon. Quiz nights, karaoke, live music and bottomless brunches where the clock only starts when your drinks arrive.</p>
+          <p class="slogan" data-i18n="hero.slogan">Two floors, two worlds, one unforgettable experience.</p>
+          <p class="lede" data-i18n="hero.lede">Professionally crafted cocktails made with only the freshest ingredients. A Hawaiian tiki bar upstairs and a Wild West saloon downstairs, complete with a games room and a private karaoke room. From signature cocktails to delicious sharing platters, we've got it all!</p>
         </div>
         <div class="hero-side">
           <div class="status" id="status" aria-live="polite"><span class="dot"></span><span id="status-text">Tue–Fri 15:00–02:00 · Sat–Sun 12:00–02:00</span></div>
@@ -496,13 +499,13 @@ dialog::backdrop{background:rgba(4,35,45,.82); backdrop-filter:blur(4px)}
   </section>
 
   <!-- VIBE TILES -->
-  <section class="vibes" aria-label="Good drinks, good vibes, same people">
+  <section class="vibes" aria-label="Gallery, services and about us">
     <div class="wrap">
       <div class="tiles-scroll">
         <div class="tiles">
-          <a class="tile" href="#experiences"><img data-img="cocktailclass9.jpg" alt="Cocktails being made at a Coco Loco cocktail class" loading="lazy"><span class="tile-word band">Signature Cocktails</span></a>
-          <a class="tile" href="#whats-on"><img data-img="brunch4.jpg" alt="Bottomless brunch at Coco Loco" loading="lazy"><span class="tile-word">Good Vibes</span></a>
-          <a class="tile" href="#story"><img data-img="quiz3.jpg" alt="Guests at a Coco Loco quiz night" loading="lazy"><span class="tile-word gold">Same People</span></a>
+          <a class="tile" href="#gallery"><img data-img="cocktailclass9.jpg" alt="A hen party at Coco Loco" loading="lazy"><span class="tile-word band" data-i18n="tile.gallery">Gallery</span></a>
+          <a class="tile" href="#experiences"><img data-img="brunch4.jpg" alt="Bottomless brunch at Coco Loco" loading="lazy"><span class="tile-word" data-i18n="tile.services">Services</span></a>
+          <a class="tile" href="#story"><img data-img="quiz3.jpg" alt="Guests at Coco Loco" loading="lazy"><span class="tile-word gold" data-i18n="tile.about">About us</span></a>
         </div>
       </div>
     </div>
@@ -567,7 +570,7 @@ dialog::backdrop{background:rgba(4,35,45,.82); backdrop-filter:blur(4px)}
       <div class="section-head">
         <p class="eyebrow" data-i18n="xp.eyebrow">Brunch, classes &amp; parties</p>
         <h2 class="h2"><span data-i18n="xp.h2">Book something special</span></h2>
-        <p class="note" data-i18n="xp.note">From a couple's brunch to a hen party of twenty. Tap any card for the details.</p>
+        <p class="note" data-i18n="xp.note">From a brunch for two to a private party for 80+. Tap any card for the details.</p>
       </div>
       <div class="xp-grid" id="xp-grid"></div>
     </div>
@@ -769,41 +772,35 @@ const DEFAULT_AGENDA = { weekly:[
 
 const EXPERIENCES = [
   { id:"brunch", photos:["brunch4.jpg","brunch6.jpg","brunch5.jpg","brunch9.jpg"],
-    tag:{en:"90 min unlimited", pt:"90 min ilimitado"},
+    tag:{en:"90 min or 2 hours", pt:"90 min ou 2 horas"},
     title:{en:"Bottomless Brunch", pt:"Bottomless Brunch"},
-    blurb:{en:"Unlimited cocktails, 20+ to pick from. Your 90 minutes start when the drinks hit the table.", pt:"Cocktails ilimitados, mais de 20 à escolha. Os 90 minutos só contam quando as bebidas chegam à mesa."},
-    points:{en:["Unlimited selected cocktails, beer, wine, sangria and selected spirits","Over 20 cocktails to choose from","Your time starts when your drinks reach the table, not from your booked slot","Book on a Friday for live music with your brunch","Couples to groups of 20+"],
-            pt:["Cocktails selecionados, cerveja, vinho, sangria e bebidas espirituosas selecionadas, tudo ilimitado","Mais de 20 cocktails à escolha","O tempo começa quando as bebidas chegam à mesa, não à hora da reserva","Reserve à sexta-feira para ter música ao vivo","De casais a grupos de mais de 20 pessoas"]}},
-  { id:"cocktail", photos:["cocktailclass9.jpg","cocktailclass21.jpg","cocktailclass14.jpg","cocktailclass10.jpg"],
-    tag:{en:"From €20 per person", pt:"Desde 20 € por pessoa"},
-    title:{en:"Cocktail Class", pt:"Aula de Cocktails"},
-    blurb:{en:"Unlock your inner bartender. Perfect for hens, birthdays, families and couples.", pt:"Descubra o barman que há em si. Ideal para despedidas, aniversários, famílias e casais."},
-    points:{en:["No minimum group size","Learn to make 1–3 cocktails each","Charcuterie board or brunch spread","Fun & games, champagne and shots","Tailored to your group"],
-            pt:["Sem número mínimo de pessoas","Aprenda a fazer 1 a 3 cocktails cada","Tábua de enchidos e queijos ou mesa de brunch","Jogos, champanhe e shots","Adaptada ao seu grupo"]}},
-  { id:"quiz", photos:["quiz3.jpg","quiz2.jpg","quiz4.jpg","quiz5.jpg"],
-    tag:{en:"Thursdays · 19:30", pt:"Quintas · 19:30"},
-    title:{en:"Quiz Night", pt:"Noite de Quiz"},
-    blurb:{en:"Music rounds, tasting rounds, trivia and more. Bring the whole family.", pt:"Rondas de música, de prova, cultura geral e muito mais. Traga a família toda."},
-    points:{en:["Music rounds, tasting rounds, trivia and general knowledge","Completely family-friendly, with a toy box for the kids","Pool table and electronic darts downstairs in the Saloon","Book a table so your team has a spot"],
-            pt:["Rondas de música, de prova, curiosidades e cultura geral","Para toda a família, com caixa de brinquedos para os mais novos","Bilhar e dardos eletrónicos no Saloon, no piso de baixo","Reserve mesa para garantir lugar à sua equipa"]}},
+    blurb:{en:"A spread of plenty of food and unlimited drinks, with 20+ cocktails to choose from.", pt:"Muita comida e bebidas ilimitadas, com mais de 20 cocktails à escolha."},
+    points:{en:["A spread of plenty of food","Unlimited selected cocktails, beer, wine, sangria and selected spirits","20+ cocktails to choose from","Your time only starts when the drinks arrive","Book on a Friday for live music with your brunch","ABBA themed brunch once a month","Couples to groups of 25+"],
+            pt:["Uma mesa farta de comida","Cocktails selecionados, cerveja, vinho, sangria e bebidas espirituosas selecionadas, tudo ilimitado","Mais de 20 cocktails à escolha","O tempo só começa quando as bebidas chegam","Reserve à sexta-feira para ter música ao vivo com o seu brunch","Brunch temático ABBA uma vez por mês","De casais a grupos de mais de 25 pessoas"]}},
   { id:"breakfast", photos:["brunch2.jpg","brunch10.jpg","brunch11.jpg","brunch5.jpg"],
-    tag:{en:"Sat & Sun mornings", pt:"Sáb. e dom. de manhã"},
+    tag:{en:"It's 5 o'clock somewhere!", pt:"Algures já são 5 da tarde!"},
     title:{en:"Boozy Breakfast", pt:"Boozy Breakfast"},
-    blurb:{en:"90 minutes of unlimited mimosas and prosecco with a fresh breakfast spread.", pt:"90 minutos de mimosas e prosecco ilimitados com um pequeno-almoço fresco."},
-    points:{en:["90 minutes of unlimited mimosas and prosecco","Fresh pastries, fruit, jams and much more","Your time starts when your drinks reach the table","Saturday and Sunday mornings from March","Limited availability, so book ahead"],
-            pt:["90 minutos de mimosas e prosecco ilimitados","Pastelaria fresca, fruta, compotas e muito mais","O tempo começa quando as bebidas chegam à mesa","Sábados e domingos de manhã, a partir de março","Lugares limitados: reserve com antecedência"]}},
+    blurb:{en:"Unlimited prosecco and champagne cocktails with a fresh breakfast spread.", pt:"Prosecco e cocktails de champanhe ilimitados com um pequeno-almoço fresco."},
+    points:{en:["Unlimited prosecco and champagne cocktails","Fresh pastries, fruits, jams, Philadelphia cheese, smoked salmon and much more","Your time only starts when the drinks reach the table"],
+            pt:["Prosecco e cocktails de champanhe ilimitados","Pastelaria fresca, fruta, compotas, queijo Philadelphia, salmão fumado e muito mais","O tempo só começa quando as bebidas chegam à mesa"]}},
+  { id:"cocktail", photos:["cocktailclass9.jpg","cocktailclass21.jpg","cocktailclass14.jpg","cocktailclass10.jpg"],
+    tag:{en:"One of our best sellers", pt:"Um dos nossos favoritos"},
+    title:{en:"Cocktail Making Class", pt:"Aula de Cocktails"},
+    blurb:{en:"Learn to make 1–3 cocktails each, with champagne, shots and games. Tailored to your group.", pt:"Aprenda a fazer 1 a 3 cocktails cada, com champanhe, shots e jogos. Adaptada ao seu grupo."},
+    points:{en:["No minimum group size","Champagne, shots and a welcome drink on arrival","Learn how to make 1–3 cocktails each","Charcuterie board or brunch spread","Fun games or cocktail pong","Tailored to your group"],
+            pt:["Sem número mínimo de pessoas","Champanhe, shots e uma bebida de boas-vindas à chegada","Aprenda a fazer 1 a 3 cocktails cada","Tábua de enchidos e queijos ou mesa de brunch","Jogos divertidos ou cocktail pong","Adaptada ao seu grupo"]}},
+  { id:"quiz", photos:["quiz3.jpg","quiz2.jpg","quiz4.jpg","quiz5.jpg"],
+    tag:{en:"A fun-filled night for all the family", pt:"Uma noite divertida para toda a família"},
+    title:{en:"Quiz Nights", pt:"Noites de Quiz"},
+    blurb:{en:"Music rounds, tasting rounds, trivia and general knowledge. Completely family friendly.", pt:"Rondas de música, de prova, curiosidades e cultura geral. Para toda a família."},
+    points:{en:["Music rounds, tasting rounds, trivia and general knowledge","Completely family friendly","Pool table, darts, kids corner and Nintendo Wii"],
+            pt:["Rondas de música, de prova, curiosidades e cultura geral","Para toda a família","Bilhar, dardos, cantinho das crianças e Nintendo Wii"]}},
   { id:"wedding", photos:["wedding1.jpg","foodwedding.jpg","wedding2.jpg","cocktailclass7.jpg"],
     tag:{en:"Private hire", pt:"Aluguer privado"},
-    title:{en:"Pre-Wedding & Day 2 Parties", pt:"Festas Pré-Casamento e Dia 2"},
-    blurb:{en:"The whole venue for your crew, with live music, themed drinks and a fresh buffet.", pt:"O espaço todo para o seu grupo, com música ao vivo, bebidas temáticas e buffet fresco."},
-    points:{en:["Privately hired venue","Live music and themed drinks","Two themed bars and a kids area","In-house buffets to suit every budget","Made fresh on the day and adapted to dietary requirements","Couples to groups of 20+"],
-            pt:["Espaço reservado só para vocês","Música ao vivo e bebidas temáticas","Dois bares temáticos e zona para crianças","Buffets da casa para todos os orçamentos","Tudo feito no próprio dia e adaptado a restrições alimentares","De casais a grupos de mais de 20 pessoas"]}},
-  { id:"party", photos:["cocktailclass7.jpg","wedding2.jpg","quiz4.jpg","brunch9.jpg"],
-    tag:{en:"Any occasion", pt:"Qualquer ocasião"},
-    title:{en:"Birthdays, Hens & Celebrations", pt:"Aniversários, Despedidas e Festas"},
-    blurb:{en:"Packages for special occasions and private areas for your group.", pt:"Pacotes para ocasiões especiais e zonas privadas para o seu grupo."},
-    points:{en:["Packages for special occasions","Private hire areas available","Add a cocktail class, brunch or buffet","Tell us your date and group size and we'll send you options"],
-            pt:["Pacotes para ocasiões especiais","Zonas privadas disponíveis","Junte uma aula de cocktails, brunch ou buffet","Diga-nos a data e o número de pessoas e enviamos opções"]}}
+    title:{en:"Birthdays, Pre-Wedding & Day 2 Parties", pt:"Aniversários, Pré-Casamento e Festas Dia 2"},
+    blurb:{en:"The whole venue for your party, with live music, karaoke and an in-house buffet. Up to 80+ guests.", pt:"O espaço todo para a sua festa, com música ao vivo, karaoke e buffet da casa. Até mais de 80 convidados."},
+    points:{en:["Privately hired venue","Live music, karaoke and decorations","Two themed bars and a kids area","In-house buffet to suit every budget","Made fresh on the day and adapted to dietary requirements","From small parties to 80+ guests"],
+            pt:["Espaço reservado só para vocês","Música ao vivo, karaoke e decoração","Dois bares temáticos e zona para crianças","Buffet da casa para todos os orçamentos","Feito no próprio dia e adaptado a restrições alimentares","De festas pequenas a mais de 80 convidados"]}}
 ];
 
 const GALLERY = [
@@ -826,8 +823,7 @@ const ENQUIRY = [
   ["breakfast",{en:"Boozy Breakfast",pt:"Boozy Breakfast"}],
   ["cocktail",{en:"Cocktail Class",pt:"Aula de Cocktails"}],
   ["quiz",{en:"Quiz Night table",pt:"Mesa para a Noite de Quiz"}],
-  ["wedding",{en:"Pre-Wedding / Day 2 party",pt:"Festa pré-casamento / Dia 2"}],
-  ["party",{en:"Birthday, hen or private hire",pt:"Aniversário, despedida ou aluguer"}],
+  ["wedding",{en:"Birthday, pre-wedding or Day 2 party",pt:"Aniversário, pré-casamento ou festa Dia 2"}],
   ["other",{en:"Something else",pt:"Outro assunto"}]
 ];
 
@@ -841,7 +837,9 @@ const T = {
     "cta.book":"Reservar mesa","cta.week":"Programa da semana",
     "hero.eyebrow":"Bar de cocktails · Albufeira · Desde 2024",
     "hero.h1":"O bar que gostava de ter encontrado no <em>primeiro</em> dia de férias, não no último.",
-    "hero.lede":"Cocktails feitos à mão com ingredientes frescos, um bar tiki havaiano e, no piso de baixo, um saloon desportivo ao estilo Western. Noites de quiz, karaoke, música ao vivo e brunches em que o relógio só começa quando as bebidas chegam.",
+    "hero.slogan":"Dois pisos, dois mundos, uma experiência inesquecível.",
+    "hero.lede":"Cocktails preparados por profissionais, só com os ingredientes mais frescos. Um bar tiki havaiano no piso de cima e um saloon do Velho Oeste no piso de baixo, com sala de jogos e sala de karaoke privada. Dos cocktails da casa a deliciosas tábuas para partilhar, temos de tudo!",
+    "tile.gallery":"Galeria","tile.services":"Serviços","tile.about":"Sobre nós",
     "sticker.ring":"Visto no Channel 4 • A New Life in the Sun •","sticker.series":"Série 10",
     "wo.eyebrow":"Esta semana no Coco Loco","wo.h2":"Programa","wo.note":"Cocktails, petiscos, bilhar e dardos todos os dias em que estamos abertos. E ainda:",
     "wo.upcoming":"Brevemente",
@@ -855,7 +853,7 @@ const T = {
     "bars.saloon.desc":"Desça as escadas e troque as palmeiras pelo Velho Oeste. Puxe um banco, prepare as bolas de bilhar e veja o jogo.",
     "bars.saloon.poster":"EM CARTAZ","bars.saloon.p1":"Desporto ao vivo","bars.saloon.p2":"Mesa de bilhar","bars.saloon.p3":"Dardos eletrónicos","bars.saloon.p4":"Brinquedos para crianças",
     "bars.badge":"2 bares<br>1 noite",
-    "xp.eyebrow":"Brunch, aulas e festas","xp.h2":"Reserve algo especial","xp.note":"Do brunch a dois à despedida de solteira com vinte amigas. Toque num cartão para ver os detalhes.",
+    "xp.eyebrow":"Brunch, aulas e festas","xp.h2":"Reserve algo especial","xp.note":"Do brunch a dois a uma festa privada com mais de 80 pessoas. Toque num cartão para ver os detalhes.",
     "xp.more":"Ver detalhes →","xp.enquire":"Pedir informações","xp.wa":"Perguntar no WhatsApp",
     "gal.eyebrow":"Galeria","gal.h2":"Dentro do Coco Loco","gal.more":"Mais no Instagram",
     "story.tv":"Veja a Leah e o João no programa <strong>A New Life in the Sun</strong> do Channel 4, série 10",
