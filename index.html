@@ -26,7 +26,7 @@
   "name": "Coco Loco Albufeira",
   "image": "https://www.cocolocoalbufeira.com/img/hero.jpg",
   "url": "https://www.cocolocoalbufeira.com",
-  "telephone": "+351962772428",
+  "telephone": "+351966421747",
   "email": "cocolocoalbufeira@outlook.com",
   "address": {
     "@type": "PostalAddress",
@@ -398,12 +398,12 @@ dialog::backdrop{background:rgba(4,35,45,.82); backdrop-filter:blur(4px)}
 .form-card{background:#fff; border-radius:24px; padding:clamp(24px,4vw,40px); border:2px solid var(--cream-2); box-shadow:0 10px 0 var(--turq); display:grid; gap:20px; min-width:0}
 .form-card h3{font:800 clamp(30px,3.6vw,40px)/1 var(--f-head); text-transform:uppercase; color:var(--ocean)}
 .form-card > p{color:var(--ink-soft)}
-.fields{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+.fields{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:16px}
 .field{display:grid; gap:6px; min-width:0}
 .field.full{grid-column:1 / -1}
 .field label{font-weight:700; font-size:14px; color:var(--ink)}
 .field label small{font-weight:500; color:var(--ink-soft)}
-.field input, .field select, .field textarea{width:100%; font:500 16px/1.4 var(--f-body); color:var(--ink); background:var(--card-light); border:2px solid var(--cream-2); border-radius:12px; padding:12px 14px; min-height:50px}
+.field input, .field select, .field textarea{min-width:0; max-width:100%; display:block; width:100%; font:500 16px/1.4 var(--f-body); color:var(--ink); background:var(--card-light); border:2px solid var(--cream-2); border-radius:12px; padding:12px 14px; min-height:50px}
 .field textarea{min-height:120px; resize:vertical}
 .field input:focus, .field select:focus, .field textarea:focus{outline:none; border-color:var(--turq); box-shadow:0 0 0 4px rgba(22,184,196,.18)}
 .form-foot{display:flex; flex-wrap:wrap; gap:14px; align-items:center}
@@ -411,7 +411,10 @@ dialog::backdrop{background:rgba(4,35,45,.82); backdrop-filter:blur(4px)}
 .form-msg.ok{color:var(--palm)}
 .form-msg.err{color:#C2393B}
 @media (max-width: 900px){ .visit{grid-template-columns:1fr} }
-@media (max-width: 560px){ .fields{grid-template-columns:1fr} }
+@media (max-width: 560px){ .fields{grid-template-columns:minmax(0,1fr)} }
+.field input[type="date"]{-webkit-appearance:none; appearance:none; text-align:left; line-height:1.4}
+.field input[type="date"]::-webkit-date-and-time-value{text-align:left}
+.field input[type="date"]::-webkit-calendar-picker-indicator{opacity:.6}
 
 /* Footer */
 .footer{background:var(--charcoal); color:var(--on-dark); padding-block:56px 40px; border-top:2px solid var(--turq)}
@@ -646,7 +649,7 @@ dialog::backdrop{background:rgba(4,35,45,.82); backdrop-filter:blur(4px)}
           <div>
             <h3 data-i18n="visit.contact">Talk to us</h3>
             <div class="contact-lines">
-              <span><span data-i18n="visit.phone">Phone &amp; WhatsApp</span>: <a href="tel:+351962772428">+351 962 772 428</a></span>
+              <span><span data-i18n="visit.phone">Phone &amp; WhatsApp</span>: <a href="tel:+351966421747">+351 966 421 747</a></span>
               <span>Email: <a href="mailto:cocolocoalbufeira@outlook.com">cocolocoalbufeira@outlook.com</a></span>
             </div>
           </div>
@@ -688,7 +691,7 @@ dialog::backdrop{background:rgba(4,35,45,.82); backdrop-filter:blur(4px)}
               <label for="f-msg" data-i18n="form.msg">Message</label>
               <textarea id="f-msg" name="message" data-i18n-ph="form.msg.ph" placeholder="Times, occasion, dietary needs…" required></textarea>
             </div>
-            <div class="hp" aria-hidden="true"><label for="f-hp">Leave empty</label><input id="f-hp" name="_gotcha" tabindex="-1" autocomplete="off"></div>
+            <div class="hp" aria-hidden="true"><label for="f-hp">Leave empty</label><input id="f-hp" name="_honey" tabindex="-1" autocomplete="off"></div>
           </div>
           <div class="form-foot">
             <button class="btn btn-gold" type="submit" id="f-submit" data-i18n="form.send">Send message</button>
@@ -718,8 +721,8 @@ dialog::backdrop{background:rgba(4,35,45,.82); backdrop-filter:blur(4px)}
 </footer>
 
 <div class="action-bar" aria-label="Quick actions">
-  <a href="tel:+351962772428"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span data-i18n="bar.call">Call</span></a>
-  <a href="https://wa.me/351962772428" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.5A8.4 8.4 0 1 1 21 11.5z"/></svg>WhatsApp</a>
+  <a href="tel:+351966421747"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span data-i18n="bar.call">Call</span></a>
+  <a href="https://wa.me/351966421747" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.5A8.4 8.4 0 1 1 21 11.5z"/></svg>WhatsApp</a>
   <a class="hot" href="#book" data-i18n="cta.book">Book a table</a>
 </div>
 
@@ -732,7 +735,7 @@ dialog::backdrop{background:rgba(4,35,45,.82); backdrop-filter:blur(4px)}
     <ul id="xp-d-points"></ul>
     <div class="dlg-actions">
       <a class="btn btn-gold" href="#book" id="xp-d-enquire" data-i18n="xp.enquire">Enquire about this</a>
-      <a class="btn btn-outline" href="https://wa.me/351962772428" target="_blank" rel="noopener" data-i18n="xp.wa">Ask on WhatsApp</a>
+      <a class="btn btn-outline" href="https://wa.me/351966421747" target="_blank" rel="noopener" data-i18n="xp.wa">Ask on WhatsApp</a>
     </div>
   </div>
 </dialog>
@@ -762,9 +765,9 @@ dialog::backdrop{background:rgba(4,35,45,.82); backdrop-filter:blur(4px)}
 // or copy them into an /img folder and change this to "img/".
 const IMG = "https://www.cocolocoalbufeira.com/";
 
-// Contact form → email. Create a free form at formspree.io (or similar)
-// using the bar's email, then paste the form URL here.
-const FORM_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+// Contact form → email (FormSubmit.co, free, no account).
+// The very first message sends an activation email to this address: open it and click "Activate Form".
+const FORM_ENDPOINT = "https://formsubmit.co/ajax/cocolocoalbufeira@outlook.com";
 
 // AGENDA & OPENING HOURS are edited by the bar at /admin and saved in content/*.json on GitHub.
 // Put your GitHub username and repo name here, so edits show up within minutes without a redeploy.
@@ -891,12 +894,12 @@ const T = {
 };
 const MSG = {
   en:{ open:(c)=>`Open now · until ${c}`, opensToday:(o)=>`Closed now · opens today at ${o}`, opensNext:(d,o)=>`Closed today · opens ${d} at ${o}`, closed:"Closed",
-       sending:"Sending…", ok:"Thanks! Your message is on its way. We'll reply by email soon.", err:"That didn't send. Please try again, or message us on WhatsApp at +351 962 772 428.",
-       missing:"Please add your name, a valid email and a message.", notLive:"This form isn't connected yet. For now, please email cocolocoalbufeira@outlook.com or WhatsApp +351 962 772 428.",
+       sending:"Sending…", ok:"Thanks! Your message is on its way. We'll reply by email soon.", err:"That didn't send. Please try again, or message us on WhatsApp at +351 966 421 747.",
+       missing:"Please add your name, a valid email and a message.", notLive:"This form isn't connected yet. For now, please email cocolocoalbufeira@outlook.com or WhatsApp +351 966 421 747.",
        today:"Today", nothing:"Cocktails, pool & darts", more:"See details →", photo:"Photo" },
   pt:{ open:(c)=>`Aberto agora · até às ${c}`, opensToday:(o)=>`Fechado agora · abre hoje às ${o}`, opensNext:(d,o)=>`Fechado hoje · abre ${d} às ${o}`, closed:"Fechado",
-       sending:"A enviar…", ok:"Obrigado! A sua mensagem foi enviada. Respondemos em breve por email.", err:"Não foi possível enviar. Tente de novo ou fale connosco no WhatsApp: +351 962 772 428.",
-       missing:"Indique o seu nome, um email válido e uma mensagem.", notLive:"Este formulário ainda não está ligado. Por agora, escreva para cocolocoalbufeira@outlook.com ou WhatsApp +351 962 772 428.",
+       sending:"A enviar…", ok:"Obrigado! A sua mensagem foi enviada. Respondemos em breve por email.", err:"Não foi possível enviar. Tente de novo ou fale connosco no WhatsApp: +351 966 421 747.",
+       missing:"Indique o seu nome, um email válido e uma mensagem.", notLive:"Este formulário ainda não está ligado. Por agora, escreva para cocolocoalbufeira@outlook.com ou WhatsApp +351 966 421 747.",
        today:"Hoje", nothing:"Cocktails, bilhar e dardos", more:"Ver detalhes →", photo:"Foto" }
 };
 
@@ -1117,14 +1120,18 @@ $("#book").addEventListener("submit", async e => {
   if (!$("#f-name").value.trim() || !/^\S+@\S+\.\S+$/.test(email) || !$("#f-msg").value.trim()){
     msg.textContent = m.missing; msg.classList.add("err"); return;
   }
-  if (FORM_ENDPOINT.includes("YOUR_FORM_ID")){ msg.textContent = m.notLive; msg.classList.add("err"); return; }
-  const data = Object.fromEntries(new FormData(f));
-  data.type = $("#f-type").selectedOptions[0].textContent;
-  data._subject = `Website enquiry: ${data.type} – ${data.name}`;
+  const fd = Object.fromEntries(new FormData(f));
+  const type = $("#f-type").selectedOptions[0].textContent;
+  const data = {
+    "Name": fd.name, "Email": fd.email, "Phone / WhatsApp": fd.phone || "-",
+    "Enquiry": type, "Date": fd.date || "-", "People": fd.group_size || "-", "Message": fd.message,
+    _subject: `Website enquiry: ${type} – ${fd.name}`, _replyto: fd.email, _template: "table", _captcha: "false"
+  };
   btn.disabled = true; msg.textContent = m.sending;
   try{
     const r = await fetch(FORM_ENDPOINT, {method:"POST", headers:{"Content-Type":"application/json", "Accept":"application/json"}, body:JSON.stringify(data)});
-    if (!r.ok) throw new Error(r.status);
+    const j = await r.json().catch(() => ({}));
+    if (!r.ok || String(j.success) !== "true") throw new Error(j.message || r.status);
     f.reset(); renderSelect(); msg.textContent = m.ok; msg.classList.add("ok");
   } catch(err){ msg.textContent = m.err; msg.classList.add("err"); }
   finally{ btn.disabled = false; }
