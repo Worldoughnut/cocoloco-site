@@ -605,7 +605,7 @@ dialog::backdrop{background:rgba(4,35,45,.82); backdrop-filter:blur(4px)}
   <section class="band" id="story">
     <div class="wrap story">
       <div class="story-card">
-        <img data-img="wedding1.jpg" alt="A party at Coco Loco" loading="lazy">
+        <img data-img="about2.jpg" alt="Leah and João, the owners of Coco Loco" loading="lazy">
         <div class="tv"><b>C4</b><span data-i18n-html="story.tv">Catch Leah &amp; João on Channel 4's <strong>A New Life in the Sun</strong>, Series 10</span></div>
       </div>
       <div class="story-copy">
@@ -761,9 +761,8 @@ dialog::backdrop{background:rgba(4,35,45,.82); backdrop-filter:blur(4px)}
    EDIT HERE: settings the bar can change without touching the design
    ================================================================ */
 
-// Where photos live. Keep as-is while the old site's images are online,
-// or copy them into an /img folder and change this to "img/".
-const IMG = "https://www.cocolocoalbufeira.com/";
+// Where photos live (img folder in this project).
+const IMG = "img/";
 
 // Contact form → email (FormSubmit.co, free, no account).
 // The very first message sends an activation email to this address: open it and click "Activate Form".
@@ -827,18 +826,18 @@ const EXPERIENCES = [
 ];
 
 const GALLERY = [
-  ["aboutusheader2.png","bar"],
-  ["cocktailclass9.jpg","cocktails"],["brunch4.jpg","brunch"],["quiz3.jpg","quiz"],["wedding1.jpg","parties"],
+  ["cocoloco.jpg","bar"],["cocktailclass9.jpg","cocktails"],["brunch4.jpg","brunch"],["quiz3.jpg","quiz"],["wedding1.jpg","parties"],
   ["cocktailclass21.jpg","cocktails"],["brunch6.jpg","brunch"],["quiz2.jpg","quiz"],["foodwedding.jpg","parties"],
-  ["cocktailclass14.jpg","cocktails"],["brunch5.jpg","brunch"],["quiz4.jpg","quiz"],["wedding2.jpg","parties"],
+  ["cocktailclass14.jpg","cocktails"],["about5.jpg","bar"],["brunch5.jpg","brunch"],["quiz4.jpg","quiz"],["wedding2.jpg","parties"],
   ["cocktailclass10.jpg","cocktails"],["brunch9.jpg","brunch"],["quiz5.jpg","quiz"],["brunch2.jpg","brunch"],
-  ["cocktailclass7.jpg","cocktails"],["brunch10.jpg","brunch"],["brunch11.jpg","brunch"]
+  ["cocktailclass7.jpg","cocktails"],["brunch10.jpg","brunch"],["cocktailclass2.jpg","cocktails"],["brunch11.jpg","brunch"],
+  ["cocktailclass17.jpg","cocktails"],["cocktailclass1.jpg","cocktails"]
 ];
 const CATS = {
   all:{en:"All", pt:"Tudo"}, bar:{en:"The bar", pt:"O bar"}, cocktails:{en:"Cocktail classes", pt:"Aulas de cocktails"},
   brunch:{en:"Brunch & breakfast", pt:"Brunch e pequeno-almoço"}, quiz:{en:"Quiz nights", pt:"Noites de quiz"}, parties:{en:"Parties", pt:"Festas"}
 };
-const REVIEWS = ["brunchreview1.jpg","cocktailreview1.jpg","quizreview1.jpg","brunchreview2.jpg","cocktailreview2.jpg","quizreview2.jpg","brunchreview3.jpg","cocktailreview3.jpg","quizreview3.jpg"];
+const REVIEWS = ["brunchreview1.jpg","cocktailreview1.jpg","quizreview1.jpg","brunchreview2.jpg","cocktailreview2.jpg","quizreview2.jpg","brunchreview3.jpg","cocktailreview3.jpg","quizreview3.jpg","reviews1.jpg","reviews2.jpg","reviews3.jpg"];
 
 const ENQUIRY = [
   ["table",{en:"Table booking",pt:"Reserva de mesa"}],
@@ -1133,7 +1132,13 @@ $("#book").addEventListener("submit", async e => {
     const j = await r.json().catch(() => ({}));
     if (!r.ok || String(j.success) !== "true") throw new Error(j.message || r.status);
     f.reset(); renderSelect(); msg.textContent = m.ok; msg.classList.add("ok");
-  } catch(err){ msg.textContent = m.err; msg.classList.add("err"); }
+  } catch(err){
+    const why = String(err && err.message || "");
+    msg.textContent = /activat/i.test(why)
+      ? "This form isn't activated yet. Open the FormSubmit email sent to cocolocoalbufeira@outlook.com (check Junk) and click \"Activate Form\"."
+      : m.err + (why && !/^\d+$/.test(why) ? ` (${why})` : "");
+    msg.classList.add("err");
+  }
   finally{ btn.disabled = false; }
 });
 
