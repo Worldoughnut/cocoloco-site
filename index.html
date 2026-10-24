@@ -351,6 +351,13 @@ dialog::backdrop{background:rgba(4,35,45,.82); backdrop-filter:blur(4px)}
 .masonry button:hover img{transform:scale(1.03)}
 .gallery-foot{margin-top:24px; display:flex; flex-wrap:wrap; gap:12px; align-items:center}
 #lightbox{max-width:min(1100px, calc(100vw - 24px)); background:#000}
+#menu-dialog{max-width:min(900px, calc(100vw - 24px)); background:var(--charcoal); color:var(--on-dark); color-scheme:dark}
+.menu-body{display:grid; gap:18px; padding:24px clamp(14px, 3vw, 28px) 28px}
+.menu-body h3{font:800 clamp(30px, 4vw, 40px)/1 var(--f-head); text-transform:uppercase; padding-right:56px}
+.menu-body h3::first-letter{color:var(--gold)}
+.menu-pages{display:grid; gap:14px}
+.menu-pages img{width:100%; height:auto; border-radius:12px; background:var(--charcoal-2)}
+.menu-none{color:var(--on-dark-soft); font-size:17px; padding-block:12px}
 #lightbox figure{margin:0; display:grid; place-items:center; min-height:200px}
 #lightbox img{max-height:84vh; width:auto; margin-inline:auto}
 #lightbox figcaption{color:#ddd; padding:12px 16px; font-size:14px; background:#000; width:100%; text-align:center}
@@ -489,7 +496,7 @@ dialog::backdrop{background:rgba(4,35,45,.82); backdrop-filter:blur(4px)}
           </div>
           <nav class="icons" aria-label="Quick links">
             <a href="#whats-on"><span class="ic ic-turq"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M8 14h2M14 14h2M8 18h2"/></svg></span><span data-i18n="ic.events">Events</span></a>
-            <a href="#experiences"><span class="ic ic-gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16l-8 9z"/><path d="M12 13v7M8 21h8"/><circle cx="17.5" cy="4.5" r="2.5"/></svg></span>Cocktails</a>
+            <a href="#menu" id="open-menu"><span class="ic ic-gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16l-8 9z"/><path d="M12 13v7M8 21h8"/><circle cx="17.5" cy="4.5" r="2.5"/></svg></span>Cocktails</a>
             <a href="#gallery"><span class="ic ic-sky"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></span><span data-i18n="nav.gallery">Gallery</span></a>
             <a href="#visit"><span class="ic ic-cream"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span><span data-i18n="ic.find">Location</span></a>
           </nav>
@@ -517,7 +524,7 @@ dialog::backdrop{background:rgba(4,35,45,.82); backdrop-filter:blur(4px)}
       <div class="section-head">
         <p class="eyebrow" data-i18n="wo.eyebrow">This week at Coco Loco</p>
         <h2 class="h2"><span data-i18n="wo.h2">What's on</span></h2>
-        <p class="note" data-i18n="wo.note">Cocktails, bar snacks, pool and darts every day we're open. Here's what else is happening.</p>
+        <p class="note" data-i18n="wo.note">We keep this section updated with our upcoming events.</p>
       </div>
       <div class="week-scroll"><div class="week" id="week"></div></div>
       <div class="upcoming" id="upcoming" hidden>
@@ -696,7 +703,7 @@ dialog::backdrop{background:rgba(4,35,45,.82); backdrop-filter:blur(4px)}
 <footer class="footer">
   <div class="wrap footer-row">
     <div style="display:grid; gap:8px">
-      <p class="sign">Good Drinks · Good Vibes · Same People</p>
+      <p class="sign" data-i18n="foot.sign">Thank you for your visit, see you soon.</p>
       <small>© <span id="year">2026</span> Coco Loco Albufeira · Rua Alexandre Herculano 27, Albufeira</small>
     </div>
     <nav aria-label="Footer">
@@ -727,6 +734,15 @@ dialog::backdrop{background:rgba(4,35,45,.82); backdrop-filter:blur(4px)}
       <a class="btn btn-gold" href="#book" id="xp-d-enquire" data-i18n="xp.enquire">Enquire about this</a>
       <a class="btn btn-outline" href="https://wa.me/351962772428" target="_blank" rel="noopener" data-i18n="xp.wa">Ask on WhatsApp</a>
     </div>
+  </div>
+</dialog>
+
+<dialog id="menu-dialog" aria-labelledby="menu-title">
+  <button class="dlg-x" type="button" data-close aria-label="Close">×</button>
+  <div class="menu-body">
+    <h3 id="menu-title" data-i18n="menu.title">Our menu</h3>
+    <div class="menu-pages" id="menu-pages"></div>
+    <p class="menu-none" id="menu-none" data-i18n="menu.none" hidden>Our menu will be here soon. Ask at the bar!</p>
   </div>
 </dialog>
 
@@ -761,6 +777,10 @@ const DEFAULT_HOURS = {
   fri:{closed:false, open:"15:00", close:"02:00"}, sat:{closed:false, open:"12:00", close:"02:00"},
   sun:{closed:false, open:"12:00", close:"02:00"}
 };
+// MENU: shown when someone taps "Cocktails". The bar uploads the images at /admin (content/menu.json).
+const DEFAULT_MENU = { pages:[{ image:"img/menu.jpg" }] };
+let MENU = DEFAULT_MENU;
+
 const DEFAULT_AGENDA = { weekly:[
   {day:"thu", time:"19:30", title_en:"Quiz Night", title_pt:"Noite de Quiz", details_en:"Music & tasting rounds · family-friendly", details_pt:"Rondas de música e prova · para famílias"},
   {day:"fri", time:"", title_en:"Bottomless Brunch + live music", title_pt:"Bottomless Brunch + música ao vivo", details_en:"Book ahead", details_pt:"Reserve com antecedência"},
@@ -841,7 +861,7 @@ const T = {
     "hero.lede":"Cocktails preparados por profissionais, só com os ingredientes mais frescos. Um bar tiki havaiano no piso de cima e um saloon do Velho Oeste no piso de baixo, com sala de jogos e sala de karaoke privada. Dos cocktails da casa a deliciosas tábuas para partilhar, temos de tudo!",
     "tile.gallery":"Galeria","tile.services":"Serviços","tile.about":"Sobre nós",
     "sticker.ring":"Visto no Channel 4 • A New Life in the Sun •","sticker.series":"Série 10",
-    "wo.eyebrow":"Esta semana no Coco Loco","wo.h2":"Programa","wo.note":"Cocktails, petiscos, bilhar e dardos todos os dias em que estamos abertos. E ainda:",
+    "wo.eyebrow":"Esta semana no Coco Loco","wo.h2":"Programa","wo.note":"Mantemos esta secção atualizada com os nossos próximos eventos.",
     "wo.upcoming":"Brevemente",
     "ic.events":"Eventos","ic.find":"Localização",
     "wo.foot":"Karaoke, música ao vivo e os grandes jogos são anunciados no nosso Instagram.",
@@ -864,7 +884,8 @@ const T = {
     "visit.eyebrow":"Onde estamos e reservas","visit.h2":"Venha dizer olá","visit.where":"Morada","visit.directions":"Como chegar","visit.hours":"Horário","visit.contact":"Fale connosco","visit.phone":"Telefone e WhatsApp",
     "form.h3":"Reserve ou pergunte o que quiser","form.lede":"Mesas, brunches, aulas de cocktails, festas. Envie-nos os detalhes e respondemos por email, normalmente no mesmo dia.",
     "form.name":"O seu nome","form.email":"Email","form.phone":"Telefone / WhatsApp","form.optional":"(opcional)","form.type":"Para quê?","form.date":"Data","form.size":"Número de pessoas","form.msg":"Mensagem","form.msg.ph":"Horário, ocasião, restrições alimentares…","form.send":"Enviar mensagem",
-    "foot.sign":"Vemo-nos no bar, parceiro.",
+    "foot.sign":"Obrigado pela visita, até breve!",
+    "menu.title":"O nosso menu","menu.none":"O menu estará disponível aqui em breve. Peça-o ao balcão!",
     "bar.call":"Ligar"
   }
 };
@@ -929,6 +950,8 @@ async function loadContent(){
   if (h) applyHours(h);
   if (a) applyAgenda(a);
   if (a || h){ renderStatus(); renderWeek(); renderHours(); }
+  const m = await getJSON("menu.json");
+  if (m && Array.isArray(m.pages) && m.pages.some(pg => pg && pg.image)) MENU = m;
 }
 
 /* dates in Lisbon, as "YYYY-MM-DD" */
@@ -1126,6 +1149,18 @@ function setLang(l){
   renderAll();
 }
 document.querySelectorAll(".lang button").forEach(b => b.addEventListener("click", () => setLang(b.dataset.lang)));
+
+/* ---------- menu viewer ---------- */
+function openMenu(){
+  const pages = (MENU.pages || []).map(pg => pg && pg.image).filter(Boolean);
+  const box = $("#menu-pages"), none = $("#menu-none");
+  let left = pages.length;
+  none.hidden = left > 0;
+  box.innerHTML = pages.map((src, i) => `<img src="${esc(src)}" alt="Menu, page ${i + 1}" loading="${i ? "lazy" : "eager"}">`).join("");
+  box.querySelectorAll("img").forEach(img => img.addEventListener("error", () => { img.remove(); if (--left <= 0) none.hidden = false; }, {once:true}));
+  $("#menu-dialog").showModal();
+}
+$("#open-menu").addEventListener("click", e => { e.preventDefault(); openMenu(); });
 
 function renderAll(){ renderStatus(); renderWeek(); renderHours(); renderXP(); renderGallery(); renderReviews(); renderSelect(); }
 

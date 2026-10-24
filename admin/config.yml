@@ -14,7 +14,7 @@ public_folder: "/img/uploads"
 
 collections:
   - name: agenda
-    label: "Agenda e horário"
+    label: "Agenda, horário e menu"
     description: "As alterações aparecem no site 1 a 5 minutos depois de carregar em Publicar."
     format: json
     editor:
@@ -68,6 +68,18 @@ collections:
               - { label: "Evento (inglês)", name: title_en, widget: string }
               - { label: "Detalhes (português)", name: details_pt, widget: string, required: false }
               - { label: "Detalhes (inglês)", name: details_en, widget: string, required: false }
+
+      - name: menu
+        label: "Menu (imagens)"
+        file: "content/menu.json"
+        fields:
+          - label: "Páginas do menu"
+            name: pages
+            widget: list
+            hint: "Carregue uma imagem por página do menu (JPG ou PNG). A ordem aqui é a ordem em que aparecem no site, quando se carrega em 'Cocktails'."
+            summary: "{{fields.image}}"
+            fields:
+              - { label: "Imagem", name: image, widget: image, choose_url: false }
 
       - name: horario
         label: "Horário de abertura"
