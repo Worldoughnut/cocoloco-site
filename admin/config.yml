@@ -14,7 +14,7 @@ public_folder: "/img/uploads"
 
 collections:
   - name: agenda
-    label: "Agenda, horário e menu"
+    label: "Agenda, horário, galeria e menu"
     description: "As alterações aparecem no site 1 a 5 minutos depois de carregar em Publicar."
     format: json
     editor:
@@ -68,6 +68,27 @@ collections:
               - { label: "Evento (inglês)", name: title_en, widget: string }
               - { label: "Detalhes (português)", name: details_pt, widget: string, required: false }
               - { label: "Detalhes (inglês)", name: details_en, widget: string, required: false }
+
+      - name: galeria
+        label: "Galeria de fotos"
+        file: "content/gallery.json"
+        fields:
+          - label: "Fotos"
+            name: photos
+            widget: list
+            hint: "Carregue as fotos e escolha a categoria de cada uma. A ordem aqui é a ordem na galeria do site (arraste para reordenar)."
+            summary: "{{fields.category}} · {{fields.image}}"
+            fields:
+              - { label: "Foto", name: image, widget: image, choose_url: false }
+              - label: "Categoria"
+                name: category
+                widget: select
+                options:
+                  - { label: "O bar", value: "bar" }
+                  - { label: "Aulas de cocktails", value: "cocktails" }
+                  - { label: "Brunch e pequeno-almoço", value: "brunch" }
+                  - { label: "Noites de quiz", value: "quiz" }
+                  - { label: "Festas", value: "parties" }
 
       - name: menu
         label: "Menu (imagens)"

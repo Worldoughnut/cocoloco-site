@@ -1,0 +1,100 @@
+{
+  "photos": [
+    {
+      "image": "/img/cocoloco.jpg",
+      "category": "bar"
+    },
+    {
+      "image": "/img/cocktailclass9.jpg",
+      "category": "cocktails"
+    },
+    {
+      "image": "/img/brunch4.jpg",
+      "category": "brunch"
+    },
+    {
+      "image": "/img/quiz3.jpg",
+      "category": "quiz"
+    },
+    {
+      "image": "/img/wedding1.jpg",
+      "category": "parties"
+    },
+    {
+      "image": "/img/cocktailclass21.jpg",
+      "category": "cocktails"
+    },
+    {
+      "image": "/img/brunch6.jpg",
+      "category": "brunch"
+    },
+    {
+      "image": "/img/quiz2.jpg",
+      "category": "quiz"
+    },
+    {
+      "image": "/img/foodwedding.jpg",
+      "category": "parties"
+    },
+    {
+      "image": "/img/cocktailclass14.jpg",
+      "category": "cocktails"
+    },
+    {
+      "image": "/img/about5.jpg",
+      "category": "bar"
+    },
+    {
+      "image": "/img/brunch5.jpg",
+      "category": "brunch"
+    },
+    {
+      "image": "/img/quiz4.jpg",
+      "category": "quiz"
+    },
+    {
+      "image": "/img/wedding2.jpg",
+      "category": "parties"
+    },
+    {
+      "image": "/img/cocktailclass10.jpg",
+      "category": "cocktails"
+    },
+    {
+      "image": "/img/brunch9.jpg",
+      "category": "brunch"
+    },
+    {
+      "image": "/img/quiz5.jpg",
+      "category": "quiz"
+    },
+    {
+      "image": "/img/brunch2.jpg",
+      "category": "brunch"
+    },
+    {
+      "image": "/img/cocktailclass7.jpg",
+      "category": "cocktails"
+    },
+    {
+      "image": "/img/brunch10.jpg",
+      "category": "brunch"
+    },
+    {
+      "image": "/img/cocktailclass2.jpg",
+      "category": "cocktails"
+    },
+    {
+      "image": "/img/brunch11.jpg",
+      "category": "brunch"
+    },
+    {
+      "image": "/img/cocktailclass17.jpg",
+      "category": "cocktails"
+    },
+    {
+      "image": "/img/cocktailclass1.jpg",
+      "category": "cocktails"
+    }
+  ]
+}
