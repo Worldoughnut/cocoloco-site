@@ -263,6 +263,8 @@ body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-in
 .week-foot{padding:16px 18px; border-radius:16px; background:var(--card-light); border:2px dashed var(--cream-2)}
 .ig-pill{display:inline-flex; align-items:center; gap:8px; padding:10px 16px; border-radius:999px; background:var(--ocean); color:var(--cream); text-decoration:none; font-weight:700; font-size:15px}
 .ig-pill svg{width:18px; height:18px}
+.social-pills{display:flex; flex-wrap:wrap; align-items:center; gap:10px}
+.social-handle{font-weight:700; color:var(--ocean)}
 .ig-pill:hover{background:var(--turq); color:var(--ocean-deep)}
 @media (max-width: 1080px){
   .week-scroll{overflow-x:auto; scroll-snap-type:x mandatory; margin-inline:calc(-1 * var(--gutter)) calc(-1 * var(--gutter-r)); padding:4px var(--gutter-r) 16px var(--gutter); scroll-padding-inline:var(--gutter) var(--gutter-r); scrollbar-width:thin}
@@ -558,8 +560,12 @@ dialog::backdrop{background:rgba(4,35,45,.82); backdrop-filter:blur(4px)}
         <div class="up-list" id="up-list"></div>
       </div>
       <div class="week-foot">
-        <span data-i18n="wo.foot">Karaoke, live music and the big matches are announced on our Instagram.</span>
-        <a class="ig-pill" href="https://www.instagram.com/cocolocoalbufeira" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg>@cocolocoalbufeira</a>
+        <span data-i18n="wo.foot">Check out our socials for more content and information.</span>
+        <div class="social-pills">
+          <a class="ig-pill" href="https://www.instagram.com/cocolocoalbufeira" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg>Instagram</a>
+          <a class="ig-pill" href="https://www.facebook.com/p/Coco-Loco-Albufeira-61556658491607/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>Facebook</a>
+          <span class="social-handle">@cocolocoalbufeira</span>
+        </div>
       </div>
     </div>
   </section>
@@ -889,7 +895,7 @@ const T = {
     "wo.eyebrow":"Esta semana no Coco Loco","wo.h2":"Programa","wo.note":"Mantemos esta secção atualizada com os nossos próximos eventos.",
     "wo.upcoming":"Brevemente",
     "ic.events":"Eventos","ic.find":"Localização",
-    "wo.foot":"Karaoke, música ao vivo e os grandes jogos são anunciados no nosso Instagram.",
+    "wo.foot":"Siga as nossas redes sociais para mais conteúdos e informações.",
     "bars.title":"Dois bares debaixo do mesmo teto",
     "bars.tiki.where":"Bar principal · Tema havaiano",
     "bars.tiki.desc":"Palmeiras, cor e boa disposição. Os nossos bartenders fazem cada cocktail à mão, com ingredientes frescos, do início da tarde até de madrugada.",
