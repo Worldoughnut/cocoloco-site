@@ -248,6 +248,7 @@ body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-in
 .ev-time{font:700 13px/1.2 var(--f-body); color:var(--turq-ink); font-variant-numeric:tabular-nums}
 .ev-t{font-weight:700; font-size:15px; line-height:1.3; color:var(--ink)}
 .ev-where{font-size:13px; color:var(--ink-soft)}
+.ev-empty .ev-t{font-weight:500; font-style:italic; color:var(--ink-soft)}
 .ev.special .ev-time{color:var(--coral)}
 .ev.special .ev-time::before{content:"★ "}
 .ev.special .ev-t{color:var(--hibiscus)}
@@ -802,22 +803,12 @@ const FORM_ENDPOINT = "https://formsubmit.co/ajax/cocolocoalbufeira@outlook.com"
 const CONTENT_URL = "https://raw.githubusercontent.com/Worldoughnut/cocoloco-site/main/content/";
 
 // Backup copy, only used if content/*.json can't be loaded.
-const DEFAULT_HOURS = {
-  mon:{closed:true, open:"15:00", close:"02:00"}, tue:{closed:false, open:"15:00", close:"02:00"},
-  wed:{closed:false, open:"15:00", close:"02:00"}, thu:{closed:false, open:"15:00", close:"02:00"},
-  fri:{closed:false, open:"15:00", close:"02:00"}, sat:{closed:false, open:"12:00", close:"02:00"},
-  sun:{closed:false, open:"12:00", close:"02:00"}
-};
+const DEFAULT_HOURS = {"mon": {"closed": true, "open": "15:00", "close": "02:00"}, "tue": {"closed": false, "open": "15:00", "close": "23:00"}, "wed": {"closed": false, "open": "15:00", "close": "23:00"}, "thu": {"closed": false, "open": "15:00", "close": "23:00"}, "fri": {"closed": false, "open": "15:00", "close": "23:00"}, "sat": {"closed": false, "open": "12:00", "close": "23:00"}, "sun": {"closed": false, "open": "12:00", "close": "23:00"}};
 // MENU: shown when someone taps "Cocktails". The bar uploads the images at /admin (content/menu.json).
 const DEFAULT_MENU = { pages:[{ image:"img/menu.jpg" }] };
 let MENU = DEFAULT_MENU;
 
-const DEFAULT_AGENDA = { weekly:[
-  {day:"thu", time:"19:30", title_en:"Quiz Night", title_pt:"Noite de Quiz", details_en:"Music & tasting rounds · family-friendly", details_pt:"Rondas de música e prova · para famílias"},
-  {day:"fri", time:"", title_en:"Bottomless Brunch + live music", title_pt:"Bottomless Brunch + música ao vivo", details_en:"Book ahead", details_pt:"Reserve com antecedência"},
-  {day:"sat", time:"", title_en:"Boozy Breakfast", title_pt:"Boozy Breakfast", details_en:"Mornings · limited spaces", details_pt:"De manhã · lugares limitados"},
-  {day:"sun", time:"", title_en:"Boozy Breakfast", title_pt:"Boozy Breakfast", details_en:"Mornings · limited spaces", details_pt:"De manhã · lugares limitados"}
-], specials:[] };
+const DEFAULT_AGENDA = {"weekly": [{"day": "tue", "time": "3pm - 7pm", "title_en": "Happy Hour", "title_pt": "Happy Hour", "hidden": false}, {"day": "wed", "time": "3pm - 7pm", "title_en": "Happy Hour", "title_pt": "Happy Hour", "hidden": false}, {"day": "thu", "time": "7:30pm", "title_en": "Quiz", "title_pt": "Quiz", "hidden": false}], "specials": []};
 
 /* ================================================================ */
 
@@ -924,11 +915,11 @@ const MSG = {
   en:{ open:(c)=>`Open now · until ${c}`, opensToday:(o)=>`Closed now · opens today at ${o}`, opensNext:(d,o)=>`Closed today · opens ${d} at ${o}`, closed:"Closed",
        sending:"Sending…", ok:"Thanks! Your message is on its way. We'll reply by email soon.", err:"That didn't send. Please try again, or message us on WhatsApp at +351 966 421 747.",
        missing:"Please add your name, a valid email and a message.", notLive:"This form isn't connected yet. For now, please email cocolocoalbufeira@outlook.com or WhatsApp +351 966 421 747.",
-       today:"Today", nothing:"Cocktails, pool & darts", more:"See details →", photo:"Photo" },
+       today:"Today", nothing:"No events planned. Drop in for drinks!", more:"See details →", photo:"Photo" },
   pt:{ open:(c)=>`Aberto agora · até às ${c}`, opensToday:(o)=>`Fechado agora · abre hoje às ${o}`, opensNext:(d,o)=>`Fechado hoje · abre ${d} às ${o}`, closed:"Fechado",
        sending:"A enviar…", ok:"Obrigado! A sua mensagem foi enviada. Respondemos em breve por email.", err:"Não foi possível enviar. Tente de novo ou fale connosco no WhatsApp: +351 966 421 747.",
        missing:"Indique o seu nome, um email válido e uma mensagem.", notLive:"Este formulário ainda não está ligado. Por agora, escreva para cocolocoalbufeira@outlook.com ou WhatsApp +351 966 421 747.",
-       today:"Hoje", nothing:"Cocktails, bilhar e dardos", more:"Ver detalhes →", photo:"Foto" }
+       today:"Hoje", nothing:"Sem eventos marcados. Venha beber um copo!", more:"Ver detalhes →", photo:"Foto" }
 };
 
 /* ---------- helpers ---------- */
@@ -954,7 +945,7 @@ function applyAgenda(a){
   WEEKLY = {};
   ((a && a.weekly) || []).forEach(e => {
     const i = DAY_KEYS.indexOf(e && e.day);
-    if (i < 0 || e.active === false) return;
+    if (i < 0 || e.hidden === true) return;
     (WEEKLY[i] ||= []).push(e);
   });
   Object.values(WEEKLY).forEach(l => l.sort(byTime));
@@ -1047,7 +1038,7 @@ function renderWeek(){
     const evs = [...(WEEKLY[d] || []), ...SPECIALS.filter(s => s.date === date).map(s => ({...s, _special:true}))];
     const hrs = h ? `${fmtM(h[0])}–${fmtM(h[1])}` : MSG[lang].closed;
     const body = evs.length ? (h ? evs : evs.filter(e => e._special)).map(evHTML).join("") : "";
-    const fallback = `<div class="ev"><span class="ev-t">${h ? MSG[lang].nothing : MSG[lang].closed}</span></div>`;
+    const fallback = `<div class="ev ev-empty"><span class="ev-t">${h ? MSG[lang].nothing : MSG[lang].closed}</span></div>`;
     return `<article class="day${date === nightYmd ? " today" : ""}${h ? "" : " closed"}">
       <span class="today-chip">${MSG[lang].today}</span>
       <div class="day-top"><h3>${DAYS_SHORT[lang][d]} <span class="dom">${+date.slice(8)}</span></h3><span class="hrs">${hrs}</span></div>${body || fallback}</article>`;

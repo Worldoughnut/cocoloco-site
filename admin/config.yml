@@ -27,7 +27,7 @@ collections:
           - label: "Eventos semanais"
             name: weekly
             widget: list
-            hint: "Repetem-se todas as semanas (ex: Quiz à quinta). Desligue 'Ativo' para esconder um evento sem o apagar."
+            hint: "Repetem-se todas as semanas (ex: Quiz à quinta). Aparecem todos no site, exceto os que tiverem 'Esconder do site' ligado."
             add_to_top: false
             summary: "{{fields.day}} · {{fields.time}} · {{fields.title_pt}}"
             fields:
@@ -42,7 +42,7 @@ collections:
                   - { label: "Sexta", value: "fri" }
                   - { label: "Sábado", value: "sat" }
                   - { label: "Domingo", value: "sun" }
-              - { label: "Ativo (mostrar no site)", name: active, widget: boolean, default: true }
+              - { label: "Esconder do site", name: hidden, widget: boolean, default: false, required: false, hint: "Deixe desligado. Ligue só para esconder este evento sem o apagar (ex: fora de época)." }
               - { label: "Hora", name: time, widget: string, required: false, hint: "Ex: 19:30. Pode ficar vazio." }
               - { label: "Evento (português)", name: title_pt, widget: string }
               - { label: "Evento (inglês)", name: title_en, widget: string, hint: "O que os turistas veem na versão inglesa." }

@@ -1,25 +1,25 @@
 {
   "weekly": [
     {
-      "active": false,
       "day": "tue",
       "time": "3pm - 7pm",
-      "title_en": "Happy Hour ",
-      "title_pt": "Happy Hour "
+      "title_en": "Happy Hour",
+      "title_pt": "Happy Hour",
+      "hidden": false
     },
     {
-      "active": true,
       "day": "wed",
       "time": "3pm - 7pm",
-      "title_en": "Happy Hour ",
-      "title_pt": "Happy Hour "
+      "title_en": "Happy Hour",
+      "title_pt": "Happy Hour",
+      "hidden": false
     },
     {
-      "active": false,
       "day": "thu",
       "time": "7:30pm",
       "title_en": "Quiz",
-      "title_pt": "Quiz "
+      "title_pt": "Quiz",
+      "hidden": false
     }
   ],
   "specials": []
