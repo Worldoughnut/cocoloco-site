@@ -1,5 +1,10 @@
 {
   "pages": [
-    { "image": "/img/menu.jpg" }
+    {
+      "image": "/img/menu.jpg"
+    },
+    {
+      "image": "/img/uploads/inbound3728344217892392074.jpg"
+    }
   ]
 }
