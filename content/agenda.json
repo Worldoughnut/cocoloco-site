@@ -1,4 +1,26 @@
 {
-  "weekly": [],
+  "weekly": [
+    {
+      "active": false,
+      "day": "tue",
+      "time": "3pm - 7pm",
+      "title_en": "Happy Hour ",
+      "title_pt": "Happy Hour "
+    },
+    {
+      "active": true,
+      "day": "wed",
+      "time": "3pm - 7pm",
+      "title_en": "Happy Hour ",
+      "title_pt": "Happy Hour "
+    },
+    {
+      "active": false,
+      "day": "thu",
+      "time": "7:30pm",
+      "title_en": "Quiz",
+      "title_pt": "Quiz "
+    }
+  ],
   "specials": []
 }
