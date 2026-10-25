@@ -1,41 +1,4 @@
 {
-  "weekly": [
-    {
-      "day": "thu",
-      "active": true,
-      "time": "19:30",
-      "title_en": "Quiz Night",
-      "title_pt": "Noite de Quiz",
-      "details_en": "Music & tasting rounds · family-friendly",
-      "details_pt": "Rondas de música e prova · para famílias"
-    },
-    {
-      "day": "fri",
-      "active": true,
-      "time": "",
-      "title_en": "Bottomless Brunch + live music",
-      "title_pt": "Bottomless Brunch + música ao vivo",
-      "details_en": "Book ahead",
-      "details_pt": "Reserve com antecedência"
-    },
-    {
-      "day": "sat",
-      "active": true,
-      "time": "",
-      "title_en": "Boozy Breakfast",
-      "title_pt": "Boozy Breakfast",
-      "details_en": "Mornings · limited spaces",
-      "details_pt": "De manhã · lugares limitados"
-    },
-    {
-      "day": "sun",
-      "active": true,
-      "time": "",
-      "title_en": "Boozy Breakfast",
-      "title_pt": "Boozy Breakfast",
-      "details_en": "Mornings · limited spaces",
-      "details_pt": "De manhã · lugares limitados"
-    }
-  ],
+  "weekly": [],
   "specials": []
 }
