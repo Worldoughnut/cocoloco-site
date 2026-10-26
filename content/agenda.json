@@ -2,17 +2,21 @@
   "weekly": [
     {
       "day": "tue",
-      "time": "3pm - 7pm",
-      "title_en": "Happy Hour",
-      "title_pt": "Happy Hour",
-      "hidden": false
+      "time": "",
+      "title_en": "BOTTOMLESS BRUNCH / COCKTAIL CLASS ",
+      "title_pt": "BOTTOMLESS BRUNCH / COCKTAIL CLASS",
+      "hidden": false,
+      "details_pt": "Booking required ",
+      "details_en": "Booking required "
     },
     {
       "day": "wed",
-      "time": "3pm - 7pm",
-      "title_en": "Happy Hour",
-      "title_pt": "Happy Hour",
-      "hidden": false
+      "time": "",
+      "title_en": "BOTTOMLESS BRUNCH / COCKTAIL CLASS ",
+      "title_pt": "BOTTOMLESS BRUNCH / COCKTAIL CLASS ",
+      "hidden": false,
+      "details_pt": "Booking required ",
+      "details_en": "Booking required "
     },
     {
       "day": "thu",
@@ -20,6 +24,22 @@
       "title_en": "Quiz",
       "title_pt": "Quiz",
       "hidden": false
+    },
+    {
+      "hidden": false,
+      "day": "thu",
+      "title_pt": "BOTTOMLESS BRUNCH / COCKTAIL CLASS ",
+      "title_en": "BOTTOMLESS BRUNCH / COCKTAIL CLASS ",
+      "details_pt": "Booking required ",
+      "details_en": "Booking required "
+    },
+    {
+      "hidden": false,
+      "day": "fri",
+      "title_pt": "HALLOWEEN QUIZ ",
+      "title_en": "HALLOWEEN QUIZ ",
+      "details_pt": "Booking required ",
+      "details_en": "Booking required "
     }
   ],
   "specials": [
