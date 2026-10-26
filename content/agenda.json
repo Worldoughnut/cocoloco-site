@@ -40,6 +40,22 @@
       "title_en": "HALLOWEEN QUIZ ",
       "details_pt": "Booking required ",
       "details_en": "Booking required "
+    },
+    {
+      "hidden": false,
+      "day": "sat",
+      "title_pt": "BOTTOMLESS BRUNCH / COCKTAIL CLASS ",
+      "title_en": "BOTTOMLESS BRUNCH / COCKTAIL CLASS ",
+      "details_pt": "Booking required ",
+      "details_en": "Booking required "
+    },
+    {
+      "hidden": false,
+      "day": "sun",
+      "title_pt": "BOTTOMLESS BRUNCH / COCKTAIL CLASS ",
+      "title_en": "BOTTOMLESS BRUNCH / COCKTAIL CLASS ",
+      "details_pt": "Booking required ",
+      "details_en": "Booking required "
     }
   ],
   "specials": [
