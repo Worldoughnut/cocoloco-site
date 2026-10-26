@@ -22,5 +22,13 @@
       "hidden": false
     }
   ],
-  "specials": []
+  "specials": [
+    {
+      "date": "2026-10-30",
+      "title_pt": "HALLOWEEN QUIZ ",
+      "title_en": "HALLOWEEN QUIZ",
+      "details_pt": "Booking required, limited spaces left.",
+      "details_en": "Booking required, limited spaces left."
+    }
+  ]
 }
